@@ -7,15 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B0660383BF5824B7A7004D0 /* Pods_ScavengerHunt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2E6AF81506BB94B43619CE2 /* Pods_ScavengerHunt.framework */; };
 		C9B2C53125F859E4008375C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B2C53025F859E4008375C0 /* AppDelegate.swift */; };
 		C9B2C53325F859E4008375C0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B2C53225F859E4008375C0 /* SceneDelegate.swift */; };
 		C9B2C53525F859E4008375C0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B2C53425F859E4008375C0 /* ViewController.swift */; };
 		C9B2C53825F859E4008375C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9B2C53625F859E4008375C0 /* Main.storyboard */; };
 		C9B2C53A25F859EA008375C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9B2C53925F859EA008375C0 /* Assets.xcassets */; };
 		C9B2C53D25F859EA008375C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9B2C53B25F859EA008375C0 /* LaunchScreen.storyboard */; };
+		C9B2C54625F85B2A008375C0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9B2C54525F85B2A008375C0 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0411D729B1837775569A96F9 /* Pods-ScavengerHunt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScavengerHunt.debug.xcconfig"; path = "Target Support Files/Pods-ScavengerHunt/Pods-ScavengerHunt.debug.xcconfig"; sourceTree = "<group>"; };
+		513B5066B2254A8C3A35FB6B /* Pods-ScavengerHunt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScavengerHunt.release.xcconfig"; path = "Target Support Files/Pods-ScavengerHunt/Pods-ScavengerHunt.release.xcconfig"; sourceTree = "<group>"; };
 		C9B2C52D25F859E4008375C0 /* ScavengerHunt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScavengerHunt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9B2C53025F859E4008375C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9B2C53225F859E4008375C0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +28,8 @@
 		C9B2C53925F859EA008375C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C9B2C53C25F859EA008375C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C9B2C53E25F859EA008375C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C9B2C54525F85B2A008375C0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E2E6AF81506BB94B43619CE2 /* Pods_ScavengerHunt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScavengerHunt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +37,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B0660383BF5824B7A7004D0 /* Pods_ScavengerHunt.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C6E5AB42F1035ACFA69CFA9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0411D729B1837775569A96F9 /* Pods-ScavengerHunt.debug.xcconfig */,
+				513B5066B2254A8C3A35FB6B /* Pods-ScavengerHunt.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		A6F523517628E0E26B2CCCE9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E2E6AF81506BB94B43619CE2 /* Pods_ScavengerHunt.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C9B2C52425F859E4008375C0 = {
 			isa = PBXGroup;
 			children = (
 				C9B2C52F25F859E4008375C0 /* ScavengerHunt */,
 				C9B2C52E25F859E4008375C0 /* Products */,
+				5C6E5AB42F1035ACFA69CFA9 /* Pods */,
+				A6F523517628E0E26B2CCCE9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +87,7 @@
 				C9B2C53225F859E4008375C0 /* SceneDelegate.swift */,
 				C9B2C53425F859E4008375C0 /* ViewController.swift */,
 				C9B2C53625F859E4008375C0 /* Main.storyboard */,
+				C9B2C54525F85B2A008375C0 /* GoogleService-Info.plist */,
 				C9B2C53925F859EA008375C0 /* Assets.xcassets */,
 				C9B2C53B25F859EA008375C0 /* LaunchScreen.storyboard */,
 				C9B2C53E25F859EA008375C0 /* Info.plist */,
@@ -74,9 +102,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C9B2C54125F859EA008375C0 /* Build configuration list for PBXNativeTarget "ScavengerHunt" */;
 			buildPhases = (
+				7C517810F56EAD9C5444B7B6 /* [CP] Check Pods Manifest.lock */,
 				C9B2C52925F859E4008375C0 /* Sources */,
 				C9B2C52A25F859E4008375C0 /* Frameworks */,
 				C9B2C52B25F859E4008375C0 /* Resources */,
+				388AA4A034FFBBB8CA5F1223 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -127,10 +157,53 @@
 				C9B2C53D25F859EA008375C0 /* LaunchScreen.storyboard in Resources */,
 				C9B2C53A25F859EA008375C0 /* Assets.xcassets in Resources */,
 				C9B2C53825F859E4008375C0 /* Main.storyboard in Resources */,
+				C9B2C54625F85B2A008375C0 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		388AA4A034FFBBB8CA5F1223 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ScavengerHunt/Pods-ScavengerHunt-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ScavengerHunt/Pods-ScavengerHunt-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ScavengerHunt/Pods-ScavengerHunt-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7C517810F56EAD9C5444B7B6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ScavengerHunt-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C9B2C52925F859E4008375C0 /* Sources */ = {
@@ -283,6 +356,7 @@
 		};
 		C9B2C54225F859EA008375C0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0411D729B1837775569A96F9 /* Pods-ScavengerHunt.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -302,6 +376,7 @@
 		};
 		C9B2C54325F859EA008375C0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 513B5066B2254A8C3A35FB6B /* Pods-ScavengerHunt.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
