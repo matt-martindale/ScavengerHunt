@@ -27,6 +27,7 @@
 		C9B2C53C25F859EA008375C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C9B2C53E25F859EA008375C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9B2C54525F85B2A008375C0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C9CC0C9725F86FFD0059822E /* ScavengerHunt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ScavengerHunt.entitlements; sourceTree = "<group>"; };
 		E2E6AF81506BB94B43619CE2 /* Pods_ScavengerHunt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScavengerHunt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -80,6 +81,7 @@
 		C9B2C52F25F859E4008375C0 /* ScavengerHunt */ = {
 			isa = PBXGroup;
 			children = (
+				C9CC0C9725F86FFD0059822E /* ScavengerHunt.entitlements */,
 				C9B5405925F86C73004E4EE6 /* Controllers */,
 				C9B5405825F86C23004E4EE6 /* Models */,
 				C9B5405B25F86C7D004E4EE6 /* Resources */,
@@ -395,6 +397,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ScavengerHunt/ScavengerHunt.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NVQX7ZW685;
 				INFOPLIST_FILE = "$(SRCROOT)/ScavengerHunt/Resources/Info.plist";
@@ -415,6 +418,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ScavengerHunt/ScavengerHunt.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NVQX7ZW685;
 				INFOPLIST_FILE = "$(SRCROOT)/ScavengerHunt/Resources/Info.plist";
