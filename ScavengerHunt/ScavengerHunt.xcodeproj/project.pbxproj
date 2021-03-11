@@ -10,10 +10,11 @@
 		3B0660383BF5824B7A7004D0 /* Pods_ScavengerHunt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2E6AF81506BB94B43619CE2 /* Pods_ScavengerHunt.framework */; };
 		C9B2C53125F859E4008375C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B2C53025F859E4008375C0 /* AppDelegate.swift */; };
 		C9B2C53325F859E4008375C0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B2C53225F859E4008375C0 /* SceneDelegate.swift */; };
-		C9B2C53825F859E4008375C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9B2C53625F859E4008375C0 /* Main.storyboard */; };
+		C9B2C53825F859E4008375C0 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9B2C53625F859E4008375C0 /* User.storyboard */; };
 		C9B2C53A25F859EA008375C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9B2C53925F859EA008375C0 /* Assets.xcassets */; };
 		C9B2C53D25F859EA008375C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9B2C53B25F859EA008375C0 /* LaunchScreen.storyboard */; };
 		C9B2C54625F85B2A008375C0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9B2C54525F85B2A008375C0 /* GoogleService-Info.plist */; };
+		C9CC0CB325F9A7A40059822E /* LandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC0CB225F9A7A40059822E /* LandingPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,12 +23,13 @@
 		C9B2C52D25F859E4008375C0 /* ScavengerHunt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScavengerHunt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9B2C53025F859E4008375C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9B2C53225F859E4008375C0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C9B2C53725F859E4008375C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C9B2C53725F859E4008375C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/User.storyboard; sourceTree = "<group>"; };
 		C9B2C53925F859EA008375C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C9B2C53C25F859EA008375C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C9B2C53E25F859EA008375C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9B2C54525F85B2A008375C0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C9CC0C9725F86FFD0059822E /* ScavengerHunt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ScavengerHunt.entitlements; sourceTree = "<group>"; };
+		C9CC0CB225F9A7A40059822E /* LandingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageViewController.swift; sourceTree = "<group>"; };
 		E2E6AF81506BB94B43619CE2 /* Pods_ScavengerHunt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScavengerHunt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -101,6 +103,7 @@
 		C9B5405925F86C73004E4EE6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C9CC0CB225F9A7A40059822E /* LandingPageViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -127,7 +130,7 @@
 		C9B5405C25F86C89004E4EE6 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				C9B2C53625F859E4008375C0 /* Main.storyboard */,
+				C9B2C53625F859E4008375C0 /* User.storyboard */,
 				C9B2C53B25F859EA008375C0 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
@@ -194,7 +197,7 @@
 			files = (
 				C9B2C53D25F859EA008375C0 /* LaunchScreen.storyboard in Resources */,
 				C9B2C53A25F859EA008375C0 /* Assets.xcassets in Resources */,
-				C9B2C53825F859E4008375C0 /* Main.storyboard in Resources */,
+				C9B2C53825F859E4008375C0 /* User.storyboard in Resources */,
 				C9B2C54625F85B2A008375C0 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9B2C53125F859E4008375C0 /* AppDelegate.swift in Sources */,
+				C9CC0CB325F9A7A40059822E /* LandingPageViewController.swift in Sources */,
 				C9B2C53325F859E4008375C0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,12 +260,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		C9B2C53625F859E4008375C0 /* Main.storyboard */ = {
+		C9B2C53625F859E4008375C0 /* User.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				C9B2C53725F859E4008375C0 /* Base */,
 			);
-			name = Main.storyboard;
+			name = User.storyboard;
 			sourceTree = "<group>";
 		};
 		C9B2C53B25F859EA008375C0 /* LaunchScreen.storyboard */ = {
