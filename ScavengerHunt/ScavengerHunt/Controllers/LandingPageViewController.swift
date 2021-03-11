@@ -8,16 +8,16 @@
 import UIKit
 
 class LandingPageViewController: UIViewController {
-
-    @IBOutlet weak var playButton: UIButton!
+    
+    @IBOutlet weak var playLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupView()
     }
     
-    private func setupViews() {
+    func setupView() {
+        playLabel.text = "PLAY\nSCAVENGER HUNT"
     }
 
 }

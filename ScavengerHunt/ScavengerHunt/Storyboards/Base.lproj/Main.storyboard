@@ -16,24 +16,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m5A-cv-Auc">
-                                <rect key="frame" x="57" y="248" width="300" height="300"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ljf-tV-GF7">
+                                <rect key="frame" x="82" y="273" width="250" height="250"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="0ru-yF-UhZ"/>
-                                    <constraint firstAttribute="width" secondItem="m5A-cv-Auc" secondAttribute="height" multiplier="1:1" id="7AQ-zM-chX"/>
+                                    <constraint firstAttribute="height" constant="250" id="QYr-AU-7rA"/>
+                                    <constraint firstAttribute="width" constant="250" id="apg-KL-sfa"/>
                                 </constraints>
-                                <state key="normal" image="play"/>
+                                <state key="normal" title="Button" image="play"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLAY" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NqJ-tD-jnk">
+                                <rect key="frame" x="180" y="388.5" width="54.5" height="19"/>
+                                <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="m5A-cv-Auc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="73U-qI-8If"/>
-                            <constraint firstItem="m5A-cv-Auc" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-50" id="7Vw-ah-PfD"/>
+                            <constraint firstItem="ljf-tV-GF7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-50" id="At3-vs-Xfv"/>
+                            <constraint firstItem="NqJ-tD-jnk" firstAttribute="centerX" secondItem="ljf-tV-GF7" secondAttribute="centerX" id="dVc-id-Lgr"/>
+                            <constraint firstItem="ljf-tV-GF7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mu7-1c-fuM"/>
+                            <constraint firstItem="NqJ-tD-jnk" firstAttribute="centerY" secondItem="ljf-tV-GF7" secondAttribute="centerY" id="qGy-uL-nLX"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="playButton" destination="m5A-cv-Auc" id="y1m-Gf-ndg"/>
+                        <outlet property="playLabel" destination="NqJ-tD-jnk" id="oG9-WG-qm0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -42,7 +50,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="play" width="200" height="200"/>
+        <image name="play" width="400" height="400"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
