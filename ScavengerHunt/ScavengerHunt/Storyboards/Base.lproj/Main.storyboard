@@ -23,6 +23,9 @@
                                     <constraint firstAttribute="width" constant="250" id="apg-KL-sfa"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="play"/>
+                                <connections>
+                                    <action selector="playButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gBY-pp-OhX"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLAY" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NqJ-tD-jnk">
                                 <rect key="frame" x="180" y="408.5" width="54.5" height="19"/>
@@ -67,6 +70,7 @@
                     <navigationItem key="navigationItem" title="SCAVENGER HUNT" id="WoF-R2-sbn"/>
                     <connections>
                         <outlet property="helpButton" destination="xRu-oK-naT" id="GiT-eJ-HwD"/>
+                        <outlet property="playButton" destination="ljf-tV-GF7" id="sNc-L5-F8n"/>
                         <outlet property="playLabel" destination="NqJ-tD-jnk" id="oG9-WG-qm0"/>
                     </connections>
                 </viewController>
