@@ -40,6 +40,9 @@
                                 <state key="normal" image="questionmark.circle" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="heavy"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Jed-bP-BNR" kind="show" id="2Ca-Xa-QyG"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How to Play" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDy-g9-W98">
                                 <rect key="frame" x="307" y="195" width="84.5" height="18"/>
@@ -70,6 +73,60 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="700" y="114.50892857142857"/>
+        </scene>
+        <!--Help Page View Controller-->
+        <scene sceneID="9jW-J7-o3N">
+            <objects>
+                <viewController id="Jed-bP-BNR" customClass="HelpPageViewController" customModule="ScavengerHunt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HaF-5G-Tzy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i9p-Dh-ent">
+                                <rect key="frame" x="132" y="752" width="150" height="40"/>
+                                <color key="backgroundColor" red="0.5017094648" green="0.47275155499999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="9Vt-wb-IeH"/>
+                                    <constraint firstAttribute="height" constant="40" id="VT2-0B-a6v"/>
+                                </constraints>
+                                <state key="normal" title="GOT IT">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="bf1-eI-14x">
+                                <rect key="frame" x="145.5" y="684" width="123" height="28"/>
+                                <color key="pageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="currentPageIndicatorTintColor" red="0.5017094648" green="0.47275155499999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </pageControl>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Fi-pv-sfa">
+                                <rect key="frame" x="87" y="384" width="240" height="128"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="0RM-Cb-YaX"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="EJD-Vm-MRf"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6mU-Al-N8U"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bf1-eI-14x" firstAttribute="centerX" secondItem="HaF-5G-Tzy" secondAttribute="centerX" id="Ao7-Ts-7et"/>
+                            <constraint firstItem="i9p-Dh-ent" firstAttribute="top" secondItem="bf1-eI-14x" secondAttribute="bottom" constant="40" id="IEL-oh-pVw"/>
+                            <constraint firstItem="6mU-Al-N8U" firstAttribute="trailing" secondItem="5Fi-pv-sfa" secondAttribute="trailing" id="MVl-jp-F01"/>
+                            <constraint firstItem="bf1-eI-14x" firstAttribute="top" secondItem="5Fi-pv-sfa" secondAttribute="bottom" constant="20" id="Nqh-IL-OmS"/>
+                            <constraint firstItem="i9p-Dh-ent" firstAttribute="centerX" secondItem="HaF-5G-Tzy" secondAttribute="centerX" id="Uwc-fv-NRU"/>
+                            <constraint firstItem="6mU-Al-N8U" firstAttribute="bottom" secondItem="i9p-Dh-ent" secondAttribute="bottom" constant="70" id="for-x6-sxl"/>
+                            <constraint firstItem="5Fi-pv-sfa" firstAttribute="leading" secondItem="6mU-Al-N8U" secondAttribute="leading" id="gMX-OL-je5"/>
+                            <constraint firstItem="5Fi-pv-sfa" firstAttribute="top" secondItem="6mU-Al-N8U" secondAttribute="top" id="vo8-ZJ-oLD"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="I4N-ms-dmD"/>
+                    <connections>
+                        <outlet property="button" destination="i9p-Dh-ent" id="hhX-Xe-IBH"/>
+                        <outlet property="pageControl" destination="bf1-eI-14x" id="KML-Bh-Dfc"/>
+                        <outlet property="scrollView" destination="5Fi-pv-sfa" id="uDU-Fd-cca"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aGF-xt-fsf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1646.376811594203" y="-172.09821428571428"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OEK-Zn-v8F">
