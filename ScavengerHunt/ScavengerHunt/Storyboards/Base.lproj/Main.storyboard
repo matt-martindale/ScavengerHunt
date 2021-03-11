@@ -92,11 +92,17 @@
                                 <state key="normal" title="GOT IT">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="Jed-bP-BNR" eventType="touchUpInside" id="fFN-7a-DML"/>
+                                </connections>
                             </button>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="bf1-eI-14x">
                                 <rect key="frame" x="145.5" y="684" width="123" height="28"/>
                                 <color key="pageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="currentPageIndicatorTintColor" red="0.5017094648" green="0.47275155499999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="pageChanged:" destination="Jed-bP-BNR" eventType="valueChanged" id="hsP-yT-XC5"/>
+                                </connections>
                             </pageControl>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Fi-pv-sfa">
                                 <rect key="frame" x="87" y="384" width="240" height="128"/>
