@@ -12,6 +12,7 @@ class LandingPageViewController: UIViewController {
     @IBOutlet weak var playLabel: UILabel!
     @IBOutlet weak var helpButton: UIButton!
     @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var creatorButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,13 +31,17 @@ class LandingPageViewController: UIViewController {
     
     func setupView() {
         self.navigationController?.isNavigationBarHidden = true
-        playLabel.text = "PLAY\nSCAVENGER HUNT"
         
         helpButton.contentVerticalAlignment = .fill
         helpButton.contentHorizontalAlignment = .fill
         helpButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         
         playButton.adjustsImageWhenHighlighted = false
+        playLabel.text = "PLAY\nSCAVENGER HUNT"
+        
+        creatorButton.layer.cornerRadius = 20
+        creatorButton.layer.borderWidth = 2.0
+        creatorButton.layer.borderColor = UIColor.orange.cgColor
     }
 
     @IBAction func playButtonTapped(_ sender: UIButton) {

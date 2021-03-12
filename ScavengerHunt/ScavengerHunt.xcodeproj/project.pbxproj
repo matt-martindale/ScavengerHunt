@@ -19,6 +19,7 @@
 		C9CC0CBC25FAE6DE0059822E /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC0CBB25FAE6DE0059822E /* Event.swift */; };
 		C9CC0CC025FAE7510059822E /* Marker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC0CBF25FAE7510059822E /* Marker.swift */; };
 		C9CC0CC325FAE7CE0059822E /* MarkerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC0CC225FAE7CE0059822E /* MarkerList.swift */; };
+		C9CC0CC925FB08D10059822E /* Creator.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9CC0CC825FB08D10059822E /* Creator.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		C9CC0CBB25FAE6DE0059822E /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		C9CC0CBF25FAE7510059822E /* Marker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marker.swift; sourceTree = "<group>"; };
 		C9CC0CC225FAE7CE0059822E /* MarkerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerList.swift; sourceTree = "<group>"; };
+		C9CC0CC825FB08D10059822E /* Creator.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Creator.storyboard; sourceTree = "<group>"; };
 		E2E6AF81506BB94B43619CE2 /* Pods_ScavengerHunt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScavengerHunt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -91,6 +93,8 @@
 		C9B2C52F25F859E4008375C0 /* ScavengerHunt */ = {
 			isa = PBXGroup;
 			children = (
+				C9CC0CC625FB03750059822E /* Helpers */,
+				C9CC0CC525FB036E0059822E /* Managers */,
 				C9CC0C9725F86FFD0059822E /* ScavengerHunt.entitlements */,
 				C9B5405925F86C73004E4EE6 /* Controllers */,
 				C9B5405825F86C23004E4EE6 /* Models */,
@@ -141,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				C9B2C53625F859E4008375C0 /* Main.storyboard */,
+				C9CC0CC825FB08D10059822E /* Creator.storyboard */,
 				C9B2C53B25F859EA008375C0 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
@@ -154,6 +159,20 @@
 				C9CC0CC225FAE7CE0059822E /* MarkerList.swift */,
 			);
 			path = MarkerList;
+			sourceTree = "<group>";
+		};
+		C9CC0CC525FB036E0059822E /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		C9CC0CC625FB03750059822E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,6 +236,7 @@
 			files = (
 				C9B2C53D25F859EA008375C0 /* LaunchScreen.storyboard in Resources */,
 				C9B2C53A25F859EA008375C0 /* Assets.xcassets in Resources */,
+				C9CC0CC925FB08D10059822E /* Creator.storyboard in Resources */,
 				C9B2C53825F859E4008375C0 /* Main.storyboard in Resources */,
 				C9B2C54625F85B2A008375C0 /* GoogleService-Info.plist in Resources */,
 			);

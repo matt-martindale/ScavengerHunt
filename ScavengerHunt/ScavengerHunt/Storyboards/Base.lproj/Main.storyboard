@@ -33,7 +33,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xRu-oK-naT">
-                                <rect key="frame" x="334" y="140" width="30" height="30"/>
+                                <rect key="frame" x="334" y="160" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="4zX-nT-HNV"/>
                                     <constraint firstAttribute="height" constant="30" id="jDc-8u-HlB"/>
@@ -47,27 +47,45 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How to Play" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDy-g9-W98">
-                                <rect key="frame" x="307" y="175" width="84.5" height="18"/>
+                                <rect key="frame" x="307" y="195" width="84.5" height="18"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <color key="textColor" red="1" green="0.96470588239999999" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRb-Ka-njx">
+                                <rect key="frame" x="107" y="772" width="200" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="27I-hZ-vIT"/>
+                                    <constraint firstAttribute="height" constant="40" id="lsd-5d-BrG"/>
+                                </constraints>
+                                <state key="normal" title="Creator">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="Jed-bP-BNR" eventType="touchUpInside" id="tzp-Kx-geU"/>
+                                    <segue destination="fnz-gk-q5B" kind="show" id="LZj-T9-PhI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.14901960784313725" green="0.27450980392156865" blue="0.32549019607843138" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="xRu-oK-naT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="1ui-6O-Psh"/>
+                            <constraint firstItem="xRu-oK-naT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="1ui-6O-Psh"/>
                             <constraint firstItem="kDy-g9-W98" firstAttribute="centerX" secondItem="xRu-oK-naT" secondAttribute="centerX" id="77y-GA-ySC"/>
                             <constraint firstItem="ljf-tV-GF7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-30" id="At3-vs-Xfv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xRu-oK-naT" secondAttribute="trailing" constant="50" id="dSC-QA-BnW"/>
                             <constraint firstItem="NqJ-tD-jnk" firstAttribute="centerX" secondItem="ljf-tV-GF7" secondAttribute="centerX" id="dVc-id-Lgr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="NRb-Ka-njx" secondAttribute="bottom" constant="50" id="ecJ-Pv-SYT"/>
                             <constraint firstItem="kDy-g9-W98" firstAttribute="top" secondItem="xRu-oK-naT" secondAttribute="bottom" constant="5" id="lmi-Hh-tu0"/>
                             <constraint firstItem="ljf-tV-GF7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mu7-1c-fuM"/>
                             <constraint firstItem="NqJ-tD-jnk" firstAttribute="centerY" secondItem="ljf-tV-GF7" secondAttribute="centerY" id="qGy-uL-nLX"/>
+                            <constraint firstItem="NRb-Ka-njx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xai-kY-ZC1"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="WoF-R2-sbn"/>
                     <connections>
+                        <outlet property="creatorButton" destination="NRb-Ka-njx" id="K6d-9w-wnZ"/>
                         <outlet property="helpButton" destination="xRu-oK-naT" id="GiT-eJ-HwD"/>
                         <outlet property="playButton" destination="ljf-tV-GF7" id="sNc-L5-F8n"/>
                         <outlet property="playLabel" destination="NqJ-tD-jnk" id="oG9-WG-qm0"/>
@@ -76,6 +94,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="700" y="114.50892857142857"/>
+        </scene>
+        <!--Creator-->
+        <scene sceneID="5y9-1I-G5H">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Creator" id="fnz-gk-q5B" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="mJ2-AT-sAW"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7l7-7G-jHR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="694" y="587"/>
         </scene>
         <!--Help Page View Controller-->
         <scene sceneID="9jW-J7-o3N">
