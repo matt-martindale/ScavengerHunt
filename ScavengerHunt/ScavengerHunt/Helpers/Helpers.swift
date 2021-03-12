@@ -16,12 +16,11 @@ extension UITextField {
         self.layer.addSublayer(bottomLayer)
     }
     
-    func validateFields(textFields: [UITextField]) -> String? {
-        for textField in textFields {
-            if textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
-                return "Please fill in all fields."
-            }
+    func validateField() -> String? {
+        if self.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+            return "Please fill in all fields."
         }
+        return nil
     }
     
 }
