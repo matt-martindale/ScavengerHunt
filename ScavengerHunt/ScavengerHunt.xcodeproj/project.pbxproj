@@ -20,6 +20,7 @@
 		C9CC0CC025FAE7510059822E /* Marker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC0CBF25FAE7510059822E /* Marker.swift */; };
 		C9CC0CC325FAE7CE0059822E /* MarkerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC0CC225FAE7CE0059822E /* MarkerList.swift */; };
 		C9CC0CC925FB08D10059822E /* Creator.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9CC0CC825FB08D10059822E /* Creator.storyboard */; };
+		C9CC0CCE25FB0B5E0059822E /* CreatorLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC0CCD25FB0B5E0059822E /* CreatorLoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		C9CC0CBF25FAE7510059822E /* Marker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marker.swift; sourceTree = "<group>"; };
 		C9CC0CC225FAE7CE0059822E /* MarkerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerList.swift; sourceTree = "<group>"; };
 		C9CC0CC825FB08D10059822E /* Creator.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Creator.storyboard; sourceTree = "<group>"; };
+		C9CC0CCD25FB0B5E0059822E /* CreatorLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorLoginViewController.swift; sourceTree = "<group>"; };
 		E2E6AF81506BB94B43619CE2 /* Pods_ScavengerHunt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScavengerHunt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -116,6 +118,7 @@
 		C9B5405925F86C73004E4EE6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C9CC0CCC25FB0B420059822E /* CreatorControllers */,
 				C9CC0CB225F9A7A40059822E /* LandingPageViewController.swift */,
 				C9CC0CB725F9BE060059822E /* HelpPageViewController.swift */,
 			);
@@ -173,6 +176,14 @@
 			children = (
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		C9CC0CCC25FB0B420059822E /* CreatorControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C9CC0CCD25FB0B5E0059822E /* CreatorLoginViewController.swift */,
+			);
+			path = CreatorControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,6 +308,7 @@
 				C9B2C53325F859E4008375C0 /* SceneDelegate.swift in Sources */,
 				C9CC0CC325FAE7CE0059822E /* MarkerList.swift in Sources */,
 				C9CC0CBC25FAE6DE0059822E /* Event.swift in Sources */,
+				C9CC0CCE25FB0B5E0059822E /* CreatorLoginViewController.swift in Sources */,
 				C9CC0CC025FAE7510059822E /* Marker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

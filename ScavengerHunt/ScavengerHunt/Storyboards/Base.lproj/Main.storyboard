@@ -38,7 +38,7 @@
                                     <constraint firstAttribute="width" constant="30" id="4zX-nT-HNV"/>
                                     <constraint firstAttribute="height" constant="30" id="jDc-8u-HlB"/>
                                 </constraints>
-                                <color key="tintColor" red="0.9137254901960784" green="0.76862745098039209" blue="0.41568627450980389" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" red="0.95686274510000002" green="0.63529411759999999" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" image="questionmark.circle" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="heavy"/>
                                 </state>
@@ -163,7 +163,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aGF-xt-fsf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1646.376811594203" y="-172.09821428571428"/>
+            <point key="canvasLocation" x="1626" y="-587"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OEK-Zn-v8F">
