@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -87,10 +86,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i9p-Dh-ent">
-                                <rect key="frame" x="132" y="752" width="150" height="40"/>
-                                <color key="backgroundColor" red="0.5017094648" green="0.47275155499999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <rect key="frame" x="107" y="752" width="200" height="40"/>
+                                <color key="backgroundColor" red="0.95686274510000002" green="0.63529411759999999" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="9Vt-wb-IeH"/>
+                                    <constraint firstAttribute="width" constant="200" id="9Vt-wb-IeH"/>
                                     <constraint firstAttribute="height" constant="40" id="VT2-0B-a6v"/>
                                 </constraints>
                                 <state key="normal" title="GOT IT">
@@ -103,7 +102,7 @@
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="bf1-eI-14x">
                                 <rect key="frame" x="145.5" y="684" width="123" height="28"/>
                                 <color key="pageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="currentPageIndicatorTintColor" red="0.5017094648" green="0.47275155499999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="currentPageIndicatorTintColor" red="0.95686274510000002" green="0.63529411759999999" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <action selector="pageChanged:" destination="Jed-bP-BNR" eventType="valueChanged" id="hsP-yT-XC5"/>
                                 </connections>
@@ -115,7 +114,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6mU-Al-N8U"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.1647058824" green="0.61568627450000002" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="bf1-eI-14x" firstAttribute="centerX" secondItem="HaF-5G-Tzy" secondAttribute="centerX" id="Ao7-Ts-7et"/>
                             <constraint firstItem="i9p-Dh-ent" firstAttribute="top" secondItem="bf1-eI-14x" secondAttribute="bottom" constant="40" id="IEL-oh-pVw"/>
@@ -160,8 +159,5 @@
     <resources>
         <image name="play" width="400" height="400"/>
         <image name="questionmark.circle" catalog="system" width="128" height="121"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

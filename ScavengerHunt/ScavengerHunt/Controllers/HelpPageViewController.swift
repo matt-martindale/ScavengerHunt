@@ -35,6 +35,11 @@ class HelpPageViewController: UIViewController, UIScrollViewDelegate {
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.showsVerticalScrollIndicator = false
         
+        setupScrollView()
+        setupViews()
+    }
+    
+    private func setupScrollView() {
         var frame = CGRect(x: 0.0, y: 0.0, width: 0.0, height: 0.0)
         for index in 0..<titles.count {
             frame.origin.x = scrollWidth * CGFloat(index)
@@ -60,6 +65,10 @@ class HelpPageViewController: UIViewController, UIScrollViewDelegate {
         
         pageControl.numberOfPages = titles.count
         pageControl.currentPage = 0
+    }
+    
+    private func setupViews() {
+        button.layer.cornerRadius = 20
     }
 
     @IBAction func pageChanged(_ sender: Any) {
