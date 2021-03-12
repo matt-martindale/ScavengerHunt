@@ -9,21 +9,23 @@ import UIKit
 
 class CreatorLoginViewController: UIViewController {
 
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var loginBtn: UIButton!
+    @IBOutlet weak var signUpBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupViews()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func setupViews() {
+        loginBtn.layer.cornerRadius = 20
+        
+        signUpBtn.layer.cornerRadius = 20
+        signUpBtn.layer.borderWidth = 2.0
+        signUpBtn.layer.borderColor = UIColor.orange.cgColor
+        
     }
-    */
 
 }
