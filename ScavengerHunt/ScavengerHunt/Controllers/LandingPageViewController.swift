@@ -18,7 +18,13 @@ class LandingPageViewController: UIViewController {
         setupView()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.isNavigationBarHidden = false
+    }
+    
     func setupView() {
+        self.navigationController?.isNavigationBarHidden = true
         playLabel.text = "PLAY\nSCAVENGER HUNT"
         
         helpButton.contentVerticalAlignment = .fill
