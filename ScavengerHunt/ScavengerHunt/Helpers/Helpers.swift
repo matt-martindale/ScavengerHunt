@@ -15,4 +15,13 @@ extension UITextField {
         self.borderStyle = .none
         self.layer.addSublayer(bottomLayer)
     }
+    
+    func validateFields(textFields: [UITextField]) -> String? {
+        for textField in textFields {
+            if textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+                return "Please fill in all fields."
+            }
+        }
+    }
+    
 }
