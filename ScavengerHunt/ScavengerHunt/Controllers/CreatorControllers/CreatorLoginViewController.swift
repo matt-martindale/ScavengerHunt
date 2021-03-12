@@ -26,6 +26,8 @@ class CreatorLoginViewController: UIViewController {
         signUpBtn.layer.borderWidth = 2.0
         signUpBtn.layer.borderColor = UIColor.orange.cgColor
         
+        emailTextField.addBottomBorder()
+        passwordTextField.addBottomBorder()
     }
 
 }

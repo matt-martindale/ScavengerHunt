@@ -21,6 +21,8 @@
 		C9CC0CC325FAE7CE0059822E /* MarkerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC0CC225FAE7CE0059822E /* MarkerList.swift */; };
 		C9CC0CC925FB08D10059822E /* Creator.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9CC0CC825FB08D10059822E /* Creator.storyboard */; };
 		C9CC0CCE25FB0B5E0059822E /* CreatorLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC0CCD25FB0B5E0059822E /* CreatorLoginViewController.swift */; };
+		C9CC0CD225FB10930059822E /* CreatorSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC0CD125FB10930059822E /* CreatorSignUpViewController.swift */; };
+		C9CC0CD525FB14FB0059822E /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC0CD425FB14FB0059822E /* Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		C9CC0CC225FAE7CE0059822E /* MarkerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerList.swift; sourceTree = "<group>"; };
 		C9CC0CC825FB08D10059822E /* Creator.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Creator.storyboard; sourceTree = "<group>"; };
 		C9CC0CCD25FB0B5E0059822E /* CreatorLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorLoginViewController.swift; sourceTree = "<group>"; };
+		C9CC0CD125FB10930059822E /* CreatorSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorSignUpViewController.swift; sourceTree = "<group>"; };
+		C9CC0CD425FB14FB0059822E /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		E2E6AF81506BB94B43619CE2 /* Pods_ScavengerHunt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScavengerHunt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -174,6 +178,7 @@
 		C9CC0CC625FB03750059822E /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				C9CC0CD425FB14FB0059822E /* Helpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -182,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				C9CC0CCD25FB0B5E0059822E /* CreatorLoginViewController.swift */,
+				C9CC0CD125FB10930059822E /* CreatorSignUpViewController.swift */,
 			);
 			path = CreatorControllers;
 			sourceTree = "<group>";
@@ -305,7 +311,9 @@
 				C9CC0CB825F9BE060059822E /* HelpPageViewController.swift in Sources */,
 				C9B2C53125F859E4008375C0 /* AppDelegate.swift in Sources */,
 				C9CC0CB325F9A7A40059822E /* LandingPageViewController.swift in Sources */,
+				C9CC0CD525FB14FB0059822E /* Helpers.swift in Sources */,
 				C9B2C53325F859E4008375C0 /* SceneDelegate.swift in Sources */,
+				C9CC0CD225FB10930059822E /* CreatorSignUpViewController.swift in Sources */,
 				C9CC0CC325FAE7CE0059822E /* MarkerList.swift in Sources */,
 				C9CC0CBC25FAE6DE0059822E /* Event.swift in Sources */,
 				C9CC0CCE25FB0B5E0059822E /* CreatorLoginViewController.swift in Sources */,
