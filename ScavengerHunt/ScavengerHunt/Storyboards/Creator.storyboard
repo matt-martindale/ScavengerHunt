@@ -172,19 +172,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="hSi-D7-Rv6">
-                                <rect key="frame" x="40" y="64" width="334" height="363"/>
+                                <rect key="frame" x="40" y="64" width="334" height="368"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cQ5-Y3-kvL">
-                                        <rect key="frame" x="0.0" y="0.0" width="334" height="81.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="84"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5lj-8X-TxZ">
-                                                <rect key="frame" x="0.0" y="0.0" width="334" height="21.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="334" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <color key="textColor" red="1" green="0.96470588239999999" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GQP-5U-XUL">
-                                                <rect key="frame" x="0.0" y="41.5" width="334" height="40"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GQP-5U-XUL">
+                                                <rect key="frame" x="0.0" y="44" width="334" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="BYw-Xe-u6P"/>
                                                 </constraints>
@@ -194,16 +194,16 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="igu-2P-PvM">
-                                        <rect key="frame" x="0.0" y="121.5" width="334" height="241.5"/>
+                                        <rect key="frame" x="0.0" y="124" width="334" height="244"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ON8-4C-kkS">
-                                                <rect key="frame" x="0.0" y="0.0" width="334" height="21.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="334" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <color key="textColor" red="1" green="0.96470588239999999" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="GdP-Bk-LgU">
-                                                <rect key="frame" x="0.0" y="41.5" width="334" height="200"/>
+                                                <rect key="frame" x="0.0" y="44" width="334" height="200"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="200" id="DMW-fY-dTi"/>
@@ -217,7 +217,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1uY-4N-5hs">
-                                <rect key="frame" x="107" y="457" width="200" height="40"/>
+                                <rect key="frame" x="107" y="462" width="200" height="40"/>
                                 <color key="backgroundColor" red="0.95686274510000002" green="0.63529411759999999" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="6Lm-5o-VQP"/>
@@ -228,7 +228,7 @@
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JoL-A4-SEg">
-                                <rect key="frame" x="50" y="537" width="314" height="20.5"/>
+                                <rect key="frame" x="50" y="542" width="314" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.95686274510000002" green="0.63529411759999999" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -248,6 +248,12 @@
                             <constraint firstItem="1uY-4N-5hs" firstAttribute="top" secondItem="hSi-D7-Rv6" secondAttribute="bottom" constant="30" id="r22-xM-vXa"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="confirmBtn" destination="1uY-4N-5hs" id="aRV-lB-f34"/>
+                        <outlet property="descriptionTextView" destination="GdP-Bk-LgU" id="guh-KP-0yX"/>
+                        <outlet property="errorLabel" destination="JoL-A4-SEg" id="DSQ-WV-AFK"/>
+                        <outlet property="titleTextField" destination="GQP-5U-XUL" id="LH7-1i-8Cx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wdF-KS-5ER" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

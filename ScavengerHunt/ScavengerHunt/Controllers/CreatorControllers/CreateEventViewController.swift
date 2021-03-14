@@ -9,11 +9,34 @@ import UIKit
 
 class CreateEventViewController: UIViewController {
 
+    // MARK: - IBOutlets
+    @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var confirmBtn: UIButton!
+    @IBOutlet weak var errorLabel: UILabel!
+    
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupViews()
+        self.hideKeyboardOnTap()
     }
     
-
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        errorLabel.alpha = 0.0
+    }
+    
+    // MARK: - Methods
+    private func setupViews() {
+        titleTextField.layer.cornerRadius = 20
+        titleTextField.addBottomBorder()
+        
+        descriptionTextView.layer.borderWidth = 2.0
+        descriptionTextView.layer.borderColor = UIColor.orange.cgColor
+        descriptionTextView.backgroundColor = .clear
+        
+        errorLabel.alpha = 0.0
+    }
+    
 }
