@@ -30,7 +30,6 @@
 		C9CC0D0125FDA9920059822E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC0D0025FDA9920059822E /* Constants.swift */; };
 		C9CC0D0525FDB5BC0059822E /* startButton.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C9CC0D0425FDB5BC0059822E /* startButton.mp3 */; };
 		C9CC0D0C25FDBC160059822E /* buttonClick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C9CC0D0B25FDBC150059822E /* buttonClick.mp3 */; };
-		C9CC0D0F25FDBE290059822E /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC0D0E25FDBE290059822E /* UIButton+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,7 +60,6 @@
 		C9CC0D0025FDA9920059822E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C9CC0D0425FDB5BC0059822E /* startButton.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = startButton.mp3; sourceTree = "<group>"; };
 		C9CC0D0B25FDBC150059822E /* buttonClick.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = buttonClick.mp3; sourceTree = "<group>"; };
-		C9CC0D0E25FDBE290059822E /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		E2E6AF81506BB94B43619CE2 /* Pods_ScavengerHunt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScavengerHunt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -200,7 +198,6 @@
 				C9CC0CDE25FD8F750059822E /* Utilities.swift */,
 				C9CC0CE125FD9F400059822E /* UIViewController+Extension.swift */,
 				C9CC0D0025FDA9920059822E /* Constants.swift */,
-				C9CC0D0E25FDBE290059822E /* UIButton+Extension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -347,7 +344,6 @@
 				C9B2C53125F859E4008375C0 /* AppDelegate.swift in Sources */,
 				C9CC0CB325F9A7A40059822E /* LandingPageViewController.swift in Sources */,
 				C9B2C53325F859E4008375C0 /* SceneDelegate.swift in Sources */,
-				C9CC0D0F25FDBE290059822E /* UIButton+Extension.swift in Sources */,
 				C9CC0D0125FDA9920059822E /* Constants.swift in Sources */,
 				C9CC0CD225FB10930059822E /* CreatorSignUpViewController.swift in Sources */,
 				C9CC0CC325FAE7CE0059822E /* MarkerList.swift in Sources */,
