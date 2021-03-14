@@ -27,16 +27,29 @@ class CreateEventViewController: UIViewController {
         errorLabel.alpha = 0.0
     }
     
+    // MARK: - IBActions
+    @IBAction func confirmBtnTapped(_ sender: UIButton) {
+        Utilites.shared.playSound(sender.tag)
+        validateFields()
+    }
+    
     // MARK: - Methods
     private func setupViews() {
         titleTextField.layer.cornerRadius = 20
         titleTextField.addBottomBorder()
-        
         descriptionTextView.layer.borderWidth = 2.0
         descriptionTextView.layer.borderColor = UIColor.orange.cgColor
         descriptionTextView.backgroundColor = .clear
-        
+        descriptionTextView.layer.cornerRadius = 10
+        descriptionTextView.tintColor = .orange
+        confirmBtn.layer.cornerRadius = 20
         errorLabel.alpha = 0.0
+    }
+    
+    private func validateFields() {
+        if titleTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+            Utilites.shared.showError("Please fill in all fields", errorLabel: errorLabel)
+        }
     }
     
 }

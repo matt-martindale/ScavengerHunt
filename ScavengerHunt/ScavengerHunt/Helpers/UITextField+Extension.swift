@@ -13,6 +13,7 @@ extension UITextField {
         bottomLayer.frame = CGRect(x: 0.0, y: self.frame.height - 1, width: self.frame.width - 20, height: 2.0)
         bottomLayer.backgroundColor = UIColor.orange.cgColor
         self.borderStyle = .none
+        self.tintColor = .orange
         self.layer.addSublayer(bottomLayer)
     }
     

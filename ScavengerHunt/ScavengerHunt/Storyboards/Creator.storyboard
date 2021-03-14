@@ -172,29 +172,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="hSi-D7-Rv6">
-                                <rect key="frame" x="40" y="64" width="334" height="368"/>
+                                <rect key="frame" x="40" y="64" width="334" height="374"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cQ5-Y3-kvL">
-                                        <rect key="frame" x="0.0" y="0.0" width="334" height="84"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="90"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5lj-8X-TxZ">
-                                                <rect key="frame" x="0.0" y="0.0" width="334" height="24"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="334" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <color key="textColor" red="1" green="0.96470588239999999" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GQP-5U-XUL">
-                                                <rect key="frame" x="0.0" y="44" width="334" height="40"/>
+                                                <rect key="frame" x="0.0" y="50" width="334" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="BYw-Xe-u6P"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="igu-2P-PvM">
-                                        <rect key="frame" x="0.0" y="124" width="334" height="244"/>
+                                        <rect key="frame" x="0.0" y="130" width="334" height="244"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ON8-4C-kkS">
                                                 <rect key="frame" x="0.0" y="0.0" width="334" height="24"/>
@@ -217,18 +217,21 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1uY-4N-5hs">
-                                <rect key="frame" x="107" y="462" width="200" height="40"/>
+                                <rect key="frame" x="107" y="468" width="200" height="40"/>
                                 <color key="backgroundColor" red="0.95686274510000002" green="0.63529411759999999" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="6Lm-5o-VQP"/>
                                     <constraint firstAttribute="height" constant="40" id="zvB-zd-fRy"/>
                                 </constraints>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="CONFIRM">
                                     <color key="titleColor" red="1" green="0.96470588239999999" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="confirmBtnTapped:" destination="2S6-FE-jro" eventType="touchUpInside" id="laf-lQ-Yff"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JoL-A4-SEg">
-                                <rect key="frame" x="50" y="542" width="314" height="20.5"/>
+                                <rect key="frame" x="50" y="548" width="314" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.95686274510000002" green="0.63529411759999999" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -313,7 +316,7 @@
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vm7-FB-Ziv">
                                                 <rect key="frame" x="0.0" y="60" width="334" height="40"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
                                             </textField>
                                         </subviews>
                                         <constraints>
