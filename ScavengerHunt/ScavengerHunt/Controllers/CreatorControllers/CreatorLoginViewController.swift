@@ -24,14 +24,13 @@ class CreatorLoginViewController: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         errorLabel.alpha = 0.0
     }
     
     private func setupViews() {
         errorLabel.alpha = 0.0
-        
         loginBtn.layer.cornerRadius = 20
-        
         signUpBtn.layer.cornerRadius = 20
         signUpBtn.layer.borderWidth = 2.0
         signUpBtn.layer.borderColor = UIColor.orange.cgColor
@@ -44,18 +43,18 @@ class CreatorLoginViewController: UIViewController {
     @IBAction func loginBtnTapped(_ sender: Any) {
         let error = validateFields()
         
+        // Check if there's a textField validation error
         if error != nil {
             Utilites.shared.showError(error!, errorLabel: errorLabel)
             return
         }
         
+        // Hide errorLabel create cleaned email & password
         errorLabel.alpha = 0.0
         guard let email = emailTextField?.text?.trimmingCharacters(in: .whitespacesAndNewlines),
               let password = passwordTextField?.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
         
-        
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] (result, error) in
-            
             guard let strongSelf = self else { return }
             
             if error != nil {
@@ -65,6 +64,7 @@ class CreatorLoginViewController: UIViewController {
         }
     }
     
+    // MARK: - Methods
     private func validateFields() -> String? {
         if emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {

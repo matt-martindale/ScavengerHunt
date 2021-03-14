@@ -182,7 +182,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hiD-7h-n7M">
-                                <rect key="frame" x="107" y="772" width="200" height="40"/>
+                                <rect key="frame" x="107" y="530" width="200" height="40"/>
                                 <color key="backgroundColor" red="0.95686274510000002" green="0.63529411759999999" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="DzC-2D-4bV"/>
@@ -192,23 +192,37 @@
                                 <state key="normal" title="SIGN UP">
                                     <color key="titleColor" red="1" green="0.96470588239999999" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="signUpBtnTapped:" destination="TGy-Sl-fuB" eventType="touchUpInside" id="V7t-Z4-E9U"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K3b-Ak-3r3">
+                                <rect key="frame" x="50" y="615" width="314" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.91372549020000005" green="0.76862745099999996" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2eR-id-9AG"/>
                         <color key="backgroundColor" red="0.14901960780000001" green="0.27450980390000002" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="2eR-id-9AG" firstAttribute="trailing" secondItem="gzw-w4-n8Y" secondAttribute="trailing" constant="40" id="FyA-7f-CaX"/>
+                            <constraint firstItem="K3b-Ak-3r3" firstAttribute="centerX" secondItem="PrW-Gp-Lpl" secondAttribute="centerX" id="NUP-MZ-3IF"/>
+                            <constraint firstItem="K3b-Ak-3r3" firstAttribute="leading" secondItem="2eR-id-9AG" secondAttribute="leading" constant="50" id="ThG-wO-nLm"/>
                             <constraint firstItem="gzw-w4-n8Y" firstAttribute="centerX" secondItem="PrW-Gp-Lpl" secondAttribute="centerX" id="V5B-td-j3F"/>
-                            <constraint firstItem="2eR-id-9AG" firstAttribute="bottom" secondItem="hiD-7h-n7M" secondAttribute="bottom" constant="50" id="VRd-We-L5F"/>
                             <constraint firstItem="gzw-w4-n8Y" firstAttribute="leading" secondItem="2eR-id-9AG" secondAttribute="leading" constant="40" id="WoM-Wk-lJX"/>
+                            <constraint firstItem="hiD-7h-n7M" firstAttribute="top" secondItem="gzw-w4-n8Y" secondAttribute="bottom" constant="40" id="cLT-DW-kwz"/>
                             <constraint firstItem="hiD-7h-n7M" firstAttribute="centerX" secondItem="PrW-Gp-Lpl" secondAttribute="centerX" id="pIn-RC-ueC"/>
                             <constraint firstItem="gzw-w4-n8Y" firstAttribute="top" secondItem="2eR-id-9AG" secondAttribute="top" constant="50" id="pmc-di-veh"/>
+                            <constraint firstItem="2eR-id-9AG" firstAttribute="trailing" secondItem="K3b-Ak-3r3" secondAttribute="trailing" constant="50" id="tMI-FN-3VS"/>
+                            <constraint firstItem="K3b-Ak-3r3" firstAttribute="top" secondItem="hiD-7h-n7M" secondAttribute="bottom" constant="45" id="tcw-ns-TmB"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="SIGN UP" largeTitleDisplayMode="always" id="85T-y2-Iau"/>
                     <connections>
                         <outlet property="companyTextfield" destination="Jkh-uj-Xh7" id="5zk-Tb-Xum"/>
                         <outlet property="emailTextfield" destination="pF2-r5-raz" id="wkc-x0-iHz"/>
+                        <outlet property="errorLabel" destination="K3b-Ak-3r3" id="IQy-U2-MMg"/>
                         <outlet property="firstNameTextfield" destination="mbA-KQ-kIM" id="Kj0-GK-wyX"/>
                         <outlet property="lastNameTextfield" destination="Uaw-fM-Cfe" id="a6p-Ys-upv"/>
                         <outlet property="passwordTextfield" destination="Vm7-FB-Ziv" id="8Re-v4-pO8"/>
