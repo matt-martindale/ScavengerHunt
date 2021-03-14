@@ -13,4 +13,6 @@ struct Constants {
         static let creatorHomeVC = "CreatorHomeVC"
     }
     
+    static let eventsTableViewCell = "eventsTableViewCell"
+    
 }

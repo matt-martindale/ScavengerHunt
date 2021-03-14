@@ -205,9 +205,9 @@
 		C9CC0CCC25FB0B420059822E /* CreatorControllers */ = {
 			isa = PBXGroup;
 			children = (
+				C9CC0CFD25FDA8DA0059822E /* CreatorHomeViewController.swift */,
 				C9CC0CCD25FB0B5E0059822E /* CreatorLoginViewController.swift */,
 				C9CC0CD125FB10930059822E /* CreatorSignUpViewController.swift */,
-				C9CC0CFD25FDA8DA0059822E /* CreatorHomeViewController.swift */,
 			);
 			path = CreatorControllers;
 			sourceTree = "<group>";

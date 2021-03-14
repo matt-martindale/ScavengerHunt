@@ -71,6 +71,7 @@ class CreatorSignUpViewController: UIViewController {
                     db.collection("users").addDocument(data: ["firstName":firstName,
                                                               "lastName":lastName,
                                                               "company":company,
+                                                              "email":email,
                                                               "events":[String](),
                                                               "uid":result!.user.uid]) { [weak self] error in
                         guard let strongSelf = self else { return }

@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -119,36 +120,44 @@
             </objects>
             <point key="canvasLocation" x="1239.1304347826087" y="154.6875"/>
         </scene>
-        <!--Creator Home View Controller-->
+        <!--EVENTS-->
         <scene sceneID="QdK-Cq-EOf">
             <objects>
-                <viewController storyboardIdentifier="CreatorHomeVC" id="1Xv-bF-HMN" customClass="CreatorHomeViewController" customModule="ScavengerHunt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreatorHomeVC" title="EVENTS" id="1Xv-bF-HMN" customClass="CreatorHomeViewController" customModule="ScavengerHunt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TMh-S1-k2i">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tgo-za-G9j">
-                                <rect key="frame" x="107" y="438" width="200" height="20.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="yiz-XZ-LE0"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="0.96470588239999999" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="boo-fa-6j4">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="eventsTableViewCell" id="BGa-IK-Ksq">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BGa-IK-Ksq" id="N2S-ad-hzc">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="1Xv-bF-HMN" id="RAX-sm-T0V"/>
+                                    <outlet property="delegate" destination="1Xv-bF-HMN" id="DHN-60-HFC"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dub-p7-72t"/>
                         <color key="backgroundColor" red="0.14901960780000001" green="0.27450980390000002" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="Tgo-za-G9j" firstAttribute="centerY" secondItem="TMh-S1-k2i" secondAttribute="centerY" id="2Ds-ER-5Rg"/>
-                            <constraint firstItem="Tgo-za-G9j" firstAttribute="centerX" secondItem="TMh-S1-k2i" secondAttribute="centerX" id="Ay9-L4-7bw"/>
+                            <constraint firstItem="boo-fa-6j4" firstAttribute="leading" secondItem="dub-p7-72t" secondAttribute="leading" id="PbV-Nh-DbW"/>
+                            <constraint firstItem="dub-p7-72t" firstAttribute="bottom" secondItem="boo-fa-6j4" secondAttribute="bottom" id="muv-gg-MGo"/>
+                            <constraint firstItem="dub-p7-72t" firstAttribute="trailing" secondItem="boo-fa-6j4" secondAttribute="trailing" id="nY8-KZ-jIo"/>
+                            <constraint firstItem="boo-fa-6j4" firstAttribute="top" secondItem="dub-p7-72t" secondAttribute="top" id="yGE-HC-QLC"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="label" destination="Tgo-za-G9j" id="UCH-hG-tRs"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DkQ-mI-hPI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -270,4 +279,9 @@
             <point key="canvasLocation" x="1239" y="865"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
