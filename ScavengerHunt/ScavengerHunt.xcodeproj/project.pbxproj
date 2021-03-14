@@ -23,6 +23,8 @@
 		C9CC0CCE25FB0B5E0059822E /* CreatorLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC0CCD25FB0B5E0059822E /* CreatorLoginViewController.swift */; };
 		C9CC0CD225FB10930059822E /* CreatorSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC0CD125FB10930059822E /* CreatorSignUpViewController.swift */; };
 		C9CC0CD825FB27360059822E /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC0CD725FB27350059822E /* AuthManager.swift */; };
+		C9CC0CDC25FD8EAA0059822E /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC0CDB25FD8EAA0059822E /* UITextField+Extension.swift */; };
+		C9CC0CDF25FD8F750059822E /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC0CDE25FD8F750059822E /* Utilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		C9CC0CCD25FB0B5E0059822E /* CreatorLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorLoginViewController.swift; sourceTree = "<group>"; };
 		C9CC0CD125FB10930059822E /* CreatorSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorSignUpViewController.swift; sourceTree = "<group>"; };
 		C9CC0CD725FB27350059822E /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		C9CC0CDB25FD8EAA0059822E /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
+		C9CC0CDE25FD8F750059822E /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		E2E6AF81506BB94B43619CE2 /* Pods_ScavengerHunt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScavengerHunt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -179,6 +183,8 @@
 		C9CC0CC625FB03750059822E /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				C9CC0CDB25FD8EAA0059822E /* UITextField+Extension.swift */,
+				C9CC0CDE25FD8F750059822E /* Utilities.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -314,6 +320,8 @@
 				C9B2C53325F859E4008375C0 /* SceneDelegate.swift in Sources */,
 				C9CC0CD225FB10930059822E /* CreatorSignUpViewController.swift in Sources */,
 				C9CC0CC325FAE7CE0059822E /* MarkerList.swift in Sources */,
+				C9CC0CDF25FD8F750059822E /* Utilities.swift in Sources */,
+				C9CC0CDC25FD8EAA0059822E /* UITextField+Extension.swift in Sources */,
 				C9CC0CBC25FAE6DE0059822E /* Event.swift in Sources */,
 				C9CC0CD825FB27360059822E /* AuthManager.swift in Sources */,
 				C9CC0CCE25FB0B5E0059822E /* CreatorLoginViewController.swift in Sources */,

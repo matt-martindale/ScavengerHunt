@@ -40,7 +40,7 @@
                                 </constraints>
                                 <color key="tintColor" red="0.95686274510000002" green="0.63529411759999999" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" image="questionmark.circle" catalog="system">
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="heavy"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="regular"/>
                                 </state>
                                 <connections>
                                     <segue destination="Jed-bP-BNR" kind="show" id="2Ca-Xa-QyG"/>
@@ -60,7 +60,7 @@
                                     <constraint firstAttribute="height" constant="40" id="lsd-5d-BrG"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="Creator">
+                                <state key="normal" title="Create">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
