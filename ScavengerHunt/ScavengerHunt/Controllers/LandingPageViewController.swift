@@ -6,13 +6,19 @@
 //
 
 import UIKit
+import AVFoundation
 
 class LandingPageViewController: UIViewController {
     
+    
+    // MARK: - IBOutlets
     @IBOutlet weak var playLabel: UILabel!
     @IBOutlet weak var helpButton: UIButton!
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var creatorButton: UIButton!
+    
+    // MARK: - Properties
+    var startButton: AVAudioPlayer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +51,8 @@ class LandingPageViewController: UIViewController {
     }
 
     @IBAction func playButtonTapped(_ sender: UIButton) {
+        playSound(senderTag: sender.tag)
+        
         sender.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
         playLabel.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
         
@@ -53,4 +61,27 @@ class LandingPageViewController: UIViewController {
             self?.playLabel.transform = CGAffineTransform.identity
         }, completion: { Void in()})
     }
+    
+    @IBAction func helpBtnTapped(_ sender: UIButton) {
+        playSound(senderTag: sender.tag)
+    }
+    
+    @IBAction func createBtnTapped(_ sender: UIButton) {
+        playSound(senderTag: sender.tag)
+    }
+    
+    func playSound(senderTag: Int) {
+        // Check which button was tapped using Sender's tag
+        let resource: String = senderTag == 1 ? "startButton" : "buttonClick"
+        
+        let path = Bundle.main.path(forResource: resource, ofType: "mp3")!
+        let url = URL(fileURLWithPath: path)
+        do {
+            startButton = try AVAudioPlayer(contentsOf: url)
+            startButton?.play()
+        } catch {
+            print("Couldn't load file")
+        }
+    }
+    
 }

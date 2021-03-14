@@ -28,6 +28,8 @@
 		C9CC0CE225FD9F400059822E /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC0CE125FD9F400059822E /* UIViewController+Extension.swift */; };
 		C9CC0CFE25FDA8DA0059822E /* CreatorHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC0CFD25FDA8DA0059822E /* CreatorHomeViewController.swift */; };
 		C9CC0D0125FDA9920059822E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC0D0025FDA9920059822E /* Constants.swift */; };
+		C9CC0D0525FDB5BC0059822E /* startButton.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C9CC0D0425FDB5BC0059822E /* startButton.mp3 */; };
+		C9CC0D0825FDB8DD0059822E /* buttonClick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C9CC0D0725FDB8DD0059822E /* buttonClick.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,8 @@
 		C9CC0CE125FD9F400059822E /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		C9CC0CFD25FDA8DA0059822E /* CreatorHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorHomeViewController.swift; sourceTree = "<group>"; };
 		C9CC0D0025FDA9920059822E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C9CC0D0425FDB5BC0059822E /* startButton.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = startButton.mp3; sourceTree = "<group>"; };
+		C9CC0D0725FDB8DD0059822E /* buttonClick.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = buttonClick.mp3; sourceTree = "<group>"; };
 		E2E6AF81506BB94B43619CE2 /* Pods_ScavengerHunt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScavengerHunt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -149,6 +153,7 @@
 		C9B5405B25F86C7D004E4EE6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C9CC0D0325FDB5AC0059822E /* Sounds */,
 				C9B2C54525F85B2A008375C0 /* GoogleService-Info.plist */,
 				C9B2C53E25F859EA008375C0 /* Info.plist */,
 				C9B2C53925F859EA008375C0 /* Assets.xcassets */,
@@ -205,6 +210,15 @@
 				C9CC0CFD25FDA8DA0059822E /* CreatorHomeViewController.swift */,
 			);
 			path = CreatorControllers;
+			sourceTree = "<group>";
+		};
+		C9CC0D0325FDB5AC0059822E /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				C9CC0D0725FDB8DD0059822E /* buttonClick.mp3 */,
+				C9CC0D0425FDB5BC0059822E /* startButton.mp3 */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,7 +284,9 @@
 				C9B2C53A25F859EA008375C0 /* Assets.xcassets in Resources */,
 				C9CC0CC925FB08D10059822E /* Creator.storyboard in Resources */,
 				C9B2C53825F859E4008375C0 /* Main.storyboard in Resources */,
+				C9CC0D0825FDB8DD0059822E /* buttonClick.mp3 in Resources */,
 				C9B2C54625F85B2A008375C0 /* GoogleService-Info.plist in Resources */,
+				C9CC0D0525FDB5BC0059822E /* startButton.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
