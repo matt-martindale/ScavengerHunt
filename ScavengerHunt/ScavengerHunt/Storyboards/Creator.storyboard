@@ -68,8 +68,8 @@
                                     <constraint firstItem="QwI-Zw-LTi" firstAttribute="height" secondItem="FtG-Zu-NMR" secondAttribute="height" id="tKV-yv-TvO"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s3D-Cu-1hB">
-                                <rect key="frame" x="186.5" y="430.5" width="41.5" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s3D-Cu-1hB">
+                                <rect key="frame" x="50" y="430.5" width="314" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.91372549020000005" green="0.76862745099999996" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -95,11 +95,13 @@
                             <constraint firstItem="lcD-Kb-cJY" firstAttribute="top" secondItem="q4h-e7-UmU" secondAttribute="bottom" constant="30" id="Qjn-2P-G84"/>
                             <constraint firstItem="kSk-mW-oDR" firstAttribute="centerX" secondItem="wh9-JR-DjD" secondAttribute="centerX" id="Ujb-Un-vLX"/>
                             <constraint firstItem="kSk-mW-oDR" firstAttribute="top" secondItem="lcD-Kb-cJY" secondAttribute="bottom" constant="40" id="Xlj-Gb-fo7"/>
+                            <constraint firstItem="s3D-Cu-1hB" firstAttribute="leading" secondItem="BwV-fL-nwp" secondAttribute="leading" constant="50" id="Xpf-eg-fBj"/>
                             <constraint firstItem="q4h-e7-UmU" firstAttribute="top" secondItem="BwV-fL-nwp" secondAttribute="top" constant="30" id="bb3-eb-26Q"/>
                             <constraint firstItem="s3D-Cu-1hB" firstAttribute="top" secondItem="kSk-mW-oDR" secondAttribute="bottom" constant="40" id="elQ-pI-VWv"/>
                             <constraint firstItem="BwV-fL-nwp" firstAttribute="trailing" secondItem="lcD-Kb-cJY" secondAttribute="trailing" constant="40" id="fOv-aT-2z1"/>
                             <constraint firstItem="BwV-fL-nwp" firstAttribute="bottom" secondItem="ad9-Ef-kZR" secondAttribute="bottom" constant="50" id="mOR-Wz-J6n"/>
                             <constraint firstItem="lcD-Kb-cJY" firstAttribute="centerX" secondItem="wh9-JR-DjD" secondAttribute="centerX" id="ssb-E6-NTK"/>
+                            <constraint firstItem="BwV-fL-nwp" firstAttribute="trailing" secondItem="s3D-Cu-1hB" secondAttribute="trailing" constant="50" id="yGx-eV-fLV"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="LOGIN" largeTitleDisplayMode="always" id="kOG-Bd-gEl"/>

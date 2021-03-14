@@ -42,9 +42,27 @@ class CreatorLoginViewController: UIViewController {
     
     // MARK: - IBActions
     @IBAction func loginBtnTapped(_ sender: Any) {
-//        Auth.auth().signIn(withEmail: email, password: password) { (result, possibleError) in
-//            <#code#>
-//        }
+        let error = validateFields()
+        
+        if error != nil {
+            Utilites.shared.showError(error!, errorLabel: errorLabel)
+            return
+        }
+        
+        errorLabel.alpha = 0.0
+        guard let email = emailTextField?.text?.trimmingCharacters(in: .whitespacesAndNewlines),
+              let password = passwordTextField?.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
+        
+        
+        Auth.auth().signIn(withEmail: email, password: password) { [weak self] (result, error) in
+            
+            guard let strongSelf = self else { return }
+            
+            if error != nil {
+                print(error!.localizedDescription)
+                Utilites.shared.showError(error!.localizedDescription, errorLabel: strongSelf.errorLabel)
+            }
+        }
     }
     
     private func validateFields() -> String? {

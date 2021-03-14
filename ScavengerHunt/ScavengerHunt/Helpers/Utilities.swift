@@ -17,4 +17,9 @@ struct Utilites {
                                        "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}")
         return passwordTest.evaluate(with: password)
     }
+    
+    func showError(_ message: String, errorLabel: UILabel) {
+        errorLabel.text = message
+        errorLabel.alpha = 1.0
+    }
 }
