@@ -12,4 +12,6 @@ struct AuthManager {
     static let shared = AuthManager()
     
     private init () {}
+    
+    
 }

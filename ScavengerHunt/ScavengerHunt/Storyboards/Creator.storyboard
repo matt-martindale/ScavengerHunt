@@ -41,6 +41,9 @@
                                 <state key="normal" title="LOGIN">
                                     <color key="titleColor" red="1" green="0.96470588239999999" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginBtnTapped:" destination="Wga-mB-bu5" eventType="touchUpInside" id="7n3-kE-2I3"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="lcD-Kb-cJY">
                                 <rect key="frame" x="40" y="210.5" width="334" height="100"/>
@@ -65,6 +68,12 @@
                                     <constraint firstItem="QwI-Zw-LTi" firstAttribute="height" secondItem="FtG-Zu-NMR" secondAttribute="height" id="tKV-yv-TvO"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s3D-Cu-1hB">
+                                <rect key="frame" x="186.5" y="430.5" width="41.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.91372549020000005" green="0.76862745099999996" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create your own Scavenger Hunts" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q4h-e7-UmU">
                                 <rect key="frame" x="82" y="118" width="250" height="62.5"/>
                                 <constraints>
@@ -81,11 +90,13 @@
                         <constraints>
                             <constraint firstItem="q4h-e7-UmU" firstAttribute="centerX" secondItem="wh9-JR-DjD" secondAttribute="centerX" id="24V-Yj-ogB"/>
                             <constraint firstItem="ad9-Ef-kZR" firstAttribute="centerX" secondItem="wh9-JR-DjD" secondAttribute="centerX" id="7Lk-vh-Jx7"/>
+                            <constraint firstItem="s3D-Cu-1hB" firstAttribute="centerX" secondItem="kSk-mW-oDR" secondAttribute="centerX" id="AEm-aZ-Dcq"/>
                             <constraint firstItem="lcD-Kb-cJY" firstAttribute="leading" secondItem="BwV-fL-nwp" secondAttribute="leading" constant="40" id="LAG-gb-6tM"/>
                             <constraint firstItem="lcD-Kb-cJY" firstAttribute="top" secondItem="q4h-e7-UmU" secondAttribute="bottom" constant="30" id="Qjn-2P-G84"/>
                             <constraint firstItem="kSk-mW-oDR" firstAttribute="centerX" secondItem="wh9-JR-DjD" secondAttribute="centerX" id="Ujb-Un-vLX"/>
                             <constraint firstItem="kSk-mW-oDR" firstAttribute="top" secondItem="lcD-Kb-cJY" secondAttribute="bottom" constant="40" id="Xlj-Gb-fo7"/>
                             <constraint firstItem="q4h-e7-UmU" firstAttribute="top" secondItem="BwV-fL-nwp" secondAttribute="top" constant="30" id="bb3-eb-26Q"/>
+                            <constraint firstItem="s3D-Cu-1hB" firstAttribute="top" secondItem="kSk-mW-oDR" secondAttribute="bottom" constant="40" id="elQ-pI-VWv"/>
                             <constraint firstItem="BwV-fL-nwp" firstAttribute="trailing" secondItem="lcD-Kb-cJY" secondAttribute="trailing" constant="40" id="fOv-aT-2z1"/>
                             <constraint firstItem="BwV-fL-nwp" firstAttribute="bottom" secondItem="ad9-Ef-kZR" secondAttribute="bottom" constant="50" id="mOR-Wz-J6n"/>
                             <constraint firstItem="lcD-Kb-cJY" firstAttribute="centerX" secondItem="wh9-JR-DjD" secondAttribute="centerX" id="ssb-E6-NTK"/>
@@ -95,6 +106,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="emailTextField" destination="FtG-Zu-NMR" id="5AC-ge-TX1"/>
+                        <outlet property="errorLabel" destination="s3D-Cu-1hB" id="zda-Ck-VRF"/>
                         <outlet property="loginBtn" destination="kSk-mW-oDR" id="3ro-q6-f5D"/>
                         <outlet property="passwordTextField" destination="QwI-Zw-LTi" id="Djz-ex-bow"/>
                         <outlet property="signUpBtn" destination="ad9-Ef-kZR" id="KLr-6B-jUJ"/>
