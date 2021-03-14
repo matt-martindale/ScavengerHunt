@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import AVFoundation
 
 struct Utilites {
-    static let shared = Utilites()
+    static var shared = Utilites()
+    var player: AVAudioPlayer?
     
     private init() {}
     
@@ -21,5 +23,19 @@ struct Utilites {
     func showError(_ message: String, errorLabel: UILabel) {
         errorLabel.text = message
         errorLabel.alpha = 1.0
+    }
+    
+    mutating func playSound(_ senderTag: Int) {
+        // Check which button was tapped using Sender's tag
+        let resource: String = senderTag == 0 ? "startButton" : "buttonClick"
+        
+        let path = Bundle.main.path(forResource: resource, ofType: "mp3")!
+        let url = URL(fileURLWithPath: path)
+        do {
+            player = try AVAudioPlayer(contentsOf: url)
+            player?.play()
+        } catch {
+            print("Couldn't load file")
+        }
     }
 }

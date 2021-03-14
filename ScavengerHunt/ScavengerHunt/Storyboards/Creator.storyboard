@@ -27,6 +27,7 @@
                                     <color key="titleColor" red="1" green="0.96470588239999999" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
+                                    <action selector="signInBtnTapped:" destination="Wga-mB-bu5" eventType="touchUpInside" id="8fE-Qh-cR3"/>
                                     <segue destination="TGy-Sl-fuB" kind="show" id="Twh-sH-Q6Y"/>
                                 </connections>
                             </button>

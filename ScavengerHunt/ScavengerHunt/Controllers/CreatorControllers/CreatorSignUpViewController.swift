@@ -44,7 +44,8 @@ class CreatorSignUpViewController: UIViewController {
         passwordTextfield.addBottomBorder()
     }
 
-    @IBAction func signUpBtnTapped(_ sender: Any) {
+    @IBAction func signUpBtnTapped(_ sender: UIButton) {
+        Utilites.shared.playSound(sender.tag)
         let error = validateFields()
         
         if error != nil {

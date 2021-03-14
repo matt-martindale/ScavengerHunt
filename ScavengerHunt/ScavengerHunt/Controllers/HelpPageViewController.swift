@@ -75,7 +75,8 @@ class HelpPageViewController: UIViewController, UIScrollViewDelegate {
         scrollView.scrollRectToVisible(CGRect(x: scrollWidth * CGFloat(pageControl.currentPage), y: 0, width: scrollWidth, height: scrollHeight), animated: true)
     }
     
-    @IBAction func buttonTapped(_ sender: Any) {
+    @IBAction func buttonTapped(_ sender: UIButton) {
+        Utilites.shared.playSound(sender.tag)
         navigationController?.popToRootViewController(animated: true)
     }
     

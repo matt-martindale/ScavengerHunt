@@ -41,7 +41,8 @@ class CreatorLoginViewController: UIViewController {
     }
     
     // MARK: - IBActions
-    @IBAction func loginBtnTapped(_ sender: Any) {
+    @IBAction func loginBtnTapped(_ sender: UIButton) {
+        Utilites.shared.playSound(sender.tag)
         let error = validateFields()
         
         // Check if there's a textField validation error
@@ -67,6 +68,10 @@ class CreatorLoginViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    @IBAction func signInBtnTapped(_ sender: UIButton) {
+        Utilites.shared.playSound(sender.tag)
     }
     
     // MARK: - Methods
