@@ -25,7 +25,7 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
     // MARK: - Methods
     private func setupViews() {
         navigationItem.setHidesBackButton(true, animated: true)
-        navigationController?.navigationBar.barTintColor = UIColor.orange
+        navigationController?.navigationBar.prefersLargeTitles = true
         createBarBtns()
     }
     
@@ -50,7 +50,8 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     @objc func addEventTapped() {
-        // TODO: - Create event
+        guard let createEventVC = storyboard?.instantiateViewController(identifier: Constants.Storyboard.createEventVC) as? CreateEventViewController else { return }
+        navigationController?.pushViewController(createEventVC, animated: true)
     }
     
     func loadEvents() {

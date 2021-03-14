@@ -30,6 +30,7 @@
 		C9CC0D0125FDA9920059822E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC0D0025FDA9920059822E /* Constants.swift */; };
 		C9CC0D0525FDB5BC0059822E /* startButton.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C9CC0D0425FDB5BC0059822E /* startButton.mp3 */; };
 		C9CC0D0C25FDBC160059822E /* buttonClick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C9CC0D0B25FDBC150059822E /* buttonClick.mp3 */; };
+		C9D605FF25FE8A0900085FAA /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D605FE25FE8A0900085FAA /* CreateEventViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		C9CC0D0025FDA9920059822E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C9CC0D0425FDB5BC0059822E /* startButton.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = startButton.mp3; sourceTree = "<group>"; };
 		C9CC0D0B25FDBC150059822E /* buttonClick.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = buttonClick.mp3; sourceTree = "<group>"; };
+		C9D605FE25FE8A0900085FAA /* CreateEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
 		E2E6AF81506BB94B43619CE2 /* Pods_ScavengerHunt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScavengerHunt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -208,6 +210,7 @@
 				C9CC0CFD25FDA8DA0059822E /* CreatorHomeViewController.swift */,
 				C9CC0CCD25FB0B5E0059822E /* CreatorLoginViewController.swift */,
 				C9CC0CD125FB10930059822E /* CreatorSignUpViewController.swift */,
+				C9D605FE25FE8A0900085FAA /* CreateEventViewController.swift */,
 			);
 			path = CreatorControllers;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 				C9CC0CD825FB27360059822E /* AuthManager.swift in Sources */,
 				C9CC0CCE25FB0B5E0059822E /* CreatorLoginViewController.swift in Sources */,
 				C9CC0CC025FAE7510059822E /* Marker.swift in Sources */,
+				C9D605FF25FE8A0900085FAA /* CreateEventViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

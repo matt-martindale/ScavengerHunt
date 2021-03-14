@@ -11,6 +11,7 @@ struct Constants {
     
     struct Storyboard {
         static let creatorHomeVC = "CreatorHomeVC"
+        static let createEventVC = "CreateEventVC"
     }
     
     static let eventsTableViewCell = "eventsTableViewCell"
