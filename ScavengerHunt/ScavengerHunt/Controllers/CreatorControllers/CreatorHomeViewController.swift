@@ -6,13 +6,22 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class CreatorHomeViewController: UIViewController {
 
+    @IBOutlet weak var label: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        fetchUserInfo()
+    }
+    
+    func fetchUserInfo() {
+        let currentUser = Auth.auth().currentUser
+        label.text = currentUser?.email
     }
 
 }

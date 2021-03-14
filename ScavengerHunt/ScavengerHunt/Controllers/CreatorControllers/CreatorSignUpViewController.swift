@@ -104,7 +104,9 @@ class CreatorSignUpViewController: UIViewController {
     }
     
     private func transitionToHome() {
-        
+        let creatorHomeVC = storyboard?.instantiateViewController(identifier: Constants.Storyboard.creatorHomeVC) as? CreatorHomeViewController
+        view.window?.rootViewController = creatorHomeVC
+        view.window?.makeKeyAndVisible()
     }
     
 }

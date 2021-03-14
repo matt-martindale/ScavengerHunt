@@ -27,6 +27,7 @@
 		C9CC0CDF25FD8F750059822E /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC0CDE25FD8F750059822E /* Utilities.swift */; };
 		C9CC0CE225FD9F400059822E /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC0CE125FD9F400059822E /* UIViewController+Extension.swift */; };
 		C9CC0CFE25FDA8DA0059822E /* CreatorHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC0CFD25FDA8DA0059822E /* CreatorHomeViewController.swift */; };
+		C9CC0D0125FDA9920059822E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC0D0025FDA9920059822E /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		C9CC0CDE25FD8F750059822E /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		C9CC0CE125FD9F400059822E /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		C9CC0CFD25FDA8DA0059822E /* CreatorHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorHomeViewController.swift; sourceTree = "<group>"; };
+		C9CC0D0025FDA9920059822E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E2E6AF81506BB94B43619CE2 /* Pods_ScavengerHunt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScavengerHunt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -190,6 +192,7 @@
 				C9CC0CDB25FD8EAA0059822E /* UITextField+Extension.swift */,
 				C9CC0CDE25FD8F750059822E /* Utilities.swift */,
 				C9CC0CE125FD9F400059822E /* UIViewController+Extension.swift */,
+				C9CC0D0025FDA9920059822E /* Constants.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				C9B2C53125F859E4008375C0 /* AppDelegate.swift in Sources */,
 				C9CC0CB325F9A7A40059822E /* LandingPageViewController.swift in Sources */,
 				C9B2C53325F859E4008375C0 /* SceneDelegate.swift in Sources */,
+				C9CC0D0125FDA9920059822E /* Constants.swift in Sources */,
 				C9CC0CD225FB10930059822E /* CreatorSignUpViewController.swift in Sources */,
 				C9CC0CC325FAE7CE0059822E /* MarkerList.swift in Sources */,
 				C9CC0CDF25FD8F750059822E /* Utilities.swift in Sources */,

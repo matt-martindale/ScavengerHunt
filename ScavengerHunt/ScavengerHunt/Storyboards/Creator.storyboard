@@ -121,7 +121,7 @@
         <!--Creator Home View Controller-->
         <scene sceneID="QdK-Cq-EOf">
             <objects>
-                <viewController id="1Xv-bF-HMN" customClass="CreatorHomeViewController" customModule="ScavengerHunt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreatorHomeVC" id="1Xv-bF-HMN" customClass="CreatorHomeViewController" customModule="ScavengerHunt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TMh-S1-k2i">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -143,6 +143,9 @@
                             <constraint firstItem="LGh-eJ-Tvg" firstAttribute="centerY" secondItem="TMh-S1-k2i" secondAttribute="centerY" id="ggm-fx-MSh"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="LGh-eJ-Tvg" id="Bs0-Vd-DUk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DkQ-mI-hPI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

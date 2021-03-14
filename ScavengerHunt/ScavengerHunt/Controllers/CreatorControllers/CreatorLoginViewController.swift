@@ -57,11 +57,13 @@ class CreatorLoginViewController: UIViewController {
             Auth.auth().signIn(withEmail: email, password: password) { [weak self] (result, error) in
                 guard let strongSelf = self else { return }
                 
+                // Check if there's an error
                 if error != nil {
                     print(error!.localizedDescription)
                     Utilites.shared.showError(error!.localizedDescription, errorLabel: strongSelf.errorLabel)
                 } else {
-                    
+                    // User logged in Successfully
+                    strongSelf.transitionToHome()
                 }
             }
         }
@@ -74,6 +76,12 @@ class CreatorLoginViewController: UIViewController {
             return "Please fill in all fields"
         }
         return nil
+    }
+    
+    private func transitionToHome() {
+        let creatorHomeVC = storyboard?.instantiateViewController(identifier: Constants.Storyboard.creatorHomeVC) as? CreatorHomeViewController
+        view.window?.rootViewController = creatorHomeVC
+        view.window?.makeKeyAndVisible()
     }
     
 }
