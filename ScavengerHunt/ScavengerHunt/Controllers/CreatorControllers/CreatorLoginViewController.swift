@@ -9,7 +9,7 @@ import UIKit
 import FirebaseAuth
 
 class CreatorLoginViewController: UIViewController {
-
+    
     // MARK: - IBOutlets
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -21,6 +21,7 @@ class CreatorLoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        self.hideKeyboardOnTap()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -46,20 +47,20 @@ class CreatorLoginViewController: UIViewController {
         // Check if there's a textField validation error
         if error != nil {
             Utilites.shared.showError(error!, errorLabel: errorLabel)
-            return
-        }
-        
-        // Hide errorLabel create cleaned email & password
-        errorLabel.alpha = 0.0
-        guard let email = emailTextField?.text?.trimmingCharacters(in: .whitespacesAndNewlines),
-              let password = passwordTextField?.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
-        
-        Auth.auth().signIn(withEmail: email, password: password) { [weak self] (result, error) in
-            guard let strongSelf = self else { return }
+        } else {
             
-            if error != nil {
-                print(error!.localizedDescription)
-                Utilites.shared.showError(error!.localizedDescription, errorLabel: strongSelf.errorLabel)
+            // Hide errorLabel create cleaned email & password
+            errorLabel.alpha = 0.0
+            guard let email = emailTextField?.text?.trimmingCharacters(in: .whitespacesAndNewlines),
+                  let password = passwordTextField?.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
+            
+            Auth.auth().signIn(withEmail: email, password: password) { [weak self] (result, error) in
+                guard let strongSelf = self else { return }
+                
+                if error != nil {
+                    print(error!.localizedDescription)
+                    Utilites.shared.showError(error!.localizedDescription, errorLabel: strongSelf.errorLabel)
+                }
             }
         }
     }

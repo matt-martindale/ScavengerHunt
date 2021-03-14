@@ -22,6 +22,7 @@ class CreatorSignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        self.hideKeyboardOnTap()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -42,6 +43,15 @@ class CreatorSignUpViewController: UIViewController {
     }
 
     @IBAction func signUpBtnTapped(_ sender: Any) {
+        let error = validateFields()
+        
+        if error != nil {
+            Utilites.shared.showError(error!, errorLabel: errorLabel)
+        } else {
+            errorLabel.alpha = 0.0
+        }
+        
+        
     }
     
     private func validateFields() -> String? {
@@ -50,6 +60,12 @@ class CreatorSignUpViewController: UIViewController {
                emailTextfield.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             passwordTextfield.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
             return "Please fill in all fields."
+        }
+        
+        // Check if password is secure
+        let cleanedPassword = passwordTextfield.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        if Utilites.shared.isPasswordValid(cleanedPassword) == false {
+            return "Please make sure your password is at least 8 characters, contains a special character and a number."
         }
         
         return nil
