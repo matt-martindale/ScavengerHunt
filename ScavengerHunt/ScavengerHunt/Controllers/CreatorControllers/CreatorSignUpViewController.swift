@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import Firebase
 
 class CreatorSignUpViewController: UIViewController {
 
@@ -49,6 +51,37 @@ class CreatorSignUpViewController: UIViewController {
             Utilites.shared.showError(error!, errorLabel: errorLabel)
         } else {
             errorLabel.alpha = 0.0
+            
+            let firstName = firstNameTextfield.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let lastName = lastNameTextfield.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let company = companyTextfield.text ?? "N/A"
+            let email = emailTextfield.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let password = passwordTextfield.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            
+            Auth.auth().createUser(withEmail: email, password: password) { [weak self] (result, error) in
+                guard let strongSelf = self else { return }
+                
+                // Check for error creating User
+                if let error = error {
+                    Utilites.shared.showError(error.localizedDescription, errorLabel: strongSelf.errorLabel)
+                } else {
+                // User created successfully
+                    let db = Firestore.firestore()
+                    db.collection("users").addDocument(data: ["firstName":firstName,
+                                                              "lastName":lastName,
+                                                              "company":company,
+                                                              "events":[String](),
+                                                              "uid":result!.user.uid]) { [weak self] error in
+                        guard let strongSelf = self else { return }
+                        
+                        if error != nil {
+                            Utilites.shared.showError(error!.localizedDescription, errorLabel: strongSelf.errorLabel)
+                        }
+                    }
+                    // Transition to home screen
+                    strongSelf.transitionToHome()
+                }
+            }
         }
         
         
@@ -67,8 +100,11 @@ class CreatorSignUpViewController: UIViewController {
         if Utilites.shared.isPasswordValid(cleanedPassword) == false {
             return "Please make sure your password is at least 8 characters, contains a special character and a number."
         }
-        
         return nil
+    }
+    
+    private func transitionToHome() {
+        
     }
     
 }

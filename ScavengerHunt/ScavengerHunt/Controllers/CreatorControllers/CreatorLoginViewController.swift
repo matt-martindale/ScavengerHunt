@@ -45,8 +45,8 @@ class CreatorLoginViewController: UIViewController {
         let error = validateFields()
         
         // Check if there's a textField validation error
-        if error != nil {
-            Utilites.shared.showError(error!, errorLabel: errorLabel)
+        if let error = error {
+            Utilites.shared.showError(error, errorLabel: errorLabel)
         } else {
             
             // Hide errorLabel create cleaned email & password
@@ -60,6 +60,8 @@ class CreatorLoginViewController: UIViewController {
                 if error != nil {
                     print(error!.localizedDescription)
                     Utilites.shared.showError(error!.localizedDescription, errorLabel: strongSelf.errorLabel)
+                } else {
+                    
                 }
             }
         }
