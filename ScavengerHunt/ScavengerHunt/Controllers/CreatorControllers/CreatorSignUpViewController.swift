@@ -81,6 +81,8 @@ class CreatorSignUpViewController: UIViewController {
                         }
                     }
                     // Transition to home screen
+                    UserDefaults.standard.set(Auth.auth().currentUser?.uid, forKey: Constants.userUIDKey)
+                    UserDefaults.standard.synchronize()
                     strongSelf.transitionToHome()
                 }
             }

@@ -48,7 +48,7 @@ class CreateEventViewController: UIViewController {
     
     private func validateFields() {
         if titleTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
-            Utilites.shared.showError("Please fill in all fields", errorLabel: errorLabel)
+            Utilites.shared.showError("Please enter an Event title", errorLabel: errorLabel)
         }
     }
     

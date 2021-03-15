@@ -15,5 +15,6 @@ struct Constants {
     }
     
     static let eventsTableViewCell = "eventsTableViewCell"
+    static let userUIDKey = "user_uid_key"
     
 }

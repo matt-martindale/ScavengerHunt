@@ -131,16 +131,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="boo-fa-6j4">
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" red="0.14901960780000001" green="0.27450980390000002" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="eventsTableViewCell" id="BGa-IK-Ksq">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BGa-IK-Ksq" id="N2S-ad-hzc">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="1Xv-bF-HMN" id="RAX-sm-T0V"/>
                                     <outlet property="delegate" destination="1Xv-bF-HMN" id="DHN-60-HFC"/>
@@ -150,10 +140,10 @@
                         <viewLayoutGuide key="safeArea" id="dub-p7-72t"/>
                         <color key="backgroundColor" red="0.14901960780000001" green="0.27450980390000002" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="boo-fa-6j4" firstAttribute="top" secondItem="dub-p7-72t" secondAttribute="top" id="NGd-aN-QXA"/>
                             <constraint firstItem="boo-fa-6j4" firstAttribute="leading" secondItem="dub-p7-72t" secondAttribute="leading" id="PbV-Nh-DbW"/>
                             <constraint firstItem="dub-p7-72t" firstAttribute="bottom" secondItem="boo-fa-6j4" secondAttribute="bottom" id="muv-gg-MGo"/>
                             <constraint firstItem="dub-p7-72t" firstAttribute="trailing" secondItem="boo-fa-6j4" secondAttribute="trailing" id="nY8-KZ-jIo"/>
-                            <constraint firstItem="boo-fa-6j4" firstAttribute="top" secondItem="dub-p7-72t" secondAttribute="top" id="yGE-HC-QLC"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -161,12 +151,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DkQ-mI-hPI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2250" y="509"/>
+            <point key="canvasLocation" x="2249.275362318841" y="508.92857142857139"/>
         </scene>
-        <!--Create Event View Controller-->
+        <!--Create New Event-->
         <scene sceneID="Ndj-Df-0t7">
             <objects>
-                <viewController storyboardIdentifier="CreateEventVC" id="2S6-FE-jro" customClass="CreateEventViewController" customModule="ScavengerHunt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateEventVC" title="Create New Event" id="2S6-FE-jro" customClass="CreateEventViewController" customModule="ScavengerHunt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sso-YH-FeM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

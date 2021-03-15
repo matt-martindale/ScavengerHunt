@@ -20,8 +20,9 @@ class CreatorLoginViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        checkIfCurrentUserExists()
         setupViews()
-        self.hideKeyboardOnTap()
+        hideKeyboardOnTap()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -64,6 +65,8 @@ class CreatorLoginViewController: UIViewController {
                     Utilites.shared.showError(error!.localizedDescription, errorLabel: strongSelf.errorLabel)
                 } else {
                     // User logged in Successfully
+                    UserDefaults.standard.set(Auth.auth().currentUser?.uid, forKey: Constants.userUIDKey)
+                    UserDefaults.standard.synchronize()
                     strongSelf.transitionToHome()
                 }
             }
@@ -86,6 +89,13 @@ class CreatorLoginViewController: UIViewController {
     private func transitionToHome() {
         guard let creatorHomeVC = storyboard?.instantiateViewController(identifier: Constants.Storyboard.creatorHomeVC) as? CreatorHomeViewController else { return }
         navigationController?.pushViewController(creatorHomeVC, animated: true)
+    }
+    
+    private func checkIfCurrentUserExists() {
+        if UserDefaults.standard.object(forKey: Constants.userUIDKey) != nil {
+            guard let creatorHomeVC = storyboard?.instantiateViewController(identifier: Constants.Storyboard.creatorHomeVC) as? CreatorHomeViewController else { return }
+            navigationController?.pushViewController(creatorHomeVC, animated: true)
+        }
     }
     
 }

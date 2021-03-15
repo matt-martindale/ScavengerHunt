@@ -20,12 +20,16 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        title = Auth.auth().currentUser?.email
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
     }
     
     // MARK: - Methods
     private func setupViews() {
         navigationItem.setHidesBackButton(true, animated: true)
-        navigationController?.navigationBar.prefersLargeTitles = true
         createBarBtns()
     }
     
@@ -42,6 +46,10 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
     @objc func settingsTapped() {
         do {
             try Auth.auth().signOut()
+            if Auth.auth().currentUser == nil {
+                UserDefaults.standard.removeObject(forKey: Constants.userUIDKey)
+                UserDefaults.standard.synchronize()
+            }
             
             navigationController?.popToRootViewController(animated: true)
         } catch {
