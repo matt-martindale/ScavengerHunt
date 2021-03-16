@@ -10,10 +10,12 @@ import Foundation
 class Event {
     var title: String
     var description: String?
+    var uid: String
     var markers: MarkerList
     
-    init(title: String, markers: MarkerList) {
+    init(title: String, uid: String, markers: MarkerList) {
         self.title = title
+        self.uid = uid
         self.markers = markers
     }
 }
