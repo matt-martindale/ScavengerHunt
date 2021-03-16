@@ -53,8 +53,8 @@ class CreateEventViewController: UIViewController {
         session?.begin()
         
         // Create Event and write UID to tag
-        let event = Event(title: titleTextField.text!, markers: MarkerList())
         let uid = UUID()
+        let event = Event(title: titleTextField.text!, uid: uid, markers: MarkerList())
         event.markers.addMarker(marker: Marker(title: "Start", clue: firstClueTextView.text, uid: uid))
         
         guard let payload = NFCNDEFPayload.wellKnownTypeURIPayload(string: uid.uuidString) else { return }
