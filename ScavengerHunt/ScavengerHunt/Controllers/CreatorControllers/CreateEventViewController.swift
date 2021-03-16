@@ -12,6 +12,7 @@ class CreateEventViewController: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var firstClueTextView: UITextView!
     @IBOutlet weak var confirmBtn: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
     
@@ -49,7 +50,17 @@ class CreateEventViewController: UIViewController {
     private func validateFields() {
         if titleTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
             Utilites.shared.showError("Please enter an Event title", errorLabel: errorLabel)
+        } else {
+            // TODO: - Scan NFC Tag
+            
+            navigateToAddMarker()
         }
+    }
+    
+    private func navigateToAddMarker() {
+        let creatorStoryboard = UIStoryboard(name: "Creator", bundle: nil)
+        guard let addMarkerVC = creatorStoryboard.instantiateViewController(identifier: Constants.Storyboard.addMarkerVC) as? AddMarkerViewController else { return }
+        navigationController?.pushViewController(addMarkerVC, animated: true)
     }
     
 }
