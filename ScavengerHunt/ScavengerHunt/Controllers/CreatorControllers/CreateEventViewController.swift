@@ -19,7 +19,7 @@ class CreateEventViewController: UIViewController {
     
     // MARK: - Properties
     var session: NFCNDEFReaderSession?
-    var message: NFCNDEFMessage = .init(records: [])
+    var uid: NFCNDEFMessage?
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -43,8 +43,22 @@ class CreateEventViewController: UIViewController {
         }
         
         // Start NfC reader session
+        guard NFCNDEFReaderSession.readingAvailable else {
+            Utilites.shared.showError("This device does not support tag scanning.", errorLabel: errorLabel)
+            return
+        }
         
+        session = NFCNDEFReaderSession(delegate: self, queue: nil, invalidateAfterFirstRead: true)
+        session?.alertMessage = "Hold your iPhone near the item to scan."
+        session?.begin()
         
+        // Create Event and write UID to tag
+        let event = Event(title: titleTextField.text!, markers: MarkerList())
+        let uid = UUID()
+        event.markers.addMarker(marker: Marker(title: "Start", clue: firstClueTextView.text, uid: uid))
+        
+        guard let payload = NFCNDEFPayload.wellKnownTypeURIPayload(string: uid.uuidString) else { return }
+        self.uid = NFCNDEFMessage.init(records: [payload])
     }
     
     // MARK: - Methods
@@ -66,8 +80,9 @@ class CreateEventViewController: UIViewController {
     }
     
     private func validateFields() -> String? {
-        if titleTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
-            return "Please enter an Event title"
+        if titleTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            firstClueTextView.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+            return "Please fill in all fields."
         } else {
             return nil
         }
@@ -120,7 +135,8 @@ extension CreateEventViewController: NFCNDEFReaderSessionDelegate {
                     session.alertMessage = "Tag is a read-only"
                     session.invalidate()
                 case .readWrite:
-                    tag.writeNDEF(self.message) { error in
+                    guard let uid = self.uid else { return }
+                    tag.writeNDEF(uid) { error in
                         if error != nil {
                             session.alertMessage = "Write NDEF message fail: \(error!)"
                         } else {
