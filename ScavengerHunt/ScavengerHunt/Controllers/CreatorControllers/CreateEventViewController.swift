@@ -57,6 +57,7 @@ class CreateEventViewController: UIViewController {
         let event = Event(title: titleTextField.text!, uid: uid, markers: MarkerList())
         event.markers.addMarker(marker: Marker(title: "Start", clue: firstClueTextView.text, uid: uid))
         
+        // Create NDEF Payload and update self.uid with Message
         guard let payload = NFCNDEFPayload.wellKnownTypeURIPayload(string: uid.uuidString) else { return }
         self.uid = NFCNDEFMessage.init(records: [payload])
     }
@@ -87,7 +88,6 @@ class CreateEventViewController: UIViewController {
             return nil
         }
     }
-    
     
     private func navigateToAddMarker() {
         let creatorStoryboard = UIStoryboard(name: "Creator", bundle: nil)
