@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreNFC
 
 class CreateEventViewController: UIViewController {
 
@@ -15,6 +16,10 @@ class CreateEventViewController: UIViewController {
     @IBOutlet weak var firstClueTextView: UITextView!
     @IBOutlet weak var confirmBtn: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
+    
+    // MARK: - Properties
+    var session: NFCNDEFReaderSession?
+    var message: NFCNDEFMessage = .init(records: [])
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -31,7 +36,15 @@ class CreateEventViewController: UIViewController {
     // MARK: - IBActions
     @IBAction func confirmBtnTapped(_ sender: UIButton) {
         Utilites.shared.playSound(sender.tag)
-        validateFields()
+        let error = validateFields()
+        if let error = error {
+            Utilites.shared.showError(error, errorLabel: errorLabel)
+            return
+        }
+        
+        // Start NfC reader session
+        
+        
     }
     
     // MARK: - Methods
@@ -52,20 +65,96 @@ class CreateEventViewController: UIViewController {
         errorLabel.alpha = 0.0
     }
     
-    private func validateFields() {
+    private func validateFields() -> String? {
         if titleTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
-            Utilites.shared.showError("Please enter an Event title", errorLabel: errorLabel)
+            return "Please enter an Event title"
         } else {
-            // TODO: - Scan NFC Tag
-            
-            navigateToAddMarker()
+            return nil
         }
     }
+    
     
     private func navigateToAddMarker() {
         let creatorStoryboard = UIStoryboard(name: "Creator", bundle: nil)
         guard let addMarkerVC = creatorStoryboard.instantiateViewController(identifier: Constants.Storyboard.addMarkerVC) as? AddMarkerViewController else { return }
         navigationController?.pushViewController(addMarkerVC, animated: true)
+    }
+    
+}
+
+extension CreateEventViewController: NFCNDEFReaderSessionDelegate {
+    
+    func readerSession(_ session: NFCNDEFReaderSession, didDetectNDEFs messages: [NFCNDEFMessage]) {
+    }
+    
+    func readerSession(_ session: NFCNDEFReaderSession, didDetect tags: [NFCNDEFTag]) {
+        if tags.count > 1 {
+            let retryInterval = DispatchTimeInterval.milliseconds(500)
+            session.alertMessage = "More than 1 tag was detected. Please remove all tags and try again."
+            DispatchQueue.global().asyncAfter(deadline: .now() + retryInterval, execute: {
+                session.restartPolling()
+            })
+            return
+        }
+        
+        // Connect to the found tag and write an NDEF message to it
+        let tag = tags.first!
+        session.connect(to: tag) { error in
+            if error != nil {
+                session.alertMessage = "Unable to connect to tag."
+                session.invalidate()
+                return
+            }
+            
+            tag.queryNDEFStatus { (ndefStatus, capacity, error) in
+                guard error == nil else {
+                    session.alertMessage = "Unable to query the NDEF status of tag."
+                    session.invalidate()
+                    return
+                }
+                switch ndefStatus {
+                case .notSupported:
+                    session.alertMessage = "Tag is not NDEF compliant"
+                    session.invalidate()
+                case .readOnly:
+                    session.alertMessage = "Tag is a read-only"
+                    session.invalidate()
+                case .readWrite:
+                    tag.writeNDEF(self.message) { error in
+                        if error != nil {
+                            session.alertMessage = "Write NDEF message fail: \(error!)"
+                        } else {
+                            session.alertMessage = "Write NDEF message successful."
+                        }
+                        session.invalidate()
+                    }
+                @unknown default:
+                    session.alertMessage = "Unknown NDEF tag status."
+                    session.invalidate()
+                }
+            }
+        }
+    }
+    
+    func readerSession(_ session: NFCNDEFReaderSession, didInvalidateWithError error: Error) {
+        // Check the invalidation reason from the returned error.
+        if let readerError = error as? NFCReaderError {
+            // Show an alert when the invalidation reason is not because of a success read
+            // during a single tag read mode, or user canceled a multi-tag read mode session
+            // from the UI or programmatically using the invalidate method call.
+            if (readerError.code != .readerSessionInvalidationErrorFirstNDEFTagRead)
+                && (readerError.code != .readerSessionInvalidationErrorUserCanceled) {
+                let alertController = UIAlertController(
+                    title: "Session Invalidated",
+                    message: error.localizedDescription,
+                    preferredStyle: .alert
+                )
+                alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                DispatchQueue.main.async {
+                    self.present(alertController, animated: true, completion: nil)
+                }
+            }
+        }
     }
     
 }

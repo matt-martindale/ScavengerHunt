@@ -32,6 +32,7 @@
 		C9CC0D0C25FDBC160059822E /* buttonClick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C9CC0D0B25FDBC150059822E /* buttonClick.mp3 */; };
 		C9D605FF25FE8A0900085FAA /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D605FE25FE8A0900085FAA /* CreateEventViewController.swift */; };
 		C9D6060226003F8C00085FAA /* AddMarkerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D6060126003F8B00085FAA /* AddMarkerViewController.swift */; };
+		C9D6060526004C0500085FAA /* NFCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D6060426004C0500085FAA /* NFCManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		C9CC0D0B25FDBC150059822E /* buttonClick.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = buttonClick.mp3; sourceTree = "<group>"; };
 		C9D605FE25FE8A0900085FAA /* CreateEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
 		C9D6060126003F8B00085FAA /* AddMarkerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMarkerViewController.swift; sourceTree = "<group>"; };
+		C9D6060426004C0500085FAA /* NFCManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCManager.swift; sourceTree = "<group>"; };
 		E2E6AF81506BB94B43619CE2 /* Pods_ScavengerHunt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScavengerHunt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -191,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				C9CC0CD725FB27350059822E /* AuthManager.swift */,
+				C9D6060426004C0500085FAA /* NFCManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 				C9CC0CB825F9BE060059822E /* HelpPageViewController.swift in Sources */,
 				C9CC0CE225FD9F400059822E /* UIViewController+Extension.swift in Sources */,
 				C9B2C53125F859E4008375C0 /* AppDelegate.swift in Sources */,
+				C9D6060526004C0500085FAA /* NFCManager.swift in Sources */,
 				C9CC0CB325F9A7A40059822E /* LandingPageViewController.swift in Sources */,
 				C9B2C53325F859E4008375C0 /* SceneDelegate.swift in Sources */,
 				C9CC0D0125FDA9920059822E /* Constants.swift in Sources */,

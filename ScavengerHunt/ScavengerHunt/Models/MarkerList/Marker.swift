@@ -9,10 +9,14 @@ import Foundation
 
 class Marker {
     var title: String
+    var clue: String
+    var uid: UUID
     var next: Marker?
     weak var prev: Marker?
     
-    init(title: String) {
+    init(title: String, clue: String, uid: UUID) {
         self.title = title
+        self.clue = clue
+        self.uid = UUID()
     }
 }
