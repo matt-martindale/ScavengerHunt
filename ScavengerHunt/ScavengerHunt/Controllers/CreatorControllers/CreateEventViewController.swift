@@ -43,6 +43,11 @@ class CreateEventViewController: UIViewController {
         descriptionTextView.backgroundColor = .clear
         descriptionTextView.layer.cornerRadius = 10
         descriptionTextView.tintColor = .orange
+        firstClueTextView.layer.borderWidth = 2.0
+        firstClueTextView.layer.borderColor = UIColor.orange.cgColor
+        firstClueTextView.backgroundColor = .clear
+        firstClueTextView.layer.cornerRadius = 10
+        firstClueTextView.tintColor = .orange
         confirmBtn.layer.cornerRadius = 20
         errorLabel.alpha = 0.0
     }
