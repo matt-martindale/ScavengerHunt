@@ -139,10 +139,14 @@ extension CreateEventViewController: NFCNDEFReaderSessionDelegate {
                     tag.writeNDEF(uid) { error in
                         if error != nil {
                             session.alertMessage = "Write NDEF message fail: \(error!)"
+                            session.invalidate()
                         } else {
                             session.alertMessage = "Write NDEF message successful."
+                            session.invalidate()
+                            // Navigate to AddMarkerVC
+                            navigateToAddMarker()
+                            // TODO: - Inject newly created event into AddMarkerVC
                         }
-                        session.invalidate()
                     }
                 @unknown default:
                     session.alertMessage = "Unknown NDEF tag status."
