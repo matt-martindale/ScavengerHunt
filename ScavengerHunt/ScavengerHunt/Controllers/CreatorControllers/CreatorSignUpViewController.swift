@@ -31,18 +31,6 @@ class CreatorSignUpViewController: UIViewController {
         super.viewWillDisappear(animated)
         errorLabel.alpha = 0.0
     }
-    
-    // MARK: - Methods
-    private func setupViews() {
-        errorLabel.alpha = 0.0
-        signUpBtn.layer.cornerRadius = 20
-        
-        firstNameTextfield.addBottomBorder()
-        lastNameTextfield.addBottomBorder()
-        companyTextfield.addBottomBorder()
-        emailTextfield.addBottomBorder()
-        passwordTextfield.addBottomBorder()
-    }
 
     @IBAction func signUpBtnTapped(_ sender: UIButton) {
         Utilites.shared.playSound(sender.tag)
@@ -87,8 +75,18 @@ class CreatorSignUpViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    // MARK: - Methods
+    private func setupViews() {
+        errorLabel.alpha = 0.0
+        signUpBtn.layer.cornerRadius = 20
         
-        
+        firstNameTextfield.addBottomBorder()
+        lastNameTextfield.addBottomBorder()
+        companyTextfield.addBottomBorder()
+        emailTextfield.addBottomBorder()
+        passwordTextfield.addBottomBorder()
     }
     
     private func validateFields() -> String? {
