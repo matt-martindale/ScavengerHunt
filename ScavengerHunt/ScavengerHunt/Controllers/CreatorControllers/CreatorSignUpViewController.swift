@@ -32,8 +32,10 @@ class CreatorSignUpViewController: UIViewController {
         errorLabel.alpha = 0.0
     }
 
+    // MARK: - IBActions
     @IBAction func signUpBtnTapped(_ sender: UIButton) {
         Utilites.shared.playSound(sender.tag)
+        // check if form error exists
         let error = validateFields()
         
         if error != nil {
