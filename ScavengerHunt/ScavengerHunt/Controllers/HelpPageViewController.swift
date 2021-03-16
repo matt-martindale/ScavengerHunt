@@ -9,14 +9,14 @@ import UIKit
 
 class HelpPageViewController: UIViewController, UIScrollViewDelegate {
 
-    // MARK: - Properties
+    // MARK: - IBOutlets
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var button: UIButton!
     
+    // MARK: - Properties
     var scrollWidth: CGFloat = 0.0
     var scrollHeight: CGFloat = 0.0
-    
     var titles = ["Number 1", "Number 2", "Number 3"]
     
     // MARK: - Lifecycles
@@ -38,7 +38,18 @@ class HelpPageViewController: UIViewController, UIScrollViewDelegate {
         setupScrollView()
         setupViews()
     }
+
+    // MARK: - IBActions
+    @IBAction func pageChanged(_ sender: Any) {
+        scrollView.scrollRectToVisible(CGRect(x: scrollWidth * CGFloat(pageControl.currentPage), y: 0, width: scrollWidth, height: scrollHeight), animated: true)
+    }
     
+    @IBAction func buttonTapped(_ sender: UIButton) {
+        Utilites.shared.playSound(sender.tag)
+        navigationController?.popToRootViewController(animated: true)
+    }
+    
+    // MARK: - Methods
     private func setupScrollView() {
         var frame = CGRect(x: 0.0, y: 0.0, width: 0.0, height: 0.0)
         for index in 0..<titles.count {
@@ -69,15 +80,6 @@ class HelpPageViewController: UIViewController, UIScrollViewDelegate {
     
     private func setupViews() {
         button.layer.cornerRadius = 20
-    }
-
-    @IBAction func pageChanged(_ sender: Any) {
-        scrollView.scrollRectToVisible(CGRect(x: scrollWidth * CGFloat(pageControl.currentPage), y: 0, width: scrollWidth, height: scrollHeight), animated: true)
-    }
-    
-    @IBAction func buttonTapped(_ sender: UIButton) {
-        Utilites.shared.playSound(sender.tag)
-        navigationController?.popToRootViewController(animated: true)
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
