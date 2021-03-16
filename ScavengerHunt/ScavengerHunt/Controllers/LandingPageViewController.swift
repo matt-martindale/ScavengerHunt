@@ -17,6 +17,7 @@ class LandingPageViewController: UIViewController {
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var creatorButton: UIButton!
     
+    // MARK: - Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -31,22 +32,8 @@ class LandingPageViewController: UIViewController {
         super.viewWillDisappear(animated)
         self.navigationController?.isNavigationBarHidden = false
     }
-    
-    func setupView() {
-        self.navigationController?.isNavigationBarHidden = true
-        
-        helpButton.contentVerticalAlignment = .fill
-        helpButton.contentHorizontalAlignment = .fill
-        helpButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        
-        playButton.adjustsImageWhenHighlighted = false
-        playLabel.text = "PLAY\nSCAVENGER HUNT"
-        
-        creatorButton.layer.cornerRadius = 20
-        creatorButton.layer.borderWidth = 2.0
-        creatorButton.layer.borderColor = UIColor.orange.cgColor
-    }
 
+    // MARK: - IBActions
     @IBAction func playButtonTapped(_ sender: UIButton) {
         Utilites.shared.playSound(sender.tag)
         
@@ -65,6 +52,22 @@ class LandingPageViewController: UIViewController {
     
     @IBAction func createBtnTapped(_ sender: UIButton) {
         Utilites.shared.playSound(sender.tag)
+    }
+    
+    // MARK: - Methods
+    func setupView() {
+        self.navigationController?.isNavigationBarHidden = true
+        
+        helpButton.contentVerticalAlignment = .fill
+        helpButton.contentHorizontalAlignment = .fill
+        helpButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        
+        playButton.adjustsImageWhenHighlighted = false
+        playLabel.text = "PLAY\nSCAVENGER HUNT"
+        
+        creatorButton.layer.cornerRadius = 20
+        creatorButton.layer.borderWidth = 2.0
+        creatorButton.layer.borderColor = UIColor.orange.cgColor
     }
     
 }
