@@ -12,7 +12,6 @@ class CreateEventViewController: UIViewController {
 
     // MARK: - IBOutlets
     @IBOutlet weak var titleTextField: UITextField!
-    @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var firstClueTextView: UITextView!
     @IBOutlet weak var confirmBtn: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
@@ -20,6 +19,7 @@ class CreateEventViewController: UIViewController {
     // MARK: - Properties
     var session: NFCNDEFReaderSession?
     var uid: NFCNDEFMessage?
+    var event: Event?
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -54,8 +54,9 @@ class CreateEventViewController: UIViewController {
         
         // Create Event and write UID to tag
         let uid = UUID()
-        let event = Event(title: titleTextField.text!, uid: uid, markers: MarkerList())
+        let event = Event(title: titleTextField.text!, uid: uid.uuidString, markers: MarkerList())
         event.markers.addMarker(marker: Marker(title: "Start", clue: firstClueTextView.text, uid: uid))
+        self.event = event
         
         // Create NDEF Payload and update self.uid with Message
         guard let payload = NFCNDEFPayload.wellKnownTypeURIPayload(string: uid.uuidString) else { return }
@@ -66,11 +67,6 @@ class CreateEventViewController: UIViewController {
     private func setupViews() {
         titleTextField.layer.cornerRadius = 20
         titleTextField.addBottomBorder()
-        descriptionTextView.layer.borderWidth = 2.0
-        descriptionTextView.layer.borderColor = UIColor.orange.cgColor
-        descriptionTextView.backgroundColor = .clear
-        descriptionTextView.layer.cornerRadius = 10
-        descriptionTextView.tintColor = .orange
         firstClueTextView.layer.borderWidth = 2.0
         firstClueTextView.layer.borderColor = UIColor.orange.cgColor
         firstClueTextView.backgroundColor = .clear
@@ -92,6 +88,7 @@ class CreateEventViewController: UIViewController {
     private func navigateToAddMarker() {
         let creatorStoryboard = UIStoryboard(name: "Creator", bundle: nil)
         guard let addMarkerVC = creatorStoryboard.instantiateViewController(identifier: Constants.Storyboard.addMarkerVC) as? AddMarkerViewController else { return }
+        addMarkerVC.event = self.event
         navigationController?.pushViewController(addMarkerVC, animated: true)
     }
     
@@ -144,8 +141,10 @@ extension CreateEventViewController: NFCNDEFReaderSessionDelegate {
                             session.alertMessage = "Write NDEF message successful."
                             session.invalidate()
                             // Navigate to AddMarkerVC
-                            navigateToAddMarker()
-                            // TODO: - Inject newly created event into AddMarkerVC
+                            DispatchQueue.main.async {
+                                self.navigateToAddMarker()
+                                // TODO: - Inject newly created event into AddMarkerVC
+                            }
                         }
                     }
                 @unknown default:

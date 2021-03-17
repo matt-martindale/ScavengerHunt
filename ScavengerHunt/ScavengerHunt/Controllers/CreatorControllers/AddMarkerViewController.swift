@@ -16,11 +16,15 @@ class AddMarkerViewController: UIViewController {
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var finishBtn: UIButton!
     
+    // MARK: - Properties
+    var event: Event?
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
         self.hideKeyboardOnTap()
+        titleTextField.text = event?.markers.head?.clue
     }
     
     override func viewWillDisappear(_ animated: Bool) {

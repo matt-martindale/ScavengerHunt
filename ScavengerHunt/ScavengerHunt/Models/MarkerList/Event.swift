@@ -9,7 +9,6 @@ import Foundation
 
 class Event {
     var title: String
-    var description: String?
     var uid: String
     var markers: MarkerList
     
