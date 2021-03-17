@@ -67,7 +67,11 @@ class AddMarkerViewController: UIViewController {
     }
     
     @IBAction func finishBtnTapped(_ sender: UIButton) {
-        // TODO: - Navigate to Event Confirmation Page
+        let creatorStoryboard = UIStoryboard(name: "Creator", bundle: nil)
+        guard let eventConfirmationVC = creatorStoryboard.instantiateViewController(identifier: Constants.Storyboard.eventConfirmationVC) as? EventConfirmationViewController else { return }
+        eventConfirmationVC.event = self.event
+        navigationController?.pushViewController(eventConfirmationVC, animated: true)
+        
     }
     
     // MARK: - Methods
