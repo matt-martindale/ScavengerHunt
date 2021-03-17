@@ -316,7 +316,6 @@
                                     <color key="titleColor" red="0.14901960780000001" green="0.27450980390000002" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
-                                    <action selector="confirmBtnTapped:" destination="2S6-FE-jro" eventType="touchUpInside" id="u2J-Jt-QRa"/>
                                     <action selector="scanMarkerBtnTapped:" destination="Uwz-re-mfd" eventType="touchUpInside" id="7aO-xp-PgJ"/>
                                 </connections>
                             </button>
@@ -337,9 +336,7 @@
                                     <color key="titleColor" red="1" green="0.96470588239999999" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
-                                    <action selector="confirmBtnTapped:" destination="2S6-FE-jro" eventType="touchUpInside" id="rjQ-VA-Nq1"/>
                                     <action selector="finishBtnTapped:" destination="Uwz-re-mfd" eventType="touchUpInside" id="97G-BV-XsC"/>
-                                    <action selector="scanMarkerBtnTapped:" destination="Uwz-re-mfd" eventType="touchUpInside" id="5xh-z5-zOe"/>
                                 </connections>
                             </button>
                         </subviews>
