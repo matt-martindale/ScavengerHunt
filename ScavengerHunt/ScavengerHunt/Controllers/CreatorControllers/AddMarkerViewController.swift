@@ -84,6 +84,9 @@ class AddMarkerViewController: UIViewController {
         finishBtn.layer.cornerRadius = 20
         finishBtn.layer.borderWidth = 2.0
         finishBtn.layer.borderColor = UIColor.orange.cgColor
+        
+        guard let event = event else { return }
+        title = "Add Marker#\(event.markers.getSize+1)"
     }
     
     private func validateFields() -> String? {
@@ -96,8 +99,10 @@ class AddMarkerViewController: UIViewController {
     }
     
     func clearValues() {
+        guard let event = event else { return }
+        title = "Add Marker #\(event.markers.getSize+1)"
         titleTextField.text = ""
-        clueTextView.text = ""
+        clueTextView.text = "*Write clue to next marker*"
     }
     
     func showSuccessAlert() {
