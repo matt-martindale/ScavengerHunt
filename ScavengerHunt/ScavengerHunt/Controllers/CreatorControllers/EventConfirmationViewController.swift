@@ -43,11 +43,11 @@ extension EventConfirmationViewController: UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") else {
-            print("No cell")
-            return UITableViewCell() }
-        cell.textLabel?.text = event?.markers.getMarkerAt(index: indexPath.row)?.title
-        cell.detailTextLabel?.text = String("next: \(event?.markers.getMarkerAt(index: indexPath.row)?.next?.title)")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell"),
+              let marker = event?.markers.getMarkerAt(index: indexPath.row) else { return UITableViewCell() }
+        let next = marker.next?.title ?? ""
+        cell.textLabel?.text = marker.title
+        cell.detailTextLabel?.text = next == "" ? "" : "next: \(next)"
         return cell
     }
     
