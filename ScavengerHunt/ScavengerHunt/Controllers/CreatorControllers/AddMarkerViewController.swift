@@ -55,6 +55,7 @@ class AddMarkerViewController: UIViewController {
         session?.alertMessage = "Hold your iPhone near the item to scan."
         session?.begin()
         
+        // ADD THIS IN IT'S OWN METHOD AND CALL ONLY ON SUCCESSFUL TAG WRITE
         // Append Marker to Event and write Marker UID to tag
         let uid = UUID()
         let marker = Marker(title: titleTextField.text!, clue: clueTextView.text!, uid: uid)
