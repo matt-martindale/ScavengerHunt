@@ -33,6 +33,7 @@
 		C9D605FF25FE8A0900085FAA /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D605FE25FE8A0900085FAA /* CreateEventViewController.swift */; };
 		C9D6060226003F8C00085FAA /* AddMarkerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D6060126003F8B00085FAA /* AddMarkerViewController.swift */; };
 		C9D6060526004C0500085FAA /* NFCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D6060426004C0500085FAA /* NFCManager.swift */; };
+		C9D6060A2601AAE400085FAA /* EventConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D606092601AAE400085FAA /* EventConfirmationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		C9D605FE25FE8A0900085FAA /* CreateEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
 		C9D6060126003F8B00085FAA /* AddMarkerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMarkerViewController.swift; sourceTree = "<group>"; };
 		C9D6060426004C0500085FAA /* NFCManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCManager.swift; sourceTree = "<group>"; };
+		C9D606092601AAE400085FAA /* EventConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventConfirmationViewController.swift; sourceTree = "<group>"; };
 		E2E6AF81506BB94B43619CE2 /* Pods_ScavengerHunt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScavengerHunt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -217,6 +219,7 @@
 				C9CC0CD125FB10930059822E /* CreatorSignUpViewController.swift */,
 				C9D605FE25FE8A0900085FAA /* CreateEventViewController.swift */,
 				C9D6060126003F8B00085FAA /* AddMarkerViewController.swift */,
+				C9D606092601AAE400085FAA /* EventConfirmationViewController.swift */,
 			);
 			path = CreatorControllers;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 				C9CC0CD225FB10930059822E /* CreatorSignUpViewController.swift in Sources */,
 				C9CC0CC325FAE7CE0059822E /* MarkerList.swift in Sources */,
 				C9CC0CDF25FD8F750059822E /* Utilities.swift in Sources */,
+				C9D6060A2601AAE400085FAA /* EventConfirmationViewController.swift in Sources */,
 				C9D6060226003F8C00085FAA /* AddMarkerViewController.swift in Sources */,
 				C9CC0CFE25FDA8DA0059822E /* CreatorHomeViewController.swift in Sources */,
 				C9CC0CDC25FD8EAA0059822E /* UITextField+Extension.swift in Sources */,

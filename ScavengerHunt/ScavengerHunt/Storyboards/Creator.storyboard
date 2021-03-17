@@ -371,6 +371,21 @@
             </objects>
             <point key="canvasLocation" x="3877" y="509"/>
         </scene>
+        <!--Confirm Event-->
+        <scene sceneID="s3J-TJ-UHc">
+            <objects>
+                <viewController storyboardIdentifier="EventConfirmationVC" title="Confirm Event" id="4tR-UV-sig" customClass="EventConfirmationViewController" customModule="ScavengerHunt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iOP-YU-ILV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="TBa-qe-K4Y"/>
+                        <color key="backgroundColor" red="0.14901960780000001" green="0.27450980390000002" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8V4-dH-3gn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4664" y="509"/>
+        </scene>
         <!--SIGN UP-->
         <scene sceneID="KH9-qD-APR">
             <objects>
