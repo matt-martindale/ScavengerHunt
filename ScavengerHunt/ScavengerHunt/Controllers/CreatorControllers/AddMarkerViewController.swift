@@ -21,6 +21,7 @@ class AddMarkerViewController: UIViewController {
     var event: Event?
     var session: NFCNDEFReaderSession?
     var uid: NFCNDEFMessage?
+    var eventUID: UUID?
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -55,16 +56,11 @@ class AddMarkerViewController: UIViewController {
         session?.alertMessage = "Hold your iPhone near the item to scan."
         session?.begin()
         
-        // ADD THIS IN IT'S OWN METHOD AND CALL ONLY ON SUCCESSFUL TAG WRITE
-        // Append Marker to Event and write Marker UID to tag
-        let uid = UUID()
-        let marker = Marker(title: titleTextField.text!, clue: clueTextView.text!, uid: uid)
-        self.event?.markers.addMarker(marker: marker)
-        
         // Create NDEF Payload and update self.uid with message
+        let uid = UUID()
         guard let payload = NFCNDEFPayload.wellKnownTypeURIPayload(string: uid.uuidString) else { return }
         self.uid = NFCNDEFMessage(records: [payload])
-        
+        self.eventUID = uid
     }
     
     @IBAction func finishBtnTapped(_ sender: UIButton) {
@@ -110,6 +106,13 @@ class AddMarkerViewController: UIViewController {
         clueTextView.text = "*Write clue to next marker*"
     }
     
+    func createEvent() {
+        // Append Marker to Event and write Marker UID to tag
+        guard let uid = self.eventUID else { return }
+        let marker = Marker(title: titleTextField.text!, clue: clueTextView.text!, uid: uid)
+        self.event?.markers.addMarker(marker: marker)
+    }
+    
     func showSuccessAlert() {
         let alert = UIAlertController(title: "Success", message: "Your Clue was successfully written. You can now add another marker.", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
@@ -135,7 +138,8 @@ extension AddMarkerViewController: NFCNDEFReaderSessionDelegate {
         
         // Connect to the found tag and write an NDEF message to it
         let tag = tags.first!
-        session.connect(to: tag) { error in
+        session.connect(to: tag) { [weak self] error in
+            guard let strongSelf = self else { return }
             if error != nil {
                 session.alertMessage = "Unable to connect to tag."
                 session.invalidate()
@@ -156,7 +160,7 @@ extension AddMarkerViewController: NFCNDEFReaderSessionDelegate {
                     session.alertMessage = "Tag is a read-only"
                     session.invalidate()
                 case .readWrite:
-                    guard let uid = self.uid else { return }
+                    guard let uid = strongSelf.uid else { return }
                     tag.writeNDEF(uid) { error in
                         if error != nil {
                             session.alertMessage = "Write NDEF message fail: \(error!)"
@@ -166,8 +170,9 @@ extension AddMarkerViewController: NFCNDEFReaderSessionDelegate {
                             session.invalidate()
                             // Upon successful write clear out current values
                             DispatchQueue.main.async {
-                                self.clearValues()
-                                self.showSuccessAlert()
+                                strongSelf.createEvent()
+                                strongSelf.clearValues()
+                                strongSelf.showSuccessAlert()
                             }
                         }
                     }

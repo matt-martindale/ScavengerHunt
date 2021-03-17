@@ -21,6 +21,7 @@ class EventConfirmationViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.tableFooterView = UIView()
         title = event?.markers.getMarkerAt(index: 0)?.title
     }
     
@@ -50,6 +51,5 @@ extension EventConfirmationViewController: UITableViewDelegate, UITableViewDataS
         cell.detailTextLabel?.text = next == "" ? "" : "next: \(next)"
         return cell
     }
-    
     
 }
