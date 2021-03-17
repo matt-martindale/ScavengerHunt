@@ -110,7 +110,7 @@ class AddMarkerViewController: UIViewController {
     }
     
     func showSuccessAlert() {
-        let alert = UIAlertController(title: "Success", message: "Your Clue was successfully written. You may now add another.", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Success", message: "Your Clue was successfully written. You can now add another marker.", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
         alert.addAction(okAction)
         self.present(alert, animated: true, completion: nil)
