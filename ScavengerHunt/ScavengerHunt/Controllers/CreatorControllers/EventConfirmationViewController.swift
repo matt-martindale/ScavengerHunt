@@ -19,7 +19,9 @@ class EventConfirmationViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableView.delegate = self
+        tableView.dataSource = self
+        title = event?.markers.getMarkerAt(index: 0)?.title
     }
     
     // MARK: - IBActions
@@ -41,8 +43,11 @@ extension EventConfirmationViewController: UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") else { return UITableViewCell() }
-        // TODO: - Fill out
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") else {
+            print("No cell")
+            return UITableViewCell() }
+        cell.textLabel?.text = event?.markers.getMarkerAt(index: indexPath.row)?.title
+        cell.detailTextLabel?.text = String("next: \(event?.markers.getMarkerAt(index: indexPath.row)?.next?.title)")
         return cell
     }
     
