@@ -31,6 +31,12 @@ class AddMarkerViewController: UIViewController {
         clueTextView.delegate = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        guard let event = event else { return }
+        title = "Add Marker#\(event.markers.getSize+1)"
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         errorLabel.alpha = 0.0
@@ -85,9 +91,6 @@ class AddMarkerViewController: UIViewController {
         finishBtn.layer.cornerRadius = 20
         finishBtn.layer.borderWidth = 2.0
         finishBtn.layer.borderColor = UIColor.orange.cgColor
-        
-        guard let event = event else { return }
-        title = "Add Marker#\(event.markers.getSize+1)"
     }
     
     private func validateFields() -> String? {

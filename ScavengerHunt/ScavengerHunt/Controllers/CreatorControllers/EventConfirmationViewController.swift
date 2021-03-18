@@ -15,6 +15,8 @@ class EventConfirmationViewController: UIViewController {
     
     // MARK: - Properties
     var event: Event?
+    var showDelete: Bool = false
+    var deleteBarButton = UIBarButtonItem()
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -23,7 +25,6 @@ class EventConfirmationViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
-        title = event?.markers.getMarkerAt(index: 0)?.title
     }
     
     // MARK: - IBActions
@@ -33,12 +34,24 @@ class EventConfirmationViewController: UIViewController {
     
     // MARK: - Methods
     private func setupViews() {
+        setupTitle()
         confirmBtn.layer.cornerRadius = 20
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(editBtnTapped))
+        tableView.isEditing = true
+        deleteBarButton.title = "Delete"
+        deleteBarButton.style = .plain
+        deleteBarButton.target = self
+        deleteBarButton.action = #selector(toggleDelete)
+        navigationItem.rightBarButtonItem = deleteBarButton
     }
     
-    @objc func editBtnTapped() {
-        tableView.isEditing = true
+    private func setupTitle() {
+        title = event?.markers.head != nil ? "\(event!.title)" : "Add Markers"
+    }
+    
+    @objc func toggleDelete() {
+        showDelete = !showDelete
+        deleteBarButton.title = showDelete ? "Done" : "Delete"
+        tableView.reloadData()
     }
     
 }
@@ -64,18 +77,25 @@ extension EventConfirmationViewController: UITableViewDelegate, UITableViewDataS
     
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         guard let event = event else { return }
+        // Use custom MarkerList method to reorder Marker Nodes
         event.markers.insert(source: sourceIndexPath.row, atIndex: destinationIndexPath.row)
         tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        .none
+        // Hide delete button in edit mode
+        return showDelete == true ? .delete : .none
+    }
+    
+    func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+        return false
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         guard let marker = event?.markers.getMarkerAt(index: indexPath.row) else { return }
         if editingStyle == .delete {
             event?.markers.removeMarker(marker)
+            setupTitle()
             tableView.reloadData()
         }
     }
