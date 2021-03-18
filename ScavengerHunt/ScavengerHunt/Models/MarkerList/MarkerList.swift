@@ -7,7 +7,7 @@
 
 import Foundation
 
-class MarkerList {
+class MarkerList: Codable {
     var head: Marker?
     var tail: Marker?
     var size = 0
@@ -49,6 +49,18 @@ class MarkerList {
         }
         marker.prev = nil
         marker.next = nil
+        self.size -= 1
+    }
+    
+    func removeTail() {
+        guard let tail = tail else { return }
+        if let prev = tail.prev {
+            prev.next = nil
+            self.tail = prev
+        } else {
+            self.head = nil
+            self.tail = nil
+        }
         self.size -= 1
     }
     
@@ -130,4 +142,18 @@ class MarkerList {
         return markerArray
     }
     
+}
+
+extension MarkerList: CustomStringConvertible {
+    var description: String {
+        var text = "["
+        var node = head
+
+        while node != nil {
+            text += "\(node!.title)"
+            node = node!.next
+            if node != nil { text += ", " }
+        }
+        return text + "]"
+    }
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Marker {
+class Marker: Codable {
     var title: String
     var clue: String
     var uid: UUID

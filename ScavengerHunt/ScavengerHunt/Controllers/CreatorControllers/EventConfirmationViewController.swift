@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseFirestoreSwift
 
 class EventConfirmationViewController: UIViewController {
     
@@ -30,6 +32,15 @@ class EventConfirmationViewController: UIViewController {
     // MARK: - IBActions
     @IBAction func confirmBtnTapped(_ sender: UIButton) {
         Utilites.shared.playSound(sender.tag)
+        
+        guard let event = event else { return }
+        event.markers.removeTail()
+        let db = Firestore.firestore()
+        do {
+            try db.collection("events").document(event.uid).setData(from: event)
+        } catch let error {
+            print("Error writing Event to Firestore")
+        }
     }
     
     // MARK: - Methods

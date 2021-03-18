@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Event {
+class Event: Codable {
     var title: String
     var uid: String
     var markers: MarkerList
