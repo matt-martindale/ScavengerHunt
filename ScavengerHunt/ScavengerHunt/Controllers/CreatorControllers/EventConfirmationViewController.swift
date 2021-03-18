@@ -19,6 +19,7 @@ class EventConfirmationViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupViews()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
@@ -33,6 +34,11 @@ class EventConfirmationViewController: UIViewController {
     // MARK: - Methods
     private func setupViews() {
         confirmBtn.layer.cornerRadius = 20
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(editBtnTapped))
+    }
+    
+    @objc func editBtnTapped() {
+        tableView.isEditing = true
     }
     
 }
@@ -50,6 +56,28 @@ extension EventConfirmationViewController: UITableViewDelegate, UITableViewDataS
         cell.textLabel?.text = marker.title
         cell.detailTextLabel?.text = next == "" ? "" : "next: \(next)"
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        guard let event = event else { return }
+        event.markers.insert(source: sourceIndexPath.row, atIndex: destinationIndexPath.row)
+        tableView.reloadData()
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        .none
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        guard let marker = event?.markers.getMarkerAt(index: indexPath.row) else { return }
+        if editingStyle == .delete {
+            event?.markers.removeMarker(marker)
+            tableView.reloadData()
+        }
     }
     
 }
