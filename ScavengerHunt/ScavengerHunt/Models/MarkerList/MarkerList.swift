@@ -154,7 +154,7 @@ class MarkerList: Codable {
 
         while node != nil {
             marker.append(node!.title)
-            marker.append(node!.id)
+            marker.append(node!.uid)
             marker.append(node!.clue)
             marker.append(node?.next?.id ?? "")
             marker.append(node?.prev?.id ?? "")
