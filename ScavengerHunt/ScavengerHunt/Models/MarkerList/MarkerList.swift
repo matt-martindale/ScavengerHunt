@@ -142,6 +142,31 @@ class MarkerList: Codable {
         return markerArray
     }
     
+    func createMarkerDictionary() -> [Int:[String]]? {
+        if self.isEmpty == true {
+            return nil
+        }
+
+        var markerDict = [Int:[String]]()
+        var marker = [String]()
+        var index = 1
+        var node = self.head
+
+        while node != nil {
+            marker.append(node!.title)
+            marker.append(node!.id)
+            marker.append(node!.clue)
+            marker.append(node?.next?.id ?? "")
+            marker.append(node?.prev?.id ?? "")
+            
+            markerDict[index] = marker
+            marker = []
+            index += 1
+            node = node?.next
+        }
+        return markerDict
+    }
+    
 }
 
 extension MarkerList: CustomStringConvertible {
