@@ -17,4 +17,14 @@ class Event: Codable {
         self.uid = uid
         self.markers = markers
     }
+    
+    func createEvent() -> [String: Any] {
+        var eventDict: [String:Any] = [:]
+
+        eventDict["title"] = self.title
+        eventDict["uid"] = self.uid
+        eventDict["markers"] = self.markers.createMarkerDictionary()
+
+        return eventDict
+    }
 }
