@@ -142,24 +142,26 @@ class MarkerList: Codable {
         return markerArray
     }
     
-    func createMarkerDictionary() -> [Int:[String]]? {
+    // Create Dictionary for markers that play nice with finicky FireStore Data Structure
+    func createMarkerDictionary() -> [String:[String]]? {
         if self.isEmpty == true {
             return nil
         }
 
-        var markerDict = [Int:[String]]()
+        var markerDict = [String:[String]]()
         var marker = [String]()
         var index = 1
         var node = self.head
 
         while node != nil {
-            marker.append(node!.title)
-            marker.append(node!.uid)
-            marker.append(node!.clue)
-            marker.append(node?.next?.id ?? "")
-            marker.append(node?.prev?.id ?? "")
+            guard let safeNode = node else { continue }
+            marker.append(safeNode.title as String)
+            marker.append(safeNode.uid as String)
+            marker.append(safeNode.clue as String)
+            marker.append(safeNode.next?.uid ?? "nil")
+            marker.append(safeNode.prev?.uid ?? "nil")
             
-            markerDict[index] = marker
+            markerDict[String(index)] = marker
             marker = []
             index += 1
             node = node?.next

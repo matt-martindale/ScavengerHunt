@@ -7,7 +7,7 @@
 
 import UIKit
 import Firebase
-import FirebaseFirestoreSwift
+//import FirebaseFirestoreSwift
 
 class EventConfirmationViewController: UIViewController {
     
@@ -34,12 +34,15 @@ class EventConfirmationViewController: UIViewController {
         Utilites.shared.playSound(sender.tag)
         
         guard let event = event else { return }
-        event.markers.removeTail()
+        
+        let confirmedEvent = event.createEvent()
+        
         let db = Firestore.firestore()
-        do {
-            try db.collection("events").document(event.uid).setData(from: event)
-        } catch let error {
-            print("Error writing Event to Firestore")
+        db.collection("events").document(event.uid).setData(confirmedEvent) { error in
+            guard error == nil else {
+                print("Error writing to FireStore: \(error!.localizedDescription)")
+                return
+            }
         }
     }
     
