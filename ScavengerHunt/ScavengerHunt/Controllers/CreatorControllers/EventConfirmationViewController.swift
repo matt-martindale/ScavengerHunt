@@ -7,7 +7,6 @@
 
 import UIKit
 import Firebase
-//import FirebaseFirestoreSwift
 
 class EventConfirmationViewController: UIViewController {
     
@@ -42,6 +41,19 @@ class EventConfirmationViewController: UIViewController {
             guard error == nil else {
                 print("Error writing to FireStore: \(error!.localizedDescription)")
                 return
+            }
+        }
+        
+        // Add new event to User's events
+        if let userID = Auth.auth().currentUser?.uid {
+            let userRef = db.collection("users").document(userID)
+            userRef.updateData([
+                "events": FieldValue.arrayUnion([event.uid])
+            ]) { error in
+                guard error == nil else {
+                    print("Error adding new event to User events")
+                    return
+                }
             }
         }
     }

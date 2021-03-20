@@ -58,18 +58,20 @@ class CreatorSignUpViewController: UIViewController {
                 } else {
                 // User created successfully
                     let db = Firestore.firestore()
-                    db.collection("users").addDocument(data: ["firstName":firstName,
+                    guard let result = result else { return }
+                    db.collection("users").document(result.user.uid).setData(["firstName":firstName,
                                                               "lastName":lastName,
                                                               "company":company,
                                                               "email":email,
                                                               "events":[String](),
-                                                              "uid":result!.user.uid]) { [weak self] error in
+                                                              "uid":result.user.uid]) { [weak self] error in
                         guard let strongSelf = self else { return }
-                        
+
                         if error != nil {
                             Utilites.shared.showError(error!.localizedDescription, errorLabel: strongSelf.errorLabel)
                         }
                     }
+                    
                     // Transition to home screen
                     UserDefaults.standard.set(Auth.auth().currentUser?.uid, forKey: Constants.userUIDKey)
                     UserDefaults.standard.synchronize()
