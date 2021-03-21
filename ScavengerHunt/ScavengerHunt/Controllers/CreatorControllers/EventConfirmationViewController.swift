@@ -56,6 +56,9 @@ class EventConfirmationViewController: UIViewController {
                 }
             }
         }
+        
+        // Go back to HomeVC
+        navigationController?.popToRootViewController(animated: true)
     }
     
     // MARK: - Methods

@@ -10,17 +10,23 @@ import Firebase
 import FirebaseAuth
 
 class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     // MARK: - IBOutlets
+    @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Properties
-    var events: [Event]?
+    var events: [String]?
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
-        title = Auth.auth().currentUser?.email
+        title = Auth.auth().currentUser?.displayName
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchEvents()
     }
     
     override func viewWillLayoutSubviews() {
@@ -62,25 +68,56 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
         navigationController?.pushViewController(createEventVC, animated: true)
     }
     
-    func loadEvents() {
+    func fetchEvents() {
         // TODO: - Load events from Firebase
+        guard let userID = Auth.auth().currentUser?.uid else { return }
+        let db = Firestore.firestore()
+        let userEventsRef = db.collection("users").document(userID)
+        
+        userEventsRef.getDocument { [weak self] document, error in
+            guard let strongSelf = self else { return }
+            guard error == nil else {
+                print("Error retrieving UserEvents: \(error!)")
+                return
+            }
+            
+            if let document = document, document.exists {
+                guard let data = document.data() else { return }
+                strongSelf.loadEvents(data: data)
+            } else {
+                print("Document does not exist")
+            }
+        }
+    }
+    
+    func loadEvents(data: [String: Any]) {
+        // Parse User Dictionary to load event data into tableView
+        if let eventTitles = data["events"] as? [String] {
+            for event in eventTitles {
+                print(event)
+            }
+        } else {
+            print("Error parsing dataDictionary")
+        }
+        
+        tableView.reloadData()
     }
     
     // MARK: - TableView Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let events = events {
+        if let events = self.events {
             return events.count
         } else {
-            print("Error loading events")
+            print("Could not load events")
+            return 0
         }
-        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.eventsTableViewCell) else {
             return UITableViewCell()
         }
-        cell.textLabel?.text = self.events?[indexPath.row].title
+        cell.textLabel?.text = self.events?[indexPath.row]
         return cell
     }
     
