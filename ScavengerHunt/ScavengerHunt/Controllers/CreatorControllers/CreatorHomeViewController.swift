@@ -15,7 +15,7 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Properties
-    var events: [String]?
+    var events: [String] = []
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -92,10 +92,9 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
     
     func loadEvents(data: [String: Any]) {
         // Parse User Dictionary to load event data into tableView
+        // Create empty array to assign to self.events
         if let eventTitles = data["events"] as? [String] {
-            for event in eventTitles {
-                self.events?.append(event)
-            }
+            eventTitles.forEach { self.events.append($0) }
         } else {
             print("Error parsing dataDictionary")
         }
@@ -105,14 +104,14 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
     
     // MARK: - TableView Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return events?.count ?? 0
+        return events.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.eventsTableViewCell) else {
             return UITableViewCell()
         }
-        cell.textLabel?.text = self.events?[indexPath.row]
+        cell.textLabel?.text = self.events[indexPath.row]
         return cell
     }
     
