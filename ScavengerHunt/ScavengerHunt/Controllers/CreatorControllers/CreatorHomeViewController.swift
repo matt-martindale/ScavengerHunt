@@ -94,7 +94,7 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
         // Parse User Dictionary to load event data into tableView
         if let eventTitles = data["events"] as? [String] {
             for event in eventTitles {
-                print(event)
+                self.events?.append(event)
             }
         } else {
             print("Error parsing dataDictionary")
@@ -105,12 +105,7 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
     
     // MARK: - TableView Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let events = self.events {
-            return events.count
-        } else {
-            print("Could not load events")
-            return 0
-        }
+        return events?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
