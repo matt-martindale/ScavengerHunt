@@ -93,36 +93,44 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
     func loadEvents(data: [String: Any]) {
         // Parse User Dictionary to load event data into tableView
         // Create empty array to assign to self.events
-        if let eventTitles = data["events"] as? [String] {
+        if let eventIDs = data["events"] as? [String] {
             self.events = []
-            eventTitles.forEach { self.events.append( fetchEventTitle($0) ) }
-//            print(self.events)
+            // Fetch event title
+            for eventID in eventIDs {
+                fetchEventTitle(eventID) { result in
+                    guard let eventTitle = try? result.get() else { return }
+                    self.events.append(eventTitle)
+                    self.tableView.reloadData()
+                }
+            }
+//            eventTitles.forEach { self.events.append( fetchEventTitle($0) ) }
         } else {
             print("Error parsing dataDictionary")
         }
         
-        tableView.reloadData()
+//        tableView.reloadData()
     }
     
-    func fetchEventTitle(_ eventID: String) -> String {
+    func fetchEventTitle(_ eventID: String, completion: @escaping (Result<String, Error>) -> Void) {
         let eventRef = db.collection("events").document(eventID)
-        var eventTitle = ""
         
         eventRef.getDocument { event, error in
             guard error == nil else {
                 print("Error fetching event title")
+                completion(.failure(error!))
                 return
             }
             
             if let event = event, event.exists {
                 guard let eventData = event.data() else { return }
-                eventTitle += eventData["title"] as! String
+                let eventTitle = eventData["title"] as! String
+                completion(.success(eventTitle))
             } else {
                 print("Event does not exist")
+                completion(.failure(error!))
+                return
             }
         }
-        print(eventTitle)
-        return eventTitle
     }
     
     // MARK: - TableView Methods
