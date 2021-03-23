@@ -16,12 +16,13 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
     
     // MARK: - Properties
     var events: [String] = []
+    let db = Firestore.firestore()
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
-        title = Auth.auth().currentUser?.displayName
+        title = Auth.auth().currentUser?.email
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -71,7 +72,6 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
     func fetchEvents() {
         // TODO: - Load events from Firebase
         guard let userID = Auth.auth().currentUser?.uid else { return }
-        let db = Firestore.firestore()
         let userEventsRef = db.collection("users").document(userID)
         
         userEventsRef.getDocument { [weak self] document, error in
@@ -94,12 +94,35 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
         // Parse User Dictionary to load event data into tableView
         // Create empty array to assign to self.events
         if let eventTitles = data["events"] as? [String] {
-            eventTitles.forEach { self.events.append($0) }
+            self.events = []
+            eventTitles.forEach { self.events.append( fetchEventTitle($0) ) }
+//            print(self.events)
         } else {
             print("Error parsing dataDictionary")
         }
         
         tableView.reloadData()
+    }
+    
+    func fetchEventTitle(_ eventID: String) -> String {
+        let eventRef = db.collection("events").document(eventID)
+        var eventTitle = ""
+        
+        eventRef.getDocument { event, error in
+            guard error == nil else {
+                print("Error fetching event title")
+                return
+            }
+            
+            if let event = event, event.exists {
+                guard let eventData = event.data() else { return }
+                eventTitle += eventData["title"] as! String
+            } else {
+                print("Event does not exist")
+            }
+        }
+        print(eventTitle)
+        return eventTitle
     }
     
     // MARK: - TableView Methods

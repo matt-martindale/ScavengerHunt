@@ -157,6 +157,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="2tn-xi-dUi"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="boo-fa-6j4" id="FrA-6E-PUH"/>
@@ -164,7 +165,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DkQ-mI-hPI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2249.275362318841" y="508.92857142857139"/>
+            <point key="canvasLocation" x="4028.985507246377" y="515.625"/>
         </scene>
         <!--Create New Event-->
         <scene sceneID="Ndj-Df-0t7">
@@ -263,7 +264,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wdF-KS-5ER" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3058" y="509"/>
+            <point key="canvasLocation" x="4837.68115942029" y="515.625"/>
         </scene>
         <!--Add Marker-->
         <scene sceneID="qgM-th-cRR">
@@ -379,7 +380,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3YW-hf-Q0n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3877" y="509"/>
+            <point key="canvasLocation" x="5656.521739130435" y="515.625"/>
         </scene>
         <!--Confirm Event-->
         <scene sceneID="s3J-TJ-UHc">
@@ -453,7 +454,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8V4-dH-3gn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4663.768115942029" y="508.92857142857139"/>
+            <point key="canvasLocation" x="6442.0289855072469" y="515.625"/>
         </scene>
         <!--SIGN UP-->
         <scene sceneID="KH9-qD-APR">

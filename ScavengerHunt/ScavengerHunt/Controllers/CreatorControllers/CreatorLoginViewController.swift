@@ -87,14 +87,22 @@ class CreatorLoginViewController: UIViewController {
     }
     
     private func transitionToHome() {
-        guard let creatorHomeVC = storyboard?.instantiateViewController(identifier: Constants.Storyboard.creatorHomeVC) as? CreatorHomeViewController else { return }
-        navigationController?.pushViewController(creatorHomeVC, animated: true)
+        let storyboard = UIStoryboard(name: "Creator", bundle: nil)
+        guard let creatorHomeVC = storyboard.instantiateViewController(identifier: Constants.Storyboard.creatorHomeVC) as? CreatorHomeViewController else { return }
+        let navController = UINavigationController(rootViewController: creatorHomeVC)
+        navController.navigationBar.prefersLargeTitles = true
+        UIApplication.shared.windows.first?.rootViewController = navController
+        UIApplication.shared.windows.first?.makeKeyAndVisible()
     }
     
     private func checkIfCurrentUserExists() {
         if UserDefaults.standard.object(forKey: Constants.userUIDKey) != nil {
-            guard let creatorHomeVC = storyboard?.instantiateViewController(identifier: Constants.Storyboard.creatorHomeVC) as? CreatorHomeViewController else { return }
-            navigationController?.pushViewController(creatorHomeVC, animated: true)
+            let storyboard = UIStoryboard(name: "Creator", bundle: nil)
+            guard let creatorHomeVC = storyboard.instantiateViewController(identifier: Constants.Storyboard.creatorHomeVC) as? CreatorHomeViewController else { return }
+            let navController = UINavigationController(rootViewController: creatorHomeVC)
+            navController.navigationBar.prefersLargeTitles = true
+            UIApplication.shared.windows.first?.rootViewController = navController
+            UIApplication.shared.windows.first?.makeKeyAndVisible()
         }
     }
     
