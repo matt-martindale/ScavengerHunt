@@ -30,10 +30,6 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
         fetchEvents()
     }
     
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-    }
-    
     // MARK: - Methods
     private func setupViews() {
         navigationItem.setHidesBackButton(true, animated: true)
@@ -69,6 +65,7 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
         navigationController?.pushViewController(createEventVC, animated: true)
     }
     
+    // Get array of eventIDs from User's events property
     func fetchEvents() {
         // TODO: - Load events from Firebase
         guard let userID = Auth.auth().currentUser?.uid else { return }
@@ -90,10 +87,12 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
         }
     }
     
+    // Load event's data and fill tableView cells with the event's title
     func loadEvents(data: [String: Any]) {
         // Parse User Dictionary to load event data into tableView
         // Create empty array to assign to self.events
         if let eventIDs = data["events"] as? [String] {
+            // Clear out events so extra calls don't create duplicate events
             self.events = []
             // Fetch event title
             for eventID in eventIDs {
@@ -103,14 +102,12 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
                     self.tableView.reloadData()
                 }
             }
-//            eventTitles.forEach { self.events.append( fetchEventTitle($0) ) }
         } else {
             print("Error parsing dataDictionary")
         }
-        
-//        tableView.reloadData()
     }
     
+    // Use EventID to fetch the event's title
     func fetchEventTitle(_ eventID: String, completion: @escaping (Result<String, Error>) -> Void) {
         let eventRef = db.collection("events").document(eventID)
         
