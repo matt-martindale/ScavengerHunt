@@ -71,20 +71,23 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
         guard let userID = Auth.auth().currentUser?.uid else { return }
         let userEventsRef = db.collection("users").document(userID)
         
-        userEventsRef.getDocument { [weak self] document, error in
-            guard let strongSelf = self else { return }
-            guard error == nil else {
-                print("Error retrieving UserEvents: \(error!)")
-                return
-            }
-            
-            if let document = document, document.exists {
-                guard let data = document.data() else { return }
-                strongSelf.loadEvents(data: data)
-            } else {
-                print("Document does not exist")
+        DispatchQueue.global(qos: .default).async {
+            userEventsRef.getDocument { [weak self] document, error in
+                guard let strongSelf = self else { return }
+                guard error == nil else {
+                    print("Error retrieving UserEvents: \(error!)")
+                    return
+                }
+                
+                if let document = document, document.exists {
+                    guard let data = document.data() else { return }
+                    strongSelf.loadEvents(data: data)
+                } else {
+                    print("Document does not exist")
+                }
             }
         }
+        
     }
     
     // Load event's data and fill tableView cells with the event's title
@@ -99,7 +102,9 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
                 fetchEventTitle(eventID) { result in
                     guard let eventTitle = try? result.get() else { return }
                     self.events.append(eventTitle)
-                    self.tableView.reloadData()
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
                 }
             }
         } else {
