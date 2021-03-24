@@ -71,6 +71,8 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
         guard let userID = Auth.auth().currentUser?.uid else { return }
         let userEventsRef = db.collection("users").document(userID)
         
+        tableView.showActivityIndicator()
+        
         DispatchQueue.global(qos: .default).async {
             userEventsRef.getDocument { [weak self] document, error in
                 guard let strongSelf = self else { return }
@@ -81,6 +83,7 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
                 
                 if let document = document, document.exists {
                     guard let data = document.data() else { return }
+                    strongSelf.tableView.hideActivityIndicator()
                     strongSelf.loadEvents(data: data)
                 } else {
                     print("Document does not exist")
