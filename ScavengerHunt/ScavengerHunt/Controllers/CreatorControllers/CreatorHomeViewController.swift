@@ -143,7 +143,8 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
         } else {
             let image = UIImage(systemName: "gear")
             let noDataImage = UIImageView(image: image)
-            noDataImage.frame = CGRect(x: 0, y: 0, width: tableView.bounds.width, height: tableView.frame.height)
+            noDataImage.frame = CGRect(x: 0, y: 0, width: tableView.bounds.width, height: tableView.bounds.width)
+            noDataImage.contentMode = .scaleAspectFit
             tableView.backgroundView = noDataImage
             tableView.separatorStyle = .none
             
