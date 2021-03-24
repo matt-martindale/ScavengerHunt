@@ -137,7 +137,18 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
     
     // MARK: - TableView Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return events.count
+        if events.count > 0 {
+            tableView.backgroundView = nil
+            return events.count
+        } else {
+            let image = UIImage(systemName: "gear")
+            let noDataImage = UIImageView(image: image)
+            noDataImage.frame = CGRect(x: 0, y: 0, width: tableView.bounds.width, height: tableView.frame.height)
+            tableView.backgroundView = noDataImage
+            tableView.separatorStyle = .none
+            
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
