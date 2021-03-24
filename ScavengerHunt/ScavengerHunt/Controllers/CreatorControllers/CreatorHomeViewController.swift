@@ -17,6 +17,7 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
     // MARK: - Properties
     var events: [String] = []
     let db = Firestore.firestore()
+    var activityIndicator = UIActivityIndicatorView(style: .large)
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -83,8 +84,8 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
                 
                 if let document = document, document.exists {
                     guard let data = document.data() else { return }
-                    strongSelf.tableView.hideActivityIndicator()
                     strongSelf.loadEvents(data: data)
+                    strongSelf.tableView.hideActivityIndicator()
                 } else {
                     print("Document does not exist")
                 }
@@ -140,19 +141,7 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
     
     // MARK: - TableView Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if events.count > 0 {
-            tableView.backgroundView = nil
-            return events.count
-        } else {
-            let image = UIImage(systemName: "gear")
-            let noDataImage = UIImageView(image: image)
-            noDataImage.frame = CGRect(x: 0, y: 0, width: tableView.bounds.width, height: tableView.bounds.width)
-            noDataImage.contentMode = .scaleAspectFit
-            tableView.backgroundView = noDataImage
-            tableView.separatorStyle = .none
-            
-            return 0
-        }
+        return self.events.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
