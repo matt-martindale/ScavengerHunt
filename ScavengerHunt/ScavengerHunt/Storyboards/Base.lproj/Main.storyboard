@@ -210,6 +210,64 @@
             </objects>
             <point key="canvasLocation" x="1625" y="115"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="VV1-gX-CuO">
+            <objects>
+                <viewController id="SDQ-MD-DD8" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6IP-N9-0QF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9Cv-V8-RQR">
+                                <rect key="frame" x="40" y="202" width="334" height="256"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="51U-AK-259">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="128"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4cF-eU-cHp">
+                                        <rect key="frame" x="0.0" y="128" width="334" height="128"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.1647058824" green="0.61568627450000002" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fxh-Is-raw">
+                                <rect key="frame" x="174" y="772" width="200" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="FA1-pj-Yin"/>
+                                    <constraint firstAttribute="width" constant="200" id="qyL-TF-8TZ"/>
+                                </constraints>
+                                <state key="normal" title="Found Clue!">
+                                    <color key="titleColor" red="1" green="0.96470588239999999" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CFJ-BO-O5x">
+                                <rect key="frame" x="40" y="772" width="100" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="cKz-oh-VWr"/>
+                                    <constraint firstAttribute="height" constant="40" id="cjx-5s-cbk"/>
+                                </constraints>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" red="0.95686274510000002" green="0.63529411759999999" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="YNQ-ky-iIu"/>
+                        <color key="backgroundColor" red="0.14901960780000001" green="0.27450980390000002" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="YNQ-ky-iIu" firstAttribute="bottom" secondItem="CFJ-BO-O5x" secondAttribute="bottom" constant="50" id="5He-cS-Rwl"/>
+                            <constraint firstItem="9Cv-V8-RQR" firstAttribute="leading" secondItem="YNQ-ky-iIu" secondAttribute="leading" constant="40" id="FHO-A2-hVm"/>
+                            <constraint firstItem="9Cv-V8-RQR" firstAttribute="top" secondItem="YNQ-ky-iIu" secondAttribute="top" constant="40" id="NZK-k5-MmT"/>
+                            <constraint firstItem="CFJ-BO-O5x" firstAttribute="leading" secondItem="YNQ-ky-iIu" secondAttribute="leading" constant="40" id="Yaw-Qz-avX"/>
+                            <constraint firstItem="YNQ-ky-iIu" firstAttribute="bottom" secondItem="Fxh-Is-raw" secondAttribute="bottom" constant="50" id="di8-Lx-bFB"/>
+                            <constraint firstItem="YNQ-ky-iIu" firstAttribute="trailing" secondItem="Fxh-Is-raw" secondAttribute="trailing" constant="40" id="j9F-88-Obw"/>
+                            <constraint firstItem="YNQ-ky-iIu" firstAttribute="trailing" secondItem="9Cv-V8-RQR" secondAttribute="trailing" constant="40" id="sPL-79-hL9"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GJS-Fn-PUh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2525" y="115"/>
+        </scene>
         <!--Creator-->
         <scene sceneID="5y9-1I-G5H">
             <objects>

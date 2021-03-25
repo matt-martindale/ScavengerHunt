@@ -127,6 +127,7 @@ extension PlayerFormViewController: NFCNDEFReaderSessionDelegate {
                             print("Error getting event from UID")
                             return
                         }
+                        // TODO: - Pass event to next VC
                         print(event)
                         
                     }
