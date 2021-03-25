@@ -11,8 +11,8 @@ import FirebaseAuth
 class CreatorLoginViewController: UIViewController {
     
     // MARK: - IBOutlets
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var emailTextField: FloatingLabel!
+    @IBOutlet weak var passwordTextField: FloatingLabel!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var signUpBtn: UIButton!
@@ -37,6 +37,7 @@ class CreatorLoginViewController: UIViewController {
         signUpBtn.layer.borderWidth = 2.0
         signUpBtn.layer.borderColor = UIColor.orange.cgColor
         
+        emailTextField.becomeFirstResponder()
         emailTextField.addBottomBorder()
         passwordTextField.addBottomBorder()
     }

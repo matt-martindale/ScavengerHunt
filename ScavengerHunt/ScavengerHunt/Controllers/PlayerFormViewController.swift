@@ -10,9 +10,9 @@ import UIKit
 class PlayerFormViewController: UIViewController {
 
     // MARK: - IBOutlets
-    @IBOutlet weak var firstNameTextField: UITextField!
-    @IBOutlet weak var lastNameTextField: UITextField!
-    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var firstNameTextField: FloatingLabel!
+    @IBOutlet weak var lastNameTextField: FloatingLabel!
+    @IBOutlet weak var emailTextField: FloatingLabel!
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var beginBtn: UIButton!
     @IBOutlet weak var beginBtnLabel: UILabel!
@@ -46,8 +46,10 @@ class PlayerFormViewController: UIViewController {
     
     // MARK: - Methods
     func setupViews() {
+        self.hideKeyboardOnTap()
         self.navigationItem.setHidesBackButton(true, animated: true)
         self.navigationItem.compactAppearance = .none
+        firstNameTextField.becomeFirstResponder()
         firstNameTextField.addBottomBorder()
         lastNameTextField.addBottomBorder()
         emailTextField.addBottomBorder()

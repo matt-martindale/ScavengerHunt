@@ -12,11 +12,11 @@ import Firebase
 class CreatorSignUpViewController: UIViewController {
 
     // MARK: - IBOutlets
-    @IBOutlet weak var firstNameTextfield: UITextField!
-    @IBOutlet weak var lastNameTextfield: UITextField!
-    @IBOutlet weak var companyTextfield: UITextField!
-    @IBOutlet weak var emailTextfield: UITextField!
-    @IBOutlet weak var passwordTextfield: UITextField!
+    @IBOutlet weak var firstNameTextfield: FloatingLabel!
+    @IBOutlet weak var lastNameTextfield: FloatingLabel!
+    @IBOutlet weak var companyTextfield: FloatingLabel!
+    @IBOutlet weak var emailTextfield: FloatingLabel!
+    @IBOutlet weak var passwordTextfield: FloatingLabel!
     @IBOutlet weak var signUpBtn: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
     
@@ -86,6 +86,7 @@ class CreatorSignUpViewController: UIViewController {
         errorLabel.alpha = 0.0
         signUpBtn.layer.cornerRadius = 20
         
+        firstNameTextfield.becomeFirstResponder()
         firstNameTextfield.addBottomBorder()
         lastNameTextfield.addBottomBorder()
         companyTextfield.addBottomBorder()
