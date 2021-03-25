@@ -74,6 +74,10 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
         
         tableView.showActivityIndicator()
         
+        // --- NEWLY ADDED --- 
+        let group = DispatchGroup()
+        group.enter()
+        // -------------------
         DispatchQueue.global(qos: .default).async {
             userEventsRef.getDocument { [weak self] document, error in
                 guard let strongSelf = self else { return }
@@ -89,9 +93,17 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
                 } else {
                     print("Document does not exist")
                 }
+                // --- NEWLY ADDED ---
+                group.leave()
+                // -------------------
             }
         }
-        
+        // --- NEWLY ADDED ---
+        group.notify(queue: DispatchQueue.main, execute: {
+            print("All Done")
+            self.tableView.reloadData()
+        }) 
+        // -------------------
     }
     
     // Load event's data and fill tableView cells with the event's title
@@ -106,9 +118,9 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
                 fetchEvent(eventID) { result in
                     guard let event = try? result.get() else { return }
                     self.events.append(event)
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-                    }
+//                     DispatchQueue.main.async {
+//                         self.tableView.reloadData()
+//                     }
                 }
             }
         } else {
