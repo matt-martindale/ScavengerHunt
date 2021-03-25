@@ -15,6 +15,7 @@ class PlayerFormViewController: UIViewController {
     @IBOutlet weak var firstNameTextField: FloatingLabel!
     @IBOutlet weak var lastNameTextField: FloatingLabel!
     @IBOutlet weak var emailTextField: FloatingLabel!
+    @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var beginBtn: UIButton!
     @IBOutlet weak var beginBtnLabel: UILabel!
     @IBOutlet weak var cancelBtn: UIButton!
@@ -26,13 +27,24 @@ class PlayerFormViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
-        session = NFCNDEFReaderSession(delegate: self, queue: DispatchQueue.main, invalidateAfterFirstRead: false)
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        errorLabel.alpha = 0.0
     }
     
     @IBAction func beginBtnTapped(_ sender: UIButton) {
+        
+        guard NFCNDEFReaderSession.readingAvailable else {
+            Utilites.shared.showError("This device does not support tag scanning.", errorLabel: errorLabel)
+            return
+        }
+        
+        session = NFCNDEFReaderSession(delegate: self, queue: DispatchQueue.main, invalidateAfterFirstRead: false)
         session?.alertMessage = "Hold your iPhone near the item to scan"
         session?.begin()
-        
     }
     
     @IBAction func beginBtnHeld(_ sender: UIButton) {
@@ -63,6 +75,7 @@ class PlayerFormViewController: UIViewController {
         firstNameTextField.delegate = self
         lastNameTextField.delegate = self
         emailTextField.delegate = self
+        errorLabel.alpha = 0.0
         beginBtn.adjustsImageWhenHighlighted = false
         cancelBtn.layer.cornerRadius = 20
         cancelBtn.layer.borderWidth = 2.0
@@ -71,6 +84,11 @@ class PlayerFormViewController: UIViewController {
     }
     
     func fetchEvent(uid: String, completion: @escaping (Result<Event, Error>) -> Void) {
+        
+        defer {
+            session?.invalidate()
+        }
+        
         let db = Firestore.firestore()
         
         db.collection("events").document(uid).getDocument { document, error in
@@ -140,9 +158,7 @@ extension PlayerFormViewController: NFCNDEFReaderSessionDelegate {
         }
     }
     
-//    func readerSessionDidBecomeActive(_ session: NFCNDEFReaderSession) {
-//
-//    }
+    func readerSessionDidBecomeActive(_ session: NFCNDEFReaderSession) {} // Implemented to quiet the warnings
     
     func readerSession(_ session: NFCNDEFReaderSession, didInvalidateWithError error: Error) {
         // Check the invalidation reason from the returned error.
