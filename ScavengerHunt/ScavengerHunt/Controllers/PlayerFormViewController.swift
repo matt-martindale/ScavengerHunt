@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreNFC
+import Firebase
 
 class PlayerFormViewController: UIViewController {
 
@@ -56,7 +57,6 @@ class PlayerFormViewController: UIViewController {
         self.hideKeyboardOnTap()
         self.navigationItem.setHidesBackButton(true, animated: true)
         self.navigationItem.compactAppearance = .none
-        firstNameTextField.becomeFirstResponder()
         firstNameTextField.addBottomBorder()
         lastNameTextField.addBottomBorder()
         emailTextField.addBottomBorder()
@@ -68,6 +68,33 @@ class PlayerFormViewController: UIViewController {
         cancelBtn.layer.borderWidth = 2.0
         cancelBtn.layer.borderColor = UIColor.orange.cgColor
         
+    }
+    
+    func fetchEvent(uid: String, completion: @escaping (Result<Event, Error>) -> Void) {
+        let db = Firestore.firestore()
+        
+        db.collection("events").document(uid).getDocument { document, error in
+            guard error == nil else {
+                print("Error getting document")
+                completion(.failure(error!))
+                return
+            }
+            
+            if let document = document, document.exists {
+                guard let data = document.data() else {
+                    print("Error encoding Data")
+                    completion(.failure(error!))
+                    return
+                }
+                
+                // Turn Dictionary Data into Event
+                let event = Utilites.shared.createLinkedList(from: data)
+                completion(.success(event))
+            } else {
+                // TODO: Handle if User scans marker other than First marker
+                print("Could not find document")
+            }
+        }
     }
 
 }
@@ -88,17 +115,29 @@ extension PlayerFormViewController: NFCNDEFReaderSessionDelegate {
     func readerSession(_ session: NFCNDEFReaderSession, didDetectNDEFs messages: [NFCNDEFMessage]) {
         for message in messages {
             for record in message.records {
-                if let string = String(data: record.payload, encoding: .utf8) {
+                if let eventUID = String(data: record.payload, encoding: .utf8) {
                     session.alertMessage = "Scan successful!"
-                    self.firstNameTextField.text = string
+                    
+                    // Format eventUID to remove first 2 characters
+                    let strippedEventUID = String(eventUID.dropFirst(1))
+                    
+                    // Fetch event with NDEF message
+                    fetchEvent(uid: strippedEventUID) { result in
+                        guard let event = try? result.get() else {
+                            print("Error getting event from UID")
+                            return
+                        }
+                        print(event)
+                        
+                    }
                 }
             }
         }
     }
     
-    func readerSessionDidBecomeActive(_ session: NFCNDEFReaderSession) {
-        
-    }
+//    func readerSessionDidBecomeActive(_ session: NFCNDEFReaderSession) {
+//
+//    }
     
     func readerSession(_ session: NFCNDEFReaderSession, didInvalidateWithError error: Error) {
         // Check the invalidation reason from the returned error.
