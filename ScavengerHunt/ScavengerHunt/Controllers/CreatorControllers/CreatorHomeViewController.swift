@@ -159,6 +159,12 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let event  = self.events[indexPath.row]
+        
+        let creatorStoryboard = UIStoryboard(name: "Creator", bundle: nil)
+        guard let eventConfirmationVC = creatorStoryboard.instantiateViewController(identifier: Constants.Storyboard.eventConfirmationVC) as? EventConfirmationViewController else { return }
+        eventConfirmationVC.event = event
+        navigationController?.pushViewController(eventConfirmationVC, animated: true)
     }
     
 }
