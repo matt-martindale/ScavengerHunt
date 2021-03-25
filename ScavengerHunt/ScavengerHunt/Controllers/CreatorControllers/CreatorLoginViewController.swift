@@ -40,6 +40,8 @@ class CreatorLoginViewController: UIViewController {
         emailTextField.becomeFirstResponder()
         emailTextField.addBottomBorder()
         passwordTextField.addBottomBorder()
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
     }
     
     // MARK: - IBActions
@@ -107,4 +109,15 @@ class CreatorLoginViewController: UIViewController {
         }
     }
     
+}
+
+extension CreatorLoginViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if let nextTextField = textField.superview?.viewWithTag(textField.tag + 1) as? FloatingLabel {
+            nextTextField.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+        return false
+    }
 }

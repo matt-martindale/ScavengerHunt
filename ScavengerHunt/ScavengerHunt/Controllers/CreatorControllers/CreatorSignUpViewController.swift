@@ -92,6 +92,11 @@ class CreatorSignUpViewController: UIViewController {
         companyTextfield.addBottomBorder()
         emailTextfield.addBottomBorder()
         passwordTextfield.addBottomBorder()
+        firstNameTextfield.delegate = self
+        lastNameTextfield.delegate = self
+        companyTextfield.delegate = self
+        emailTextfield.delegate = self
+        passwordTextfield.delegate = self
     }
     
     private func validateFields() -> String? {
@@ -118,4 +123,15 @@ class CreatorSignUpViewController: UIViewController {
         UIApplication.shared.windows.first?.makeKeyAndVisible()
     }
     
+}
+
+extension CreatorSignUpViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if let nextTextField = textField.superview?.viewWithTag(textField.tag + 1) as? FloatingLabel {
+            nextTextField.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+        return false
+    }
 }

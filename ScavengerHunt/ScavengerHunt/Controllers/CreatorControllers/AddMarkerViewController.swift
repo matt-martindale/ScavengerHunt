@@ -34,7 +34,7 @@ class AddMarkerViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         guard let event = event else { return }
-        title = "Add Marker#\(event.markers.getSize+1)"
+        title = "Add Marker# \(event.markers.getSize+1)"
     }
     
     override func viewWillDisappear(_ animated: Bool) {

@@ -53,13 +53,25 @@ class PlayerFormViewController: UIViewController {
         firstNameTextField.addBottomBorder()
         lastNameTextField.addBottomBorder()
         emailTextField.addBottomBorder()
-        
+        firstNameTextField.delegate = self
+        lastNameTextField.delegate = self
+        emailTextField.delegate = self
         beginBtn.adjustsImageWhenHighlighted = false
-        
         cancelBtn.layer.cornerRadius = 20
         cancelBtn.layer.borderWidth = 2.0
         cancelBtn.layer.borderColor = UIColor.orange.cgColor
         
     }
 
+}
+
+extension PlayerFormViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if let nextTextField = textField.superview?.viewWithTag(textField.tag + 1) as? FloatingLabel {
+            nextTextField.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+        return false
+    }
 }

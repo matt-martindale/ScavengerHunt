@@ -10,7 +10,7 @@ import UIKit
 extension UITextField {
     func addBottomBorder() {
         let bottomLayer = CALayer()
-        bottomLayer.frame = CGRect(x: 0.0, y: self.frame.height - 1, width: self.frame.width - 20, height: 2.0)
+        bottomLayer.frame = CGRect(x: 0.0, y: self.frame.height - 7, width: self.frame.width - 20, height: 2.0)
         bottomLayer.backgroundColor = UIColor.orange.cgColor
         self.borderStyle = .none
         self.tintColor = .orange
