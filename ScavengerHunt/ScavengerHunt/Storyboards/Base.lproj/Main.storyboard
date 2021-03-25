@@ -153,38 +153,24 @@
                                     <action selector="cancelBtnTapped:" destination="QR6-xU-24A" eventType="touchUpInside" id="DtT-W0-abF"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SCAN FIRST CLUE" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PnQ-XJ-zJV">
-                                <rect key="frame" x="147" y="575" width="120" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="Xs0-wU-rhN"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="17"/>
-                                <color key="textColor" red="1" green="0.96470588239999999" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="LdL-vP-h8y">
-                                <rect key="frame" x="60" y="492" width="294" height="200"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Cg-Yq-j2H">
-                                        <rect key="frame" x="47" y="0.0" width="200" height="200"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="200" id="E1T-Gw-6yJ"/>
-                                            <constraint firstAttribute="height" constant="200" id="a0m-UU-mgl"/>
-                                        </constraints>
-                                        <state key="normal" image="play"/>
-                                        <connections>
-                                            <action selector="beginBtnHeld:" destination="QR6-xU-24A" eventType="touchDown" id="Rx3-6E-JsA"/>
-                                            <action selector="beginBtnTapped:" destination="QR6-xU-24A" eventType="touchUpInside" id="6Xq-fZ-UMc"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMr-cl-vu7">
                                 <rect key="frame" x="50" y="338" width="314" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.95686274510000002" green="0.63529411759999999" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Cg-Yq-j2H">
+                                <rect key="frame" x="107" y="408.5" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="E1T-Gw-6yJ"/>
+                                    <constraint firstAttribute="height" constant="200" id="a0m-UU-mgl"/>
+                                </constraints>
+                                <state key="normal" image="play"/>
+                                <connections>
+                                    <action selector="beginBtnHeld:" destination="QR6-xU-24A" eventType="touchDown" id="Rx3-6E-JsA"/>
+                                    <action selector="beginBtnTapped:" destination="QR6-xU-24A" eventType="touchUpInside" id="6Xq-fZ-UMc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xIZ-aO-7gB"/>
                         <color key="backgroundColor" red="0.14901960780000001" green="0.27450980390000002" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -192,23 +178,18 @@
                             <constraint firstItem="xIZ-aO-7gB" firstAttribute="bottom" secondItem="gnp-Mu-I21" secondAttribute="bottom" constant="50" id="123-R2-RUz"/>
                             <constraint firstItem="qMr-cl-vu7" firstAttribute="top" secondItem="Ewm-3Z-WNO" secondAttribute="bottom" constant="40" id="G2i-l3-tju"/>
                             <constraint firstItem="gnp-Mu-I21" firstAttribute="centerX" secondItem="hY5-QZ-LGT" secondAttribute="centerX" id="GP1-qm-GlQ"/>
-                            <constraint firstItem="PnQ-XJ-zJV" firstAttribute="centerX" secondItem="5Cg-Yq-j2H" secondAttribute="centerX" id="Izq-bx-Q49"/>
+                            <constraint firstItem="5Cg-Yq-j2H" firstAttribute="top" secondItem="qMr-cl-vu7" secondAttribute="bottom" constant="50" id="HCn-Ef-Y2S"/>
                             <constraint firstItem="xIZ-aO-7gB" firstAttribute="trailing" secondItem="Ewm-3Z-WNO" secondAttribute="trailing" constant="40" id="Kn1-sj-w6f"/>
                             <constraint firstItem="Ewm-3Z-WNO" firstAttribute="top" secondItem="hY5-QZ-LGT" secondAttribute="top" constant="130" id="LJq-R2-PAO"/>
                             <constraint firstItem="qMr-cl-vu7" firstAttribute="leading" secondItem="xIZ-aO-7gB" secondAttribute="leading" constant="50" id="LrD-af-brg"/>
-                            <constraint firstItem="gnp-Mu-I21" firstAttribute="top" secondItem="LdL-vP-h8y" secondAttribute="bottom" constant="80" id="YSD-V7-NvL"/>
-                            <constraint firstItem="xIZ-aO-7gB" firstAttribute="trailing" secondItem="LdL-vP-h8y" secondAttribute="trailing" constant="60" id="YxC-zE-heL"/>
-                            <constraint firstItem="PnQ-XJ-zJV" firstAttribute="centerY" secondItem="5Cg-Yq-j2H" secondAttribute="centerY" id="bMC-6W-vrY"/>
+                            <constraint firstItem="5Cg-Yq-j2H" firstAttribute="centerX" secondItem="hY5-QZ-LGT" secondAttribute="centerX" id="Yxk-OG-VxP"/>
                             <constraint firstItem="Ewm-3Z-WNO" firstAttribute="leading" secondItem="xIZ-aO-7gB" secondAttribute="leading" constant="40" id="czK-oW-Ur3"/>
-                            <constraint firstItem="LdL-vP-h8y" firstAttribute="centerX" secondItem="hY5-QZ-LGT" secondAttribute="centerX" id="ePa-wl-BJi"/>
-                            <constraint firstItem="LdL-vP-h8y" firstAttribute="leading" secondItem="xIZ-aO-7gB" secondAttribute="leading" constant="60" id="fwl-GU-WWV"/>
                             <constraint firstItem="xIZ-aO-7gB" firstAttribute="trailing" secondItem="qMr-cl-vu7" secondAttribute="trailing" constant="50" id="yK4-kz-Xer"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="QX8-ZR-HjU"/>
                     <connections>
                         <outlet property="beginBtn" destination="5Cg-Yq-j2H" id="Hqy-bB-fEH"/>
-                        <outlet property="beginBtnLabel" destination="PnQ-XJ-zJV" id="b53-mO-5mG"/>
                         <outlet property="cancelBtn" destination="gnp-Mu-I21" id="vyC-9G-9P3"/>
                         <outlet property="emailTextField" destination="HW5-gI-lvw" id="tKc-4o-WXy"/>
                         <outlet property="errorLabel" destination="qMr-cl-vu7" id="dKG-k5-mRa"/>
@@ -249,11 +230,11 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fxh-Is-raw">
-                                <rect key="frame" x="174" y="772" width="200" height="40"/>
+                                <rect key="frame" x="224" y="772" width="150" height="40"/>
                                 <color key="backgroundColor" red="0.95686274510000002" green="0.63529411759999999" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="FA1-pj-Yin"/>
-                                    <constraint firstAttribute="width" constant="200" id="qyL-TF-8TZ"/>
+                                    <constraint firstAttribute="width" constant="150" id="qyL-TF-8TZ"/>
                                 </constraints>
                                 <state key="normal" title="Found Clue!">
                                     <color key="titleColor" red="1" green="0.96470588239999999" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

@@ -25,10 +25,12 @@ class PlayViewController: UIViewController {
     
     // MARK: - IBActions
     @IBAction func backBtnTapped(_ sender: UIButton) {
+        Utilites.shared.playSound(sender.tag)
         navigationController?.popViewController(animated: true)
     }
     
     @IBAction func foundClueBtnTapped(_ sender: UIButton) {
+        Utilites.shared.playSound(sender.tag)
     }
     
     // MARK: - Methods

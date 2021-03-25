@@ -17,7 +17,6 @@ class PlayerFormViewController: UIViewController {
     @IBOutlet weak var emailTextField: FloatingLabel!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var beginBtn: UIButton!
-    @IBOutlet weak var beginBtnLabel: UILabel!
     @IBOutlet weak var cancelBtn: UIButton!
     
     // MARK: - Properties
@@ -50,12 +49,11 @@ class PlayerFormViewController: UIViewController {
     @IBAction func beginBtnHeld(_ sender: UIButton) {
         Utilites.shared.playSound(sender.tag)
         
-        sender.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
-        beginBtnLabel.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+        beginBtn.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
         
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.1, initialSpringVelocity: 1.0, options: UIView.AnimationOptions.allowUserInteraction, animations: { [weak self] in
-            sender.transform = CGAffineTransform.identity
-            self?.beginBtnLabel.transform = CGAffineTransform.identity
+            guard let self = self else { return }
+            self.beginBtn.transform = CGAffineTransform.identity
         }, completion: { Void in()})
     }
     
@@ -91,7 +89,9 @@ class PlayerFormViewController: UIViewController {
         
         let db = Firestore.firestore()
         
-        db.collection("events").document(uid).getDocument { document, error in
+        db.collection("events").document(uid).getDocument { [weak self] document, error in
+            guard let self = self else { return }
+            
             guard error == nil else {
                 print("Error getting document")
                 completion(.failure(error!))
@@ -110,7 +110,7 @@ class PlayerFormViewController: UIViewController {
                 completion(.success(event))
             } else {
                 // TODO: Handle if User scans marker other than First marker
-                print("Could not find document")
+                Utilites.shared.showError("Could not find Scavenger Hunt.\nPlease scan primary Event tag.", errorLabel: self.errorLabel)
             }
         }
     }
