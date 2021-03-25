@@ -15,7 +15,7 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Properties
-    var events: [String] = []
+    var events: [Event] = []
     let db = Firestore.firestore()
     var activityIndicator = UIActivityIndicatorView(style: .large)
     
@@ -103,9 +103,9 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
             self.events = []
             // Fetch event title
             for eventID in eventIDs {
-                fetchEventTitle(eventID) { result in
-                    guard let eventTitle = try? result.get() else { return }
-                    self.events.append(eventTitle)
+                fetchEvent(eventID) { result in
+                    guard let event = try? result.get() else { return }
+                    self.events.append(event)
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
                     }
@@ -117,7 +117,7 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     // Use EventID to fetch the event's title
-    func fetchEventTitle(_ eventID: String, completion: @escaping (Result<String, Error>) -> Void) {
+    func fetchEvent(_ eventID: String, completion: @escaping (Result<Event, Error>) -> Void) {
         let eventRef = db.collection("events").document(eventID)
         
         eventRef.getDocument { event, error in
@@ -130,11 +130,11 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
             if let event = event, event.exists {
                 guard let eventData = event.data() else { return }
                 
-                let llEvent = Utilites.shared.createLinkedList(from: eventData)
-                print(llEvent)
+//                let eventTitle = eventData["title"] as! String
                 
-                let eventTitle = eventData["title"] as! String
-                completion(.success(eventTitle))
+                let fetchedEvent = Utilites.shared.createLinkedList(from: eventData)
+                
+                completion(.success(fetchedEvent))
             } else {
                 print("Event does not exist")
                 completion(.failure(error!))
@@ -152,9 +152,13 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.eventsTableViewCell) else {
             return UITableViewCell()
         }
-        cell.textLabel?.text = self.events[indexPath.row]
+        let event = self.events[indexPath.row]
+        cell.textLabel?.text = event.title
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
     
 }
