@@ -143,7 +143,6 @@ extension CreateEventViewController: NFCNDEFReaderSessionDelegate {
                             // Navigate to AddMarkerVC
                             DispatchQueue.main.async {
                                 self.navigateToAddMarker()
-                                // TODO: - Inject newly created event into AddMarkerVC
                             }
                         }
                     }

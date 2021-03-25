@@ -25,9 +25,12 @@ class PlayerFormViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        session = NFCNDEFReaderSession(delegate: self, queue: DispatchQueue.main, invalidateAfterFirstRead: true)
     }
     
     @IBAction func beginBtnTapped(_ sender: UIButton) {
+        session?.alertMessage = "Hold your iPhone near the item to scan"
+        session?.begin()
         
     }
     
@@ -83,10 +86,38 @@ extension PlayerFormViewController: UITextFieldDelegate {
 extension PlayerFormViewController: NFCNDEFReaderSessionDelegate {
     
     func readerSession(_ session: NFCNDEFReaderSession, didDetectNDEFs messages: [NFCNDEFMessage]) {
-        <#code#>
+        for message in messages {
+            for record in message.records {
+                if let string = String(data: record.payload, encoding: .utf8) {
+                    session.alertMessage = "Scan successful!"
+                    self.firstNameTextField.text = string
+                }
+            }
+        }
+    }
+    
+    func readerSessionDidBecomeActive(_ session: NFCNDEFReaderSession) {
+        
     }
     
     func readerSession(_ session: NFCNDEFReaderSession, didInvalidateWithError error: Error) {
-        <#code#>
+        // Check the invalidation reason from the returned error.
+        if let readerError = error as? NFCReaderError {
+            // Show an alert when the invalidation reason is not because of a success read
+            // during a single tag read mode, or user canceled a multi-tag read mode session
+            // from the UI or programmatically using the invalidate method call.
+            if (readerError.code != .readerSessionInvalidationErrorFirstNDEFTagRead)
+                && (readerError.code != .readerSessionInvalidationErrorUserCanceled) {
+                let alertController = UIAlertController(
+                    title: "Session Invalidated",
+                    message: error.localizedDescription,
+                    preferredStyle: .alert
+                )
+                alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                DispatchQueue.main.async {
+                    self.present(alertController, animated: true, completion: nil)
+                }
+            }
+        }
     }
 }
