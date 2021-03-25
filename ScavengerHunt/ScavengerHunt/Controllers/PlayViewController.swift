@@ -10,13 +10,34 @@ import UIKit
 class PlayViewController: UIViewController {
     
     // MARK: - IBOutlets
+    @IBOutlet weak var clueBoxImageView: UIImageView!
+    @IBOutlet weak var avatarImageView: UIImageView!
+    @IBOutlet weak var backbtn: UIButton!
+    @IBOutlet weak var foundClueBtn: UIButton!
     
     // MARK: - Properties
     var event: Event?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupViews()
+    }
+    
+    // MARK: - IBActions
+    @IBAction func backBtnTapped(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func foundClueBtnTapped(_ sender: UIButton) {
+    }
+    
+    // MARK: - Methods
+    func setupViews() {
+        self.navigationItem.setHidesBackButton(true, animated: true)
+        backbtn.layer.cornerRadius = 20
+        backbtn.layer.borderWidth = 2.0
+        backbtn.layer.borderColor = UIColor.orange.cgColor
+        foundClueBtn.layer.cornerRadius = 20
     }
 
 }

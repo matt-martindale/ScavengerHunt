@@ -210,28 +210,37 @@
             </objects>
             <point key="canvasLocation" x="1625" y="115"/>
         </scene>
-        <!--View Controller-->
+        <!--Play View Controller-->
         <scene sceneID="VV1-gX-CuO">
             <objects>
-                <viewController id="SDQ-MD-DD8" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PlayVC" id="SDQ-MD-DD8" customClass="PlayViewController" customModule="ScavengerHunt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6IP-N9-0QF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9Cv-V8-RQR">
-                                <rect key="frame" x="40" y="202" width="334" height="256"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9Cv-V8-RQR">
+                                <rect key="frame" x="-1880.5" y="44" width="4175" height="500"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="51U-AK-259">
-                                        <rect key="frame" x="0.0" y="0.0" width="334" height="128"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quote.bubble.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="51U-AK-259">
+                                        <rect key="frame" x="0.0" y="0.5" width="4175" height="249.5"/>
+                                        <color key="tintColor" red="0.1647058824" green="0.61568627450000002" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="51U-AK-259" secondAttribute="height" multiplier="167:10" id="Au3-vK-vNf"/>
+                                            <constraint firstAttribute="height" constant="250" id="cUp-tU-nr3"/>
+                                        </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4cF-eU-cHp">
-                                        <rect key="frame" x="0.0" y="128" width="334" height="128"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="4cF-eU-cHp">
+                                        <rect key="frame" x="0.0" y="251.5" width="4175" height="247"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="4cF-eU-cHp" secondAttribute="height" multiplier="167:10" id="YVi-3w-qqe"/>
+                                            <constraint firstAttribute="height" constant="250" id="yFV-o7-ZJY"/>
+                                        </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.1647058824" green="0.61568627450000002" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fxh-Is-raw">
                                 <rect key="frame" x="174" y="772" width="200" height="40"/>
+                                <color key="backgroundColor" red="0.95686274510000002" green="0.63529411759999999" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="FA1-pj-Yin"/>
                                     <constraint firstAttribute="width" constant="200" id="qyL-TF-8TZ"/>
@@ -239,6 +248,9 @@
                                 <state key="normal" title="Found Clue!">
                                     <color key="titleColor" red="1" green="0.96470588239999999" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="foundClueBtnTapped:" destination="SDQ-MD-DD8" eventType="touchUpInside" id="WNT-ju-ARS"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CFJ-BO-O5x">
                                 <rect key="frame" x="40" y="772" width="100" height="40"/>
@@ -247,22 +259,30 @@
                                     <constraint firstAttribute="height" constant="40" id="cjx-5s-cbk"/>
                                 </constraints>
                                 <state key="normal" title="Back">
-                                    <color key="titleColor" red="0.95686274510000002" green="0.63529411759999999" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleColor" red="1" green="0.96470588239999999" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="backBtnTapped:" destination="SDQ-MD-DD8" eventType="touchUpInside" id="cDE-q8-T2a"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="YNQ-ky-iIu"/>
                         <color key="backgroundColor" red="0.14901960780000001" green="0.27450980390000002" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="9Cv-V8-RQR" firstAttribute="centerX" secondItem="6IP-N9-0QF" secondAttribute="centerX" id="0x9-Ss-9IN"/>
                             <constraint firstItem="YNQ-ky-iIu" firstAttribute="bottom" secondItem="CFJ-BO-O5x" secondAttribute="bottom" constant="50" id="5He-cS-Rwl"/>
-                            <constraint firstItem="9Cv-V8-RQR" firstAttribute="leading" secondItem="YNQ-ky-iIu" secondAttribute="leading" constant="40" id="FHO-A2-hVm"/>
-                            <constraint firstItem="9Cv-V8-RQR" firstAttribute="top" secondItem="YNQ-ky-iIu" secondAttribute="top" constant="40" id="NZK-k5-MmT"/>
+                            <constraint firstItem="9Cv-V8-RQR" firstAttribute="top" secondItem="YNQ-ky-iIu" secondAttribute="top" id="NZK-k5-MmT"/>
                             <constraint firstItem="CFJ-BO-O5x" firstAttribute="leading" secondItem="YNQ-ky-iIu" secondAttribute="leading" constant="40" id="Yaw-Qz-avX"/>
                             <constraint firstItem="YNQ-ky-iIu" firstAttribute="bottom" secondItem="Fxh-Is-raw" secondAttribute="bottom" constant="50" id="di8-Lx-bFB"/>
                             <constraint firstItem="YNQ-ky-iIu" firstAttribute="trailing" secondItem="Fxh-Is-raw" secondAttribute="trailing" constant="40" id="j9F-88-Obw"/>
-                            <constraint firstItem="YNQ-ky-iIu" firstAttribute="trailing" secondItem="9Cv-V8-RQR" secondAttribute="trailing" constant="40" id="sPL-79-hL9"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="avatarImageView" destination="4cF-eU-cHp" id="7mk-yU-iN4"/>
+                        <outlet property="backbtn" destination="CFJ-BO-O5x" id="WYN-uD-GEO"/>
+                        <outlet property="clueBoxImageView" destination="51U-AK-259" id="L2B-Cx-5gY"/>
+                        <outlet property="foundClueBtn" destination="Fxh-Is-raw" id="PKj-I4-lPQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GJS-Fn-PUh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -358,7 +378,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="play" width="400" height="400"/>
         <image name="questionmark.circle" catalog="system" width="128" height="121"/>
+        <image name="quote.bubble.fill" catalog="system" width="128" height="110"/>
     </resources>
 </document>

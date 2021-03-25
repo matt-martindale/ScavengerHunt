@@ -26,7 +26,7 @@ class PlayerFormViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
-        session = NFCNDEFReaderSession(delegate: self, queue: DispatchQueue.main, invalidateAfterFirstRead: true)
+        session = NFCNDEFReaderSession(delegate: self, queue: DispatchQueue.main, invalidateAfterFirstRead: false)
     }
     
     @IBAction func beginBtnTapped(_ sender: UIButton) {
@@ -122,13 +122,17 @@ extension PlayerFormViewController: NFCNDEFReaderSessionDelegate {
                     let strippedEventUID = String(eventUID.dropFirst(1))
                     
                     // Fetch event with NDEF message
-                    fetchEvent(uid: strippedEventUID) { result in
+                    fetchEvent(uid: strippedEventUID) { [weak self] result in
+                        guard let self = self else { return }
+                        
                         guard let event = try? result.get() else {
                             print("Error getting event from UID")
                             return
                         }
                         // TODO: - Pass event to next VC
-                        print(event)
+                        let playVC = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.playVC) as! PlayViewController
+                        playVC.event = event
+                        self.navigationController?.pushViewController(playVC, animated: true)
                         
                     }
                 }
