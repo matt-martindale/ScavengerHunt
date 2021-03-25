@@ -35,6 +35,9 @@ class LandingPageViewController: UIViewController {
 
     // MARK: - IBActions
     @IBAction func playButtonTapped(_ sender: UIButton) {
+    }
+    
+    @IBAction func playBtnHeld(_ sender: UIButton) {
         Utilites.shared.playSound(sender.tag)
         
         sender.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)

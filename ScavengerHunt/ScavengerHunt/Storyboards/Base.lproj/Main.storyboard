@@ -23,6 +23,7 @@
                                 </constraints>
                                 <state key="normal" title="Button" image="play"/>
                                 <connections>
+                                    <action selector="playBtnHeld:" destination="BYZ-38-t0r" eventType="touchDown" id="Nmy-Jq-1pa"/>
                                     <action selector="playButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gBY-pp-OhX"/>
                                     <segue destination="QR6-xU-24A" kind="show" id="ppf-b0-sgA"/>
                                 </connections>
@@ -108,7 +109,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="Ewm-3Z-WNO">
-                                <rect key="frame" x="40" y="160" width="334" height="168"/>
+                                <rect key="frame" x="40" y="130" width="334" height="168"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yMI-NH-uLj">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="40"/>
@@ -145,6 +146,9 @@
                                 <state key="normal" title="Cancel">
                                     <color key="titleColor" red="1" green="0.96470588239999999" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="cancelBtnTapped:" destination="QR6-xU-24A" eventType="touchUpInside" id="DtT-W0-abF"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="READY TO SCAN" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PnQ-XJ-zJV">
                                 <rect key="frame" x="162" y="575" width="90" height="34"/>
@@ -171,6 +175,10 @@
                                             <constraint firstAttribute="height" constant="200" id="a0m-UU-mgl"/>
                                         </constraints>
                                         <state key="normal" image="play"/>
+                                        <connections>
+                                            <action selector="beginBtnHeld:" destination="QR6-xU-24A" eventType="touchDown" id="Rx3-6E-JsA"/>
+                                            <action selector="beginBtnTapped:" destination="QR6-xU-24A" eventType="touchUpInside" id="6Xq-fZ-UMc"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -185,7 +193,7 @@
                             <constraint firstItem="gnp-Mu-I21" firstAttribute="centerX" secondItem="hY5-QZ-LGT" secondAttribute="centerX" id="GP1-qm-GlQ"/>
                             <constraint firstItem="PnQ-XJ-zJV" firstAttribute="centerX" secondItem="5Cg-Yq-j2H" secondAttribute="centerX" id="Izq-bx-Q49"/>
                             <constraint firstItem="xIZ-aO-7gB" firstAttribute="trailing" secondItem="Ewm-3Z-WNO" secondAttribute="trailing" constant="40" id="Kn1-sj-w6f"/>
-                            <constraint firstItem="Ewm-3Z-WNO" firstAttribute="top" secondItem="xIZ-aO-7gB" secondAttribute="top" constant="20" id="LJq-R2-PAO"/>
+                            <constraint firstItem="Ewm-3Z-WNO" firstAttribute="top" secondItem="hY5-QZ-LGT" secondAttribute="top" constant="130" id="LJq-R2-PAO"/>
                             <constraint firstItem="gnp-Mu-I21" firstAttribute="top" secondItem="LdL-vP-h8y" secondAttribute="bottom" constant="80" id="YSD-V7-NvL"/>
                             <constraint firstItem="xIZ-aO-7gB" firstAttribute="trailing" secondItem="LdL-vP-h8y" secondAttribute="trailing" constant="60" id="YxC-zE-heL"/>
                             <constraint firstItem="PnQ-XJ-zJV" firstAttribute="centerY" secondItem="5Cg-Yq-j2H" secondAttribute="centerY" id="bMC-6W-vrY"/>
@@ -197,6 +205,8 @@
                     <navigationItem key="navigationItem" id="QX8-ZR-HjU"/>
                     <connections>
                         <outlet property="beginBtn" destination="5Cg-Yq-j2H" id="Hqy-bB-fEH"/>
+                        <outlet property="beginBtnLabel" destination="PnQ-XJ-zJV" id="b53-mO-5mG"/>
+                        <outlet property="cancelBtn" destination="gnp-Mu-I21" id="vyC-9G-9P3"/>
                         <outlet property="emailTextField" destination="HW5-gI-lvw" id="tKc-4o-WXy"/>
                         <outlet property="firstNameTextField" destination="yMI-NH-uLj" id="b9O-2g-CUB"/>
                         <outlet property="infoLabel" destination="DOM-bZ-2SV" id="Fwu-Sn-Uzz"/>
