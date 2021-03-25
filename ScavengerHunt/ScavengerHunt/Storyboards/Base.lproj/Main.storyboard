@@ -153,26 +153,20 @@
                                     <action selector="cancelBtnTapped:" destination="QR6-xU-24A" eventType="touchUpInside" id="DtT-W0-abF"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="READY TO SCAN" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PnQ-XJ-zJV">
-                                <rect key="frame" x="162" y="575" width="90" height="34"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SCAN FIRST CLUE" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PnQ-XJ-zJV">
+                                <rect key="frame" x="147" y="575" width="120" height="34"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="Xs0-wU-rhN"/>
+                                    <constraint firstAttribute="width" constant="120" id="Xs0-wU-rhN"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.96470588239999999" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="LdL-vP-h8y">
-                                <rect key="frame" x="60" y="451.5" width="294" height="240.5"/>
+                                <rect key="frame" x="60" y="492" width="294" height="200"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*Please scan first clue*" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DOM-bZ-2SV">
-                                        <rect key="frame" x="59" y="0.0" width="176" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="1" green="0.96470588239999999" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Cg-Yq-j2H">
-                                        <rect key="frame" x="47" y="40.5" width="200" height="200"/>
+                                        <rect key="frame" x="47" y="0.0" width="200" height="200"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="E1T-Gw-6yJ"/>
                                             <constraint firstAttribute="height" constant="200" id="a0m-UU-mgl"/>
@@ -184,9 +178,6 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="DOM-bZ-2SV" firstAttribute="centerX" secondItem="LdL-vP-h8y" secondAttribute="centerX" id="LAz-Vu-Utr"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xIZ-aO-7gB"/>
@@ -212,7 +203,6 @@
                         <outlet property="cancelBtn" destination="gnp-Mu-I21" id="vyC-9G-9P3"/>
                         <outlet property="emailTextField" destination="HW5-gI-lvw" id="tKc-4o-WXy"/>
                         <outlet property="firstNameTextField" destination="yMI-NH-uLj" id="b9O-2g-CUB"/>
-                        <outlet property="infoLabel" destination="DOM-bZ-2SV" id="Fwu-Sn-Uzz"/>
                         <outlet property="lastNameTextField" destination="X0c-Zw-QNY" id="Nf0-NG-cLC"/>
                     </connections>
                 </viewController>

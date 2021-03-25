@@ -193,7 +193,7 @@
                                                     <constraint firstAttribute="height" constant="40" id="BYw-Xe-u6P"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -292,7 +292,7 @@
                                                     <constraint firstAttribute="height" constant="40" id="b3A-xM-YlZ"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="_placeholder" value="Marker Title"/>
                                                 </userDefinedRuntimeAttributes>

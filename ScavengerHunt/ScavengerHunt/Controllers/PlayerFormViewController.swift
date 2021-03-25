@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreNFC
 
 class PlayerFormViewController: UIViewController {
 
@@ -13,10 +14,12 @@ class PlayerFormViewController: UIViewController {
     @IBOutlet weak var firstNameTextField: FloatingLabel!
     @IBOutlet weak var lastNameTextField: FloatingLabel!
     @IBOutlet weak var emailTextField: FloatingLabel!
-    @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var beginBtn: UIButton!
     @IBOutlet weak var beginBtnLabel: UILabel!
     @IBOutlet weak var cancelBtn: UIButton!
+    
+    // MARK: - Properties
+    var session: NFCNDEFReaderSession?
     
     // MARK: - Lifecycles
     override func viewDidLoad() {
@@ -25,6 +28,7 @@ class PlayerFormViewController: UIViewController {
     }
     
     @IBAction func beginBtnTapped(_ sender: UIButton) {
+        
     }
     
     @IBAction func beginBtnHeld(_ sender: UIButton) {
@@ -73,5 +77,16 @@ extension PlayerFormViewController: UITextFieldDelegate {
             textField.resignFirstResponder()
         }
         return false
+    }
+}
+
+extension PlayerFormViewController: NFCNDEFReaderSessionDelegate {
+    
+    func readerSession(_ session: NFCNDEFReaderSession, didDetectNDEFs messages: [NFCNDEFMessage]) {
+        <#code#>
+    }
+    
+    func readerSession(_ session: NFCNDEFReaderSession, didInvalidateWithError error: Error) {
+        <#code#>
     }
 }
