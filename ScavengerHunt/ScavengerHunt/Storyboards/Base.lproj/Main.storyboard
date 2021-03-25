@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -98,6 +99,21 @@
             </objects>
             <point key="canvasLocation" x="700" y="114.50892857142857"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="gnl-MM-ZJu">
+            <objects>
+                <viewController id="QR6-xU-24A" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hY5-QZ-LGT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="xIZ-aO-7gB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z1I-a0-qOJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1625" y="115"/>
+        </scene>
         <!--Creator-->
         <scene sceneID="5y9-1I-G5H">
             <objects>
@@ -190,5 +206,8 @@
     <resources>
         <image name="play" width="400" height="400"/>
         <image name="questionmark.circle" catalog="system" width="128" height="121"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
