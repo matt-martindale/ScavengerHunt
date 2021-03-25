@@ -112,7 +112,7 @@ class AddMarkerViewController: UIViewController {
     func createEvent() {
         // Append Marker to Event and write Marker UID to tag
         guard let uid = self.eventUID else { return }
-        let marker = Marker(title: titleTextField.text!, clue: clueTextView.text!, uid: uid)
+        let marker = Marker(title: titleTextField.text!, clue: clueTextView.text!, uid: uid.uuidString)
         self.event?.markers.addMarker(marker: marker)
     }
     

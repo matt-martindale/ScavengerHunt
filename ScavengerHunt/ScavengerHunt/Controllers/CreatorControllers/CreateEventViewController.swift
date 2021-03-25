@@ -55,7 +55,7 @@ class CreateEventViewController: UIViewController {
         // Create Event and write UID to tag
         let uid = UUID()
         let event = Event(title: titleTextField.text!, uid: uid.uuidString, markers: MarkerList())
-        event.markers.addMarker(marker: Marker(title: "Start", clue: firstClueTextView.text, uid: uid))
+        event.markers.addMarker(marker: Marker(title: "Start", clue: firstClueTextView.text, uid: uid.uuidString))
         self.event = event
         
         // Create NDEF Payload and update self.uid with Message

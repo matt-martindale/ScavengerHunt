@@ -129,6 +129,10 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
             
             if let event = event, event.exists {
                 guard let eventData = event.data() else { return }
+                
+                let llEvent = Utilites.shared.createLinkedList(from: eventData)
+                print(llEvent)
+                
                 let eventTitle = eventData["title"] as! String
                 completion(.success(eventTitle))
             } else {
@@ -151,5 +155,6 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
         cell.textLabel?.text = self.events[indexPath.row]
         return cell
     }
+    
     
 }

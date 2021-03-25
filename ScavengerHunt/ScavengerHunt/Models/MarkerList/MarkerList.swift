@@ -84,7 +84,7 @@ class MarkerList: Codable {
         return nil
     }
     
-    private func addToHead(marker: Marker) {
+    func addToHead(marker: Marker) {
         let newMarker = marker
         self.head?.prev = newMarker
         newMarker.next = self.head
@@ -93,7 +93,7 @@ class MarkerList: Codable {
         self.size += 1
     }
     
-    private func addToTail(marker: Marker) {
+    func addToTail(marker: Marker) {
         let newMarker = marker
         self.tail?.next = newMarker
         newMarker.prev = self.tail

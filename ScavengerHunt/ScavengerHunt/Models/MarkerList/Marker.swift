@@ -14,7 +14,7 @@ class Marker: Codable {
     var next: Marker?
     weak var prev: Marker?
     
-    init(title: String, clue: String, uid: UUID) {
+    init(title: String, clue: String, uid: String) {
         self.title = title
         self.clue = clue
         self.uid = UUID().uuidString
