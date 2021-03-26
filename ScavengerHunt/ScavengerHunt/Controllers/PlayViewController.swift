@@ -11,6 +11,7 @@ class PlayViewController: UIViewController {
     
     // MARK: - IBOutlets
     @IBOutlet weak var clueBoxImageView: UIImageView!
+    @IBOutlet weak var clueLabel: UILabel!
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var backbtn: UIButton!
     @IBOutlet weak var foundClueBtn: UIButton!
@@ -21,6 +22,7 @@ class PlayViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        clueLabel.text = event?.markers.head?.clue
     }
     
     // MARK: - IBActions

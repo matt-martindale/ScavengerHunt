@@ -210,20 +210,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9Cv-V8-RQR">
-                                <rect key="frame" x="-1880.5" y="44" width="4175" height="500"/>
+                                <rect key="frame" x="32" y="44" width="350" height="550"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quote.bubble.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="51U-AK-259">
-                                        <rect key="frame" x="0.0" y="0.5" width="4175" height="249.5"/>
+                                        <rect key="frame" x="0.0" y="0.5" width="350" height="299.5"/>
                                         <color key="tintColor" red="0.1647058824" green="0.61568627450000002" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="51U-AK-259" secondAttribute="height" multiplier="167:10" id="Au3-vK-vNf"/>
-                                            <constraint firstAttribute="height" constant="250" id="cUp-tU-nr3"/>
+                                            <constraint firstAttribute="height" constant="300" id="cUp-tU-nr3"/>
                                         </constraints>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="4cF-eU-cHp">
-                                        <rect key="frame" x="0.0" y="251.5" width="4175" height="247"/>
+                                        <rect key="frame" x="0.0" y="301.5" width="350" height="247"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="4cF-eU-cHp" secondAttribute="height" multiplier="167:10" id="YVi-3w-qqe"/>
+                                            <constraint firstAttribute="width" constant="350" id="jXI-uq-nVZ"/>
                                             <constraint firstAttribute="height" constant="250" id="yFV-o7-ZJY"/>
                                         </constraints>
                                     </imageView>
@@ -256,6 +255,15 @@
                                     <action selector="backBtnTapped:" destination="SDQ-MD-DD8" eventType="touchUpInside" id="cDE-q8-T2a"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crE-He-pL3">
+                                <rect key="frame" x="107" y="152" width="200" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="bLn-tP-5bx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="1" green="0.96470588239999999" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="YNQ-ky-iIu"/>
                         <color key="backgroundColor" red="0.14901960780000001" green="0.27450980390000002" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -264,14 +272,17 @@
                             <constraint firstItem="YNQ-ky-iIu" firstAttribute="bottom" secondItem="CFJ-BO-O5x" secondAttribute="bottom" constant="50" id="5He-cS-Rwl"/>
                             <constraint firstItem="9Cv-V8-RQR" firstAttribute="top" secondItem="YNQ-ky-iIu" secondAttribute="top" id="NZK-k5-MmT"/>
                             <constraint firstItem="CFJ-BO-O5x" firstAttribute="leading" secondItem="YNQ-ky-iIu" secondAttribute="leading" constant="40" id="Yaw-Qz-avX"/>
+                            <constraint firstItem="crE-He-pL3" firstAttribute="centerX" secondItem="51U-AK-259" secondAttribute="centerX" id="dRv-q7-BbH"/>
                             <constraint firstItem="YNQ-ky-iIu" firstAttribute="bottom" secondItem="Fxh-Is-raw" secondAttribute="bottom" constant="50" id="di8-Lx-bFB"/>
                             <constraint firstItem="YNQ-ky-iIu" firstAttribute="trailing" secondItem="Fxh-Is-raw" secondAttribute="trailing" constant="40" id="j9F-88-Obw"/>
+                            <constraint firstItem="crE-He-pL3" firstAttribute="centerY" secondItem="51U-AK-259" secondAttribute="centerY" constant="-30" id="lOP-Ff-NiK"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="avatarImageView" destination="4cF-eU-cHp" id="7mk-yU-iN4"/>
                         <outlet property="backbtn" destination="CFJ-BO-O5x" id="WYN-uD-GEO"/>
                         <outlet property="clueBoxImageView" destination="51U-AK-259" id="L2B-Cx-5gY"/>
+                        <outlet property="clueLabel" destination="crE-He-pL3" id="UGA-Xo-ssq"/>
                         <outlet property="foundClueBtn" destination="Fxh-Is-raw" id="PKj-I4-lPQ"/>
                     </connections>
                 </viewController>
