@@ -90,11 +90,12 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
                     guard let data = document.data() else { return }
                     strongSelf.loadEvents(data: data)
                     strongSelf.tableView.hideActivityIndicator()
+                    group.leave()
                 } else {
                     print("Document does not exist")
                 }
                 // --- NEWLY ADDED ---
-                group.leave()
+//                group.leave()
                 // -------------------
             }
         }
@@ -118,9 +119,9 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
                 fetchEvent(eventID) { result in
                     guard let event = try? result.get() else { return }
                     self.events.append(event)
-//                     DispatchQueue.main.async {
-//                         self.tableView.reloadData()
-//                     }
+                     DispatchQueue.main.async {
+                         self.tableView.reloadData()
+                     }
                 }
             }
         } else {
@@ -141,11 +142,7 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
             
             if let event = event, event.exists {
                 guard let eventData = event.data() else { return }
-                
-//                let eventTitle = eventData["title"] as! String
-                
                 let fetchedEvent = Utilites.shared.createLinkedList(from: eventData)
-                
                 completion(.success(fetchedEvent))
             } else {
                 print("Event does not exist")
