@@ -23,7 +23,7 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
-        title = Auth.auth().currentUser?.email
+        title = "Events"
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -40,10 +40,10 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     private func createBarBtns() {
-        let gear = UIImage(systemName: "gearshape")
-        let add  = UIImage(systemName: "plus.circle.fill")
+        let profile = UIImage(systemName: "person.crop.circle", withConfiguration: UIImage.SymbolConfiguration(weight: .light))?.withTintColor(.orange, renderingMode: .alwaysOriginal)
+        let add  = UIImage(systemName: "plus.app.fill")?.withTintColor(.orange, renderingMode: .alwaysOriginal)
         
-        let settingsBtn = UIBarButtonItem(image: gear, style: .plain, target: self, action: #selector(settingsTapped))
+        let settingsBtn = UIBarButtonItem(image: profile, style: .plain, target: self, action: #selector(settingsTapped))
         let addBtn      = UIBarButtonItem(image: add, style: .plain, target: self, action: #selector(addEventTapped))
         
         navigationItem.rightBarButtonItems = [settingsBtn, addBtn]

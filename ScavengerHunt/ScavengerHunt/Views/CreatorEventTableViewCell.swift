@@ -18,6 +18,10 @@ class CreatorEventTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         cellView.layer.cornerRadius = 10
+        cellView.layer.shadowColor = UIColor.black.cgColor
+        cellView.layer.shadowOpacity = 0.3
+        cellView.layer.shadowOffset = CGSize(width: 5, height: 5)
+        cellView.layer.shadowRadius = 5
     }
     
 }

@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "dash.png",
+      "filename" : "dash@1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -11,6 +11,7 @@
       "scale" : "2x"
     },
     {
+      "filename" : "dash@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
