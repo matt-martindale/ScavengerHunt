@@ -22,8 +22,9 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupViews()
         title = "Events"
+        setupViews()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,6 +38,8 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
         createBarBtns()
         tableView.separatorStyle = .none
         tableView.tableFooterView = UIView()
+        let attributes = [NSAttributedString.Key.font: UIFont(name: "Avenir Next", size: 17)!]
+        UINavigationBarAppearance().titleTextAttributes = attributes
     }
     
     private func createBarBtns() {

@@ -21,7 +21,7 @@
                                     <constraint firstAttribute="height" constant="250" id="QYr-AU-7rA"/>
                                     <constraint firstAttribute="width" constant="250" id="apg-KL-sfa"/>
                                 </constraints>
-                                <state key="normal" image="play-1"/>
+                                <state key="normal" image="play"/>
                                 <connections>
                                     <action selector="playBtnHeld:" destination="BYZ-38-t0r" eventType="touchDown" id="Nmy-Jq-1pa"/>
                                     <action selector="playButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gBY-pp-OhX"/>
@@ -44,8 +44,8 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How to Play" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDy-g9-W98">
-                                <rect key="frame" x="304.5" y="195" width="89.5" height="19.5"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <rect key="frame" x="302.5" y="195" width="93" height="23.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.96470588239999999" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -56,7 +56,7 @@
                                     <constraint firstAttribute="width" constant="200" id="27I-hZ-vIT"/>
                                     <constraint firstAttribute="height" constant="40" id="lsd-5d-BrG"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                 <state key="normal" title="Create">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -107,7 +107,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Ei9-op-Gch"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="_placeholder" value="First Name"/>
@@ -118,7 +118,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="q6E-MS-F5C"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                     </textField>
                                     <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HW5-gI-lvw" customClass="FloatingLabel" customModule="ScavengerHunt" customModuleProvider="target">
@@ -126,7 +126,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="n3k-6f-veu"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
@@ -137,6 +137,7 @@
                                     <constraint firstAttribute="height" constant="40" id="92f-RP-SPL"/>
                                     <constraint firstAttribute="width" constant="200" id="xyh-kg-oAL"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                 <state key="normal" title="Cancel">
                                     <color key="titleColor" red="1" green="0.96470588239999999" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
@@ -145,13 +146,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMr-cl-vu7">
-                                <rect key="frame" x="50" y="338" width="314" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="50" y="338" width="314" height="23.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                 <color key="textColor" red="0.95686274510000002" green="0.63529411759999999" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Cg-Yq-j2H">
-                                <rect key="frame" x="107" y="408.5" width="200" height="200"/>
+                                <rect key="frame" x="107" y="411.5" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="E1T-Gw-6yJ"/>
                                     <constraint firstAttribute="height" constant="200" id="a0m-UU-mgl"/>
@@ -220,12 +221,13 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fxh-Is-raw">
-                                <rect key="frame" x="224" y="772" width="150" height="40"/>
+                                <rect key="frame" x="199" y="772" width="175" height="40"/>
                                 <color key="backgroundColor" red="0.95686274510000002" green="0.63529411759999999" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="FA1-pj-Yin"/>
-                                    <constraint firstAttribute="width" constant="150" id="qyL-TF-8TZ"/>
+                                    <constraint firstAttribute="width" constant="175" id="qyL-TF-8TZ"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                 <state key="normal" title="Found Clue!">
                                     <color key="titleColor" red="1" green="0.96470588239999999" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
@@ -239,6 +241,7 @@
                                     <constraint firstAttribute="width" constant="100" id="cKz-oh-VWr"/>
                                     <constraint firstAttribute="height" constant="40" id="cjx-5s-cbk"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                 <state key="normal" title="Back">
                                     <color key="titleColor" red="1" green="0.96470588239999999" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
@@ -247,11 +250,11 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crE-He-pL3">
-                                <rect key="frame" x="107" y="152" width="200" height="24"/>
+                                <rect key="frame" x="107" y="150.5" width="200" height="27.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="bLn-tP-5bx"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                                 <color key="textColor" red="1" green="0.96470588239999999" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -306,6 +309,7 @@
                                     <constraint firstAttribute="width" constant="200" id="9Vt-wb-IeH"/>
                                     <constraint firstAttribute="height" constant="40" id="VT2-0B-a6v"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                 <state key="normal" title="GOT IT">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -373,7 +377,6 @@
     <resources>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="play" width="400" height="400"/>
-        <image name="play-1" width="400" height="400"/>
         <image name="questionmark.circle" catalog="system" width="128" height="121"/>
         <image name="quote.bubble.fill" catalog="system" width="128" height="110"/>
     </resources>

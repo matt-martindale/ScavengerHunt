@@ -36,7 +36,7 @@ class FloatingLabel: UITextField {
     }
     
     @IBInspectable
-    var floatingLabelFont: UIFont = UIFont.systemFont(ofSize: 16) {
+    var floatingLabelFont: UIFont = UIFont.init(name: "Avenir Next", size: 16) ?? UIFont.systemFont(ofSize: 16) {
         didSet {
             self.floatingLabel.font = self.floatingLabelFont
             self.font = self.floatingLabelFont
