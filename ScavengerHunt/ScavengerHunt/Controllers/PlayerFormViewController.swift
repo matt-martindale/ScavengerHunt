@@ -110,7 +110,7 @@ class PlayerFormViewController: UIViewController {
                 completion(.success(event))
             } else {
                 // TODO: Handle if User scans marker other than First marker
-                Utilites.shared.showError("Could not find Scavenger Hunt.\nPlease scan primary Event tag.", errorLabel: self.errorLabel)
+                Utilites.shared.showError("Could not find Scavenger Hunt.\nPlease scan the event's \"Start\" tag.", errorLabel: self.errorLabel)
             }
         }
     }

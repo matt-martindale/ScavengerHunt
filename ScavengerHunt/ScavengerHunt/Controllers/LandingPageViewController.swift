@@ -12,7 +12,6 @@ class LandingPageViewController: UIViewController {
     
     
     // MARK: - IBOutlets
-    @IBOutlet weak var playLabel: UILabel!
     @IBOutlet weak var helpButton: UIButton!
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var creatorButton: UIButton!
@@ -41,11 +40,9 @@ class LandingPageViewController: UIViewController {
         Utilites.shared.playSound(sender.tag)
         
         sender.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
-        playLabel.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
         
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.1, initialSpringVelocity: 1.0, options: UIView.AnimationOptions.allowUserInteraction, animations: { [weak self] in
             sender.transform = CGAffineTransform.identity
-            self?.playLabel.transform = CGAffineTransform.identity
         }, completion: { Void in()})
     }
     
@@ -66,7 +63,6 @@ class LandingPageViewController: UIViewController {
         helpButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         
         playButton.adjustsImageWhenHighlighted = false
-        playLabel.text = "PLAY\nSCAVENGER HUNT"
         
         creatorButton.layer.cornerRadius = 20
         creatorButton.layer.borderWidth = 2.0

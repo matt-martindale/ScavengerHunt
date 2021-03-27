@@ -21,19 +21,13 @@
                                     <constraint firstAttribute="height" constant="250" id="QYr-AU-7rA"/>
                                     <constraint firstAttribute="width" constant="250" id="apg-KL-sfa"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="play"/>
+                                <state key="normal" image="play-1"/>
                                 <connections>
                                     <action selector="playBtnHeld:" destination="BYZ-38-t0r" eventType="touchDown" id="Nmy-Jq-1pa"/>
                                     <action selector="playButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gBY-pp-OhX"/>
                                     <segue destination="QR6-xU-24A" kind="show" id="ppf-b0-sgA"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLAY" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NqJ-tD-jnk">
-                                <rect key="frame" x="177" y="407.5" width="60" height="21"/>
-                                <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="21"/>
-                                <color key="textColor" red="1" green="0.96449482902280337" blue="0.86997918454997469" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xRu-oK-naT">
                                 <rect key="frame" x="334" y="160" width="30" height="30"/>
                                 <constraints>
@@ -80,11 +74,9 @@
                             <constraint firstItem="kDy-g9-W98" firstAttribute="centerX" secondItem="xRu-oK-naT" secondAttribute="centerX" id="77y-GA-ySC"/>
                             <constraint firstItem="ljf-tV-GF7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-30" id="At3-vs-Xfv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xRu-oK-naT" secondAttribute="trailing" constant="50" id="dSC-QA-BnW"/>
-                            <constraint firstItem="NqJ-tD-jnk" firstAttribute="centerX" secondItem="ljf-tV-GF7" secondAttribute="centerX" id="dVc-id-Lgr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="NRb-Ka-njx" secondAttribute="bottom" constant="50" id="ecJ-Pv-SYT"/>
                             <constraint firstItem="kDy-g9-W98" firstAttribute="top" secondItem="xRu-oK-naT" secondAttribute="bottom" constant="5" id="lmi-Hh-tu0"/>
                             <constraint firstItem="ljf-tV-GF7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mu7-1c-fuM"/>
-                            <constraint firstItem="NqJ-tD-jnk" firstAttribute="centerY" secondItem="ljf-tV-GF7" secondAttribute="centerY" id="qGy-uL-nLX"/>
                             <constraint firstItem="NRb-Ka-njx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xai-kY-ZC1"/>
                         </constraints>
                     </view>
@@ -93,7 +85,6 @@
                         <outlet property="creatorButton" destination="NRb-Ka-njx" id="K6d-9w-wnZ"/>
                         <outlet property="helpButton" destination="xRu-oK-naT" id="GiT-eJ-HwD"/>
                         <outlet property="playButton" destination="ljf-tV-GF7" id="sNc-L5-F8n"/>
-                        <outlet property="playLabel" destination="NqJ-tD-jnk" id="oG9-WG-qm0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -382,6 +373,7 @@
     <resources>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="play" width="400" height="400"/>
+        <image name="play-1" width="400" height="400"/>
         <image name="questionmark.circle" catalog="system" width="128" height="121"/>
         <image name="quote.bubble.fill" catalog="system" width="128" height="110"/>
     </resources>
