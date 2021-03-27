@@ -35,6 +35,8 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
     private func setupViews() {
         navigationItem.setHidesBackButton(true, animated: true)
         createBarBtns()
+        tableView.separatorStyle = .none
+        tableView.tableFooterView = UIView()
     }
     
     private func createBarBtns() {
@@ -158,12 +160,18 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.eventsTableViewCell) else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.eventsTableViewCell) as? CreatorEventTableViewCell else {
             return UITableViewCell()
         }
         let event = self.events[indexPath.row]
-        cell.textLabel?.text = event.title
+        cell.titleLabel.text = event.title
+        cell.finishLabel.text = event.markers.tail?.title
+        cell.numberOfMarkersLabel.text = String(event.markers.getSize)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -175,5 +183,7 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
         eventConfirmationVC.event = event
         navigationController?.pushViewController(eventConfirmationVC, animated: true)
     }
+    
+    
     
 }

@@ -11,6 +11,7 @@
 		C989437A260C127900C0AA0E /* PlayerFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9894379260C127900C0AA0E /* PlayerFormViewController.swift */; };
 		C989437E260C1C1F00C0AA0E /* FloatingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C989437D260C1C1F00C0AA0E /* FloatingLabel.swift */; };
 		C9894383260D507F00C0AA0E /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9894382260D507F00C0AA0E /* PlayViewController.swift */; };
+		C9894386260FCF2800C0AA0E /* CreatorEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9894385260FCF2800C0AA0E /* CreatorEventTableViewCell.swift */; };
 		C9A242C4260AE21E00D3081F /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A242C3260AE21E00D3081F /* UITableView+Extension.swift */; };
 		C9B2C53125F859E4008375C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B2C53025F859E4008375C0 /* AppDelegate.swift */; };
 		C9B2C53325F859E4008375C0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B2C53225F859E4008375C0 /* SceneDelegate.swift */; };
@@ -46,6 +47,7 @@
 		C9894379260C127900C0AA0E /* PlayerFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerFormViewController.swift; sourceTree = "<group>"; };
 		C989437D260C1C1F00C0AA0E /* FloatingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingLabel.swift; sourceTree = "<group>"; };
 		C9894382260D507F00C0AA0E /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
+		C9894385260FCF2800C0AA0E /* CreatorEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorEventTableViewCell.swift; sourceTree = "<group>"; };
 		C9A242C3260AE21E00D3081F /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		C9B2C52D25F859E4008375C0 /* ScavengerHunt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScavengerHunt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9B2C53025F859E4008375C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 		C9B5405A25F86C79004E4EE6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C9894385260FCF2800C0AA0E /* CreatorEventTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 				C9CC0CCE25FB0B5E0059822E /* CreatorLoginViewController.swift in Sources */,
 				C9CC0CC025FAE7510059822E /* Marker.swift in Sources */,
 				C9D605FF25FE8A0900085FAA /* CreateEventViewController.swift in Sources */,
+				C9894386260FCF2800C0AA0E /* CreatorEventTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
