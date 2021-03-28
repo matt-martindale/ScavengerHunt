@@ -59,27 +59,25 @@ class PlayViewController: UIViewController {
     }
     
     func loadNextMarker(nextMarkerUID: String) {
-        guard let currentMarker = currentMarker else { return }
+        guard let currentMarker = currentMarker else {
+            print("No current Marker")
+            return }
         
-        if currentMarker.next == nil {
+        if self.currentMarker?.next == nil {
             print("Finished the Game!!")
+            return
             // Navigate to Finish page
         }
         
         // Check if marker scanned is really the next Marker in the Event
-        guard isMarkerNext(nextMarkerUID) == true else {
+        guard currentMarker.next?.uid == nextMarkerUID else {
             Utilites.shared.showError("Whoops. The scanned tag wasn't the next clue", errorLabel: errorLabel)
             return
         }
         
         // If next Marker isn't the last one and scanned tag really is next, change current Marker to next one
         self.currentMarker = currentMarker.next
-        clueLabel.text = currentMarker.clue
-    }
-    
-    func isMarkerNext(_ uid: String) -> Bool {
-        print("scanned: \(uid), next: \(currentMarker?.next?.uid)")
-        return currentMarker?.next?.uid == uid
+        clueLabel.text = self.currentMarker?.clue
     }
     
 }

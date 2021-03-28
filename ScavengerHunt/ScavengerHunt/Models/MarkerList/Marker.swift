@@ -17,6 +17,6 @@ class Marker: Codable {
     init(title: String, clue: String, uid: String) {
         self.title = title
         self.clue = clue
-        self.uid = UUID().uuidString
+        self.uid = uid
     }
 }
