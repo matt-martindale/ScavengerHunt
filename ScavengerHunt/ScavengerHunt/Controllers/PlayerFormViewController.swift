@@ -147,7 +147,6 @@ extension PlayerFormViewController: NFCNDEFReaderSessionDelegate {
                             print("Error getting event from UID")
                             return
                         }
-                        // TODO: - Pass event to next VC
                         let playVC = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.playVC) as! PlayViewController
                         playVC.event = event
                         self.navigationController?.pushViewController(playVC, animated: true)
