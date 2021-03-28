@@ -217,7 +217,7 @@
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="monster1" translatesAutoresizingMaskIntoConstraints="NO" id="4cF-eU-cHp">
-                                <rect key="frame" x="0.0" y="482" width="350" height="250"/>
+                                <rect key="frame" x="32" y="482" width="350" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="250" id="1LS-gg-SY7"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="Hj8-Jc-jeY"/>
@@ -269,10 +269,10 @@
                         <color key="backgroundColor" red="0.14901960780000001" green="0.27450980390000002" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="crE-He-pL3" firstAttribute="centerY" secondItem="51U-AK-259" secondAttribute="centerY" constant="-25" id="1LC-zI-f9o"/>
+                            <constraint firstItem="4cF-eU-cHp" firstAttribute="centerX" secondItem="6IP-N9-0QF" secondAttribute="centerX" id="2LT-BQ-A6W"/>
                             <constraint firstItem="YNQ-ky-iIu" firstAttribute="bottom" secondItem="CFJ-BO-O5x" secondAttribute="bottom" constant="50" id="5He-cS-Rwl"/>
                             <constraint firstItem="51U-AK-259" firstAttribute="centerX" secondItem="6IP-N9-0QF" secondAttribute="centerX" id="8rj-8N-yA2"/>
                             <constraint firstItem="crE-He-pL3" firstAttribute="centerX" secondItem="51U-AK-259" secondAttribute="centerX" id="OAc-S9-mQi"/>
-                            <constraint firstItem="4cF-eU-cHp" firstAttribute="leading" secondItem="YNQ-ky-iIu" secondAttribute="leading" id="YNl-23-r5i"/>
                             <constraint firstItem="CFJ-BO-O5x" firstAttribute="leading" secondItem="YNQ-ky-iIu" secondAttribute="leading" constant="40" id="Yaw-Qz-avX"/>
                             <constraint firstItem="4cF-eU-cHp" firstAttribute="top" secondItem="51U-AK-259" secondAttribute="bottom" id="bjF-NC-GHg"/>
                             <constraint firstItem="YNQ-ky-iIu" firstAttribute="bottom" secondItem="Fxh-Is-raw" secondAttribute="bottom" constant="50" id="di8-Lx-bFB"/>
