@@ -24,7 +24,6 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
         super.viewDidLoad()
         title = "Events"
         setupViews()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -99,9 +98,6 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
                 } else {
                     print("Document does not exist")
                 }
-                // --- NEWLY ADDED ---
-//                group.leave()
-                // -------------------
             }
         }
         // --- NEWLY ADDED ---
