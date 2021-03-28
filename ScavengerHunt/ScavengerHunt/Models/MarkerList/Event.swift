@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Firebase
 
 class Event: Codable {
     var title: String
@@ -27,6 +28,36 @@ class Event: Codable {
         
         return eventDict
     }
+    
+    func deleteEvent(completion: @escaping (Bool) -> (Void)) {
+            let db = Firestore.firestore()
+
+            // Delete from "events" collection
+        db.collection("events").document(self.uid).delete() { err in
+                if let err = err {
+                    print("Error removing document: \(err)")
+                    completion(false)
+                    return
+                }
+            }
+
+            // Delete from User events array
+            if let userID = Auth.auth().currentUser?.uid {
+                let userRef = db.collection("users").document(userID)
+                userRef.updateData([
+                    "events": FieldValue.arrayRemove([self.uid])
+                ]) { err in
+                        if let err = err {
+                        print("Error removing document: \(err)")
+                        completion(false)
+                        return
+                    } else {
+                        completion(true)
+                    }
+                }
+            }
+
+        }
     
 }
 

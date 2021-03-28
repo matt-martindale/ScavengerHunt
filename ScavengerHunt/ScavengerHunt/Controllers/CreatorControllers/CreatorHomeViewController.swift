@@ -78,10 +78,6 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
         
         tableView.showActivityIndicator()
         
-        // --- NEWLY ADDED --- 
-        let group = DispatchGroup()
-        group.enter()
-        // -------------------
         DispatchQueue.global(qos: .default).async {
             userEventsRef.getDocument { [weak self] document, error in
                 guard let strongSelf = self else { return }
@@ -94,18 +90,11 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
                     guard let data = document.data() else { return }
                     strongSelf.loadEvents(data: data)
                     strongSelf.tableView.hideActivityIndicator()
-                    group.leave()
                 } else {
                     print("Document does not exist")
                 }
             }
         }
-        // --- NEWLY ADDED ---
-        group.notify(queue: DispatchQueue.main, execute: {
-            print("All Done")
-            self.tableView.reloadData()
-        }) 
-        // -------------------
     }
     
     // Load event's data and fill tableView cells with the event's title
@@ -183,6 +172,21 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
         navigationController?.pushViewController(eventConfirmationVC, animated: true)
     }
     
-    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let event = self.events[indexPath.row]
+            event.deleteEvent { [weak self] result in
+                guard let self = self else { return }
+                
+                switch result {
+                case true:
+                    self.fetchEvents()
+                    tableView.reloadData()
+                case false:
+                    print("Error deleting event")
+                }
+            }
+        }
+    }
     
 }
