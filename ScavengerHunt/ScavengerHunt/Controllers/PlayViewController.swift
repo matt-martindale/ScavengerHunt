@@ -14,7 +14,6 @@ class PlayViewController: UIViewController {
     @IBOutlet weak var clueBoxImageView: UIImageView!
     @IBOutlet weak var clueLabel: UILabel!
     @IBOutlet weak var avatarImageView: UIImageView!
-    @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var backbtn: UIButton!
     @IBOutlet weak var foundClueBtn: UIButton!
     
@@ -40,7 +39,7 @@ class PlayViewController: UIViewController {
         
         // start NFC session
         guard NFCNDEFReaderSession.readingAvailable else {
-            Utilites.shared.showError("This device does not support tag scanning.", errorLabel: errorLabel)
+            Utilites.shared.showError("This device does not support tag scanning.", errorLabel: clueLabel)
             return
         }
         
@@ -70,7 +69,7 @@ class PlayViewController: UIViewController {
         
         // Check if marker scanned is really the next Marker in the Event
         guard currentMarker.next?.uid == nextMarkerUID else {
-            Utilites.shared.showError("Whoops! Wrong order. This Tag wasn't the next clue.", errorLabel: errorLabel)
+            Utilites.shared.showError("Whoops! Wrong order. This Tag wasn't the next clue.", errorLabel: clueLabel)
             return
         }
         
@@ -95,7 +94,7 @@ extension PlayViewController: NFCNDEFReaderSessionDelegate {
                     loadNextMarker(nextMarkerUID: strippedMarkerUID)
                 } else {
                     // Error with getting payload
-                    Utilites.shared.showError("Error getting message payload from tag, \(record.payload)", errorLabel: errorLabel)
+                    Utilites.shared.showError("Error getting message payload from tag, \(record.payload)", errorLabel: clueLabel)
                 }
             }
         }
