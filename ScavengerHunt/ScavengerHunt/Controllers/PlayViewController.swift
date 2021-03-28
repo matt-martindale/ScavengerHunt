@@ -22,7 +22,7 @@ class PlayViewController: UIViewController {
     var event: Event?
     lazy var currentMarker: Marker? = event?.markers.head
     var session: NFCNDEFReaderSession?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
@@ -47,10 +47,6 @@ class PlayViewController: UIViewController {
         session = NFCNDEFReaderSession(delegate: self, queue: DispatchQueue.main, invalidateAfterFirstRead: false)
         session?.alertMessage = "Hold your iPhone near the item to scan"
         session?.begin()
-        
-        // check if scanned tag is the finish tag
-        
-        // if not, play on, load next marker
     }
     
     // MARK: - Methods
@@ -62,15 +58,30 @@ class PlayViewController: UIViewController {
         foundClueBtn.layer.cornerRadius = 20
     }
     
-    func isMarkerNext(uid: String) -> Bool {
-        return uid == currentMarker?.next?.uid
+    func loadNextMarker(nextMarkerUID: String) {
+        guard let currentMarker = currentMarker else { return }
+        
+        if currentMarker.next == nil {
+            print("Finished the Game!!")
+            // Navigate to Finish page
+        }
+        
+        // Check if marker scanned is really the next Marker in the Event
+        guard isMarkerNext(nextMarkerUID) == true else {
+            Utilites.shared.showError("Whoops. The scanned tag wasn't the next clue", errorLabel: errorLabel)
+            return
+        }
+        
+        // If next Marker isn't the last one and scanned tag really is next, change current Marker to next one
+        self.currentMarker = currentMarker.next
+        clueLabel.text = currentMarker.clue
     }
     
-    func playerScannedLastTag() -> Bool {
-        guard let currentMarker = currentMarker else { return false }
-        return currentMarker.next == nil
+    func isMarkerNext(_ uid: String) -> Bool {
+        print("scanned: \(uid), next: \(currentMarker?.next?.uid)")
+        return currentMarker?.next?.uid == uid
     }
-
+    
 }
 
 extension PlayViewController: NFCNDEFReaderSessionDelegate {
@@ -82,8 +93,12 @@ extension PlayViewController: NFCNDEFReaderSessionDelegate {
                     
                     // Format markerUID to remove first 2 characters
                     let strippedMarkerUID = String(markerUID.dropFirst(1))
-                    clueLabel.text = strippedMarkerUID
                     session.invalidate()
+                    
+                    loadNextMarker(nextMarkerUID: strippedMarkerUID)
+                } else {
+                    // Error with getting payload
+                    Utilites.shared.showError("Error getting message payload from tag, \(record.payload)", errorLabel: errorLabel)
                 }
             }
         }
