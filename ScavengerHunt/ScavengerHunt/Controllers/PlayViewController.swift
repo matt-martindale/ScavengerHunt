@@ -18,6 +18,7 @@ class PlayViewController: UIViewController {
     
     // MARK: - Properties
     var event: Event?
+    lazy var currentMarker: Marker? = event?.markers.head
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,12 @@ class PlayViewController: UIViewController {
     
     @IBAction func foundClueBtnTapped(_ sender: UIButton) {
         Utilites.shared.playSound(sender.tag)
+        
+        // start NFC session
+        
+        // check if scanned tag is the finish tag
+        
+        // if not, play on, load next marker
     }
     
     // MARK: - Methods
@@ -43,5 +50,16 @@ class PlayViewController: UIViewController {
         backbtn.layer.borderColor = UIColor.orange.cgColor
         foundClueBtn.layer.cornerRadius = 20
     }
+    
+    func isMarkerNext(uid: String) -> Bool {
+        return uid == currentMarker?.next?.uid
+    }
+    
+    func playerScannedLastTag() -> Bool {
+        guard let currentMarker = currentMarker else { return false }
+        return currentMarker.next == nil
+    }
 
 }
+
+
