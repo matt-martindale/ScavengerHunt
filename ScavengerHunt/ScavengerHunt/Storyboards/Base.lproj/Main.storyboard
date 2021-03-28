@@ -295,10 +295,10 @@
             </objects>
             <point key="canvasLocation" x="2525" y="115"/>
         </scene>
-        <!--View Controller-->
+        <!--Finish View Controller-->
         <scene sceneID="Puq-s6-uw3">
             <objects>
-                <viewController id="AYb-wC-5Gn" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FinishVC" id="AYb-wC-5Gn" customClass="FinishViewController" customModule="ScavengerHunt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7In-by-8zh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -325,6 +325,9 @@
                                     <constraint firstAttribute="width" constant="200" id="hr1-3T-mIm"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="homeBtnTapped:" destination="AYb-wC-5Gn" eventType="touchUpInside" id="ueO-EN-Bot"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="H9c-7x-Ued"/>
@@ -346,6 +349,10 @@
                             <constraint firstItem="H9c-7x-Ued" firstAttribute="trailing" secondItem="fwg-yS-i3B" secondAttribute="trailing" constant="40" id="pgR-yC-KJN"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="congratsImageView" destination="fwg-yS-i3B" id="Dl9-dP-4x4"/>
+                        <outlet property="homeBtn" destination="KFj-l7-3b0" id="1z8-1b-Lp0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UIf-Vt-Njo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

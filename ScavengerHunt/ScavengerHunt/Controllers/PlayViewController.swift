@@ -63,15 +63,14 @@ class PlayViewController: UIViewController {
             print("No current Marker")
             return }
         
-        if self.currentMarker?.next == nil {
-            print("Finished the Game!!")
-            return
-            // Navigate to Finish page
+        if self.currentMarker?.next?.next == nil {
+            guard let finishVC = (storyboard?.instantiateViewController(identifier: Constants.Storyboard.finishVC)) as? FinishViewController else { return }
+            navigationController?.pushViewController(finishVC, animated: true)
         }
         
         // Check if marker scanned is really the next Marker in the Event
         guard currentMarker.next?.uid == nextMarkerUID else {
-            Utilites.shared.showError("Whoops. The scanned tag wasn't the next clue", errorLabel: errorLabel)
+            Utilites.shared.showError("Whoops! Wrong order. This Tag wasn't the next clue.", errorLabel: errorLabel)
             return
         }
         
