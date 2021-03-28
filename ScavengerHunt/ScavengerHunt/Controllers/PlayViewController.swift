@@ -55,6 +55,10 @@ class PlayViewController: UIViewController {
         backbtn.layer.borderWidth = 2.0
         backbtn.layer.borderColor = UIColor.orange.cgColor
         foundClueBtn.layer.cornerRadius = 20
+//        clueBoxImageView.layer.shadowColor = UIColor.black.cgColor
+//        clueBoxImageView.layer.shadowRadius = 5.0
+//        clueBoxImageView.layer.shadowOpacity = 0.9
+//        clueBoxImageView.layer.shadowOffset = CGSize(width: 15, height: 15)
     }
     
     func loadNextMarker(nextMarkerUID: String) {
