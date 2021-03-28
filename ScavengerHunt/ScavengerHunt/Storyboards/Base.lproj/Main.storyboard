@@ -15,6 +15,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeBackground" translatesAutoresizingMaskIntoConstraints="NO" id="SMy-me-ikg">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ljf-tV-GF7">
                                 <rect key="frame" x="82" y="293" width="250" height="250"/>
                                 <constraints>
@@ -73,10 +76,14 @@
                             <constraint firstItem="xRu-oK-naT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="1ui-6O-Psh"/>
                             <constraint firstItem="kDy-g9-W98" firstAttribute="centerX" secondItem="xRu-oK-naT" secondAttribute="centerX" id="77y-GA-ySC"/>
                             <constraint firstItem="ljf-tV-GF7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-30" id="At3-vs-Xfv"/>
+                            <constraint firstItem="SMy-me-ikg" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="FJc-rI-DjX"/>
+                            <constraint firstItem="SMy-me-ikg" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="POk-c9-bAd"/>
+                            <constraint firstAttribute="bottom" secondItem="SMy-me-ikg" secondAttribute="bottom" id="bjH-xo-KxA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xRu-oK-naT" secondAttribute="trailing" constant="50" id="dSC-QA-BnW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="NRb-Ka-njx" secondAttribute="bottom" constant="50" id="ecJ-Pv-SYT"/>
                             <constraint firstItem="kDy-g9-W98" firstAttribute="top" secondItem="xRu-oK-naT" secondAttribute="bottom" constant="5" id="lmi-Hh-tu0"/>
                             <constraint firstItem="ljf-tV-GF7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mu7-1c-fuM"/>
+                            <constraint firstItem="SMy-me-ikg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="p9n-7E-6Lc"/>
                             <constraint firstItem="NRb-Ka-njx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xai-kY-ZC1"/>
                         </constraints>
                     </view>
@@ -89,7 +96,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="700" y="114.50892857142857"/>
+            <point key="canvasLocation" x="698.55072463768124" y="114.50892857142857"/>
         </scene>
         <!--Player Form View Controller-->
         <scene sceneID="gnl-MM-ZJu">
@@ -449,6 +456,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="homeBackground" width="585" height="1266"/>
         <image name="party" width="700" height="467"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="play" width="400" height="400"/>
