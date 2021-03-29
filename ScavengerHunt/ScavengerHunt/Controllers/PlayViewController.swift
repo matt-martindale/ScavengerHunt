@@ -94,7 +94,7 @@ extension PlayViewController: NFCNDEFReaderSessionDelegate {
                 if let markerUID = String(data: record.payload, encoding: .utf8) {
                     session.alertMessage = "Scan successful!"
                     
-                    // Format markerUID to remove first 2 characters
+                    // Format markerUID to remove first character
                     let strippedMarkerUID = String(markerUID.dropFirst(1))
                     session.invalidate()
                     
