@@ -52,6 +52,16 @@ class LandingPageViewController: UIViewController {
     
     @IBAction func createBtnTapped(_ sender: UIButton) {
         Utilites.shared.playSound(sender.tag)
+        
+        if UserDefaults.standard.object(forKey: Constants.userUIDKey) != nil {
+            let storyboard = UIStoryboard(name: "Creator", bundle: nil)
+            let tabbarVC = storyboard.instantiateViewController(identifier: "UITabbarController") as! UITabBarController
+            guard let vcs = tabbarVC.viewControllers,
+                  let nc = vcs.first as? UINavigationController else { return }
+            nc.navigationBar.prefersLargeTitles = true
+            UIApplication.shared.windows.first?.rootViewController = tabbarVC
+            UIApplication.shared.windows.first?.makeKeyAndVisible()
+        }
     }
     
     // MARK: - Methods

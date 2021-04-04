@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3B0660383BF5824B7A7004D0 /* Pods_ScavengerHunt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2E6AF81506BB94B43619CE2 /* Pods_ScavengerHunt.framework */; };
 		C910E3832610F22A008F9884 /* FinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C910E3822610F22A008F9884 /* FinishViewController.swift */; };
+		C931F640261A5BB20074738A /* Play.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C931F63F261A5BB20074738A /* Play.storyboard */; };
 		C989437A260C127900C0AA0E /* PlayerFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9894379260C127900C0AA0E /* PlayerFormViewController.swift */; };
 		C989437E260C1C1F00C0AA0E /* FloatingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C989437D260C1C1F00C0AA0E /* FloatingLabel.swift */; };
 		C9894383260D507F00C0AA0E /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9894382260D507F00C0AA0E /* PlayViewController.swift */; };
@@ -46,6 +47,7 @@
 		0411D729B1837775569A96F9 /* Pods-ScavengerHunt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScavengerHunt.debug.xcconfig"; path = "Target Support Files/Pods-ScavengerHunt/Pods-ScavengerHunt.debug.xcconfig"; sourceTree = "<group>"; };
 		513B5066B2254A8C3A35FB6B /* Pods-ScavengerHunt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScavengerHunt.release.xcconfig"; path = "Target Support Files/Pods-ScavengerHunt/Pods-ScavengerHunt.release.xcconfig"; sourceTree = "<group>"; };
 		C910E3822610F22A008F9884 /* FinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishViewController.swift; sourceTree = "<group>"; };
+		C931F63F261A5BB20074738A /* Play.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Play.storyboard; sourceTree = "<group>"; };
 		C9894379260C127900C0AA0E /* PlayerFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerFormViewController.swift; sourceTree = "<group>"; };
 		C989437D260C1C1F00C0AA0E /* FloatingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingLabel.swift; sourceTree = "<group>"; };
 		C9894382260D507F00C0AA0E /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				C9B2C53625F859E4008375C0 /* Main.storyboard */,
 				C9CC0CC825FB08D10059822E /* Creator.storyboard */,
 				C9B2C53B25F859EA008375C0 /* LaunchScreen.storyboard */,
+				C931F63F261A5BB20074738A /* Play.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				C9B2C53A25F859EA008375C0 /* Assets.xcassets in Resources */,
 				C9CC0CC925FB08D10059822E /* Creator.storyboard in Resources */,
 				C9B2C53825F859E4008375C0 /* Main.storyboard in Resources */,
+				C931F640261A5BB20074738A /* Play.storyboard in Resources */,
 				C9CC0D0C25FDBC160059822E /* buttonClick.mp3 in Resources */,
 				C9B2C54625F85B2A008375C0 /* GoogleService-Info.plist in Resources */,
 				C9CC0D0525FDB5BC0059822E /* startButton.mp3 in Resources */,

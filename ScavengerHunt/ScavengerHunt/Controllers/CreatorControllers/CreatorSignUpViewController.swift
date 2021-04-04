@@ -117,9 +117,11 @@ class CreatorSignUpViewController: UIViewController {
     
     private func transitionToHome() {
         let storyboard = UIStoryboard(name: "Creator", bundle: nil)
-        guard let creatorHomeVC = storyboard.instantiateViewController(identifier: Constants.Storyboard.creatorHomeVC) as? CreatorHomeViewController else { return }
-        let navController = UINavigationController(rootViewController: creatorHomeVC)
-        UIApplication.shared.windows.first?.rootViewController = navController
+        let tabbarVC = storyboard.instantiateViewController(identifier: "UITabbarController") as! UITabBarController
+        guard let vcs = tabbarVC.viewControllers,
+              let nc = vcs.first as? UINavigationController else { return }
+        nc.navigationBar.prefersLargeTitles = true
+        UIApplication.shared.windows.first?.rootViewController = tabbarVC
         UIApplication.shared.windows.first?.makeKeyAndVisible()
     }
     

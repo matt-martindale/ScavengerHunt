@@ -66,7 +66,6 @@
                                 <connections>
                                     <action selector="buttonTapped:" destination="Jed-bP-BNR" eventType="touchUpInside" id="tzp-Kx-geU"/>
                                     <action selector="createBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Hc-Do-dLd"/>
-                                    <segue destination="fnz-gk-q5B" kind="show" id="LZj-T9-PhI"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -354,16 +353,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UIf-Vt-Njo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3387" y="115"/>
-        </scene>
-        <!--Creator-->
-        <scene sceneID="5y9-1I-G5H">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Creator" id="fnz-gk-q5B" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="mJ2-AT-sAW"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7l7-7G-jHR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="694" y="587"/>
         </scene>
         <!--Help Page View Controller-->
         <scene sceneID="9jW-J7-o3N">
