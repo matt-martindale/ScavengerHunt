@@ -14,13 +14,18 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var avatarImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var companyLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Properties
     var db = Firestore.firestore()
+    var profileData: [String] = ["0.9"]
     
     // MARK: - Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
         setupViews()
     }
     
@@ -29,6 +34,8 @@ class ProfileViewController: UIViewController {
     // MARK: - Methods
     func setupViews() {
         avatarImage.image = Utilites.shared.getMonsterImage()
+        tableView.tableFooterView = UIView()
+        tableView.isScrollEnabled = false
         fetchUserInfo()
     }
     
@@ -47,13 +54,15 @@ class ProfileViewController: UIViewController {
                 if let document = document, document.exists {
                     guard let data = document.data() else { return }
                     // User Data
-                    guard let firstName = data["firstName"] as? String,
-                          let lastName = data["lastName"] as? String,
-                          let email = data["email"] as? String else { return }
+                    let firstName = data["firstName"] as? String ?? ""
+                    let lastName = data["lastName"] as? String ?? ""
+                    let email = data["email"] as? String ?? ""
+                    let company = data["company"] as? String ?? ""
                     
                     DispatchQueue.main.async {
                         self.nameLabel.text = firstName + " " + lastName
                         self.emailLabel.text = email
+                        self.companyLabel.text = company
                     }
                     
                 }
@@ -74,4 +83,19 @@ class ProfileViewController: UIViewController {
         }
     }
 
+}
+
+extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return profileData.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.profileTableViewCell) as? UITableViewCell else { return UITableViewCell() }
+        let data = profileData[indexPath.row]
+        
+        return cell
+    }
+    
+    
 }

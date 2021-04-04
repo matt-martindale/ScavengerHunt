@@ -21,6 +21,7 @@ struct Constants {
     }
     
     static let eventsTableViewCell = "eventsTableViewCell"
+    static let profileTableViewCell = "ProfileCell"
     static let userUIDKey = "user_uid_key"
     static let inCreatorModeKey = "inCreatorModeKey"
     
