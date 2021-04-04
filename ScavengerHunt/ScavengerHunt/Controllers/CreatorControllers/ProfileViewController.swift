@@ -12,6 +12,7 @@ class ProfileViewController: UIViewController {
     
     // MARK: - IBOutlets
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
     
     // MARK: - Properties
     var db = Firestore.firestore()
@@ -45,10 +46,12 @@ class ProfileViewController: UIViewController {
                     guard let data = document.data() else { return }
                     // User Data
                     guard let firstName = data["firstName"] as? String,
-                          let lastName = data["lastName"] as? String else { return }
+                          let lastName = data["lastName"] as? String,
+                          let email = data["email"] as? String else { return }
                     
                     DispatchQueue.main.async {
-                        self.nameLabel.text = String(firstName + " " + lastName)
+                        self.nameLabel.text = firstName + " " + lastName
+                        self.emailLabel.text = email
                     }
                     
                 }
