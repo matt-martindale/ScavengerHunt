@@ -65,10 +65,16 @@ class LandingPageViewController: UIViewController {
                   let nc = vcs.first as? UINavigationController else { return }
             
             // Set tabbar items
+            let homeVCTabbarItem = UITabBarItem(title: "Events", image: UIImage(systemName: "house"), tag: 0)
+            let playVCTabbarItem = UITabBarItem(title: "Play", image: UIImage(systemName: "iphone.homebutton.badge.play"), tag: 1)
+            vcs[0].tabBarItem = homeVCTabbarItem
+            vcs[1].tabBarItem = playVCTabbarItem
             
             nc.navigationBar.prefersLargeTitles = true
             UIApplication.shared.windows.first?.rootViewController = tabbarVC
             UIApplication.shared.windows.first?.makeKeyAndVisible()
+        } else {
+            navigationController?.pushViewController(<#T##viewController: UIViewController##UIViewController#>, animated: <#T##Bool#>)
         }
     }
     

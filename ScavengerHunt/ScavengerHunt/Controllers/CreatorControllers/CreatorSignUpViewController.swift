@@ -120,6 +120,13 @@ class CreatorSignUpViewController: UIViewController {
         let tabbarVC = storyboard.instantiateViewController(identifier: "UITabbarController") as! UITabBarController
         guard let vcs = tabbarVC.viewControllers,
               let nc = vcs.first as? UINavigationController else { return }
+        
+        // Set tabbar items
+        let homeVCTabbarItem = UITabBarItem(title: "Events", image: UIImage(systemName: "house"), tag: 0)
+        let playVCTabbarItem = UITabBarItem(title: "Play", image: UIImage(systemName: "iphone.homebutton.badge.play"), tag: 1)
+        vcs[0].tabBarItem = homeVCTabbarItem
+        vcs[1].tabBarItem = playVCTabbarItem
+        
         nc.navigationBar.prefersLargeTitles = true
         UIApplication.shared.windows.first?.rootViewController = tabbarVC
         UIApplication.shared.windows.first?.makeKeyAndVisible()
