@@ -24,6 +24,7 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
         super.viewDidLoad()
         title = "Events"
         setupViews()
+        UserDefaults.standard.set(true, forKey: Constants.inCreatorModeKey)
     }
     
     override func viewWillAppear(_ animated: Bool) {

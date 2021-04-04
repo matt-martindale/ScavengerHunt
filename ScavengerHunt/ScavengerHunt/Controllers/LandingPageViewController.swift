@@ -16,15 +16,20 @@ class LandingPageViewController: UIViewController {
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var creatorButton: UIButton!
     
+    // MARK: - Properties
+    lazy var isCreatorMode = UserDefaults.standard.object(forKey: Constants.inCreatorModeKey) as! Bool
+    
     // MARK: - Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = true
+        creatorButton.isHidden = isCreatorMode
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -58,6 +63,9 @@ class LandingPageViewController: UIViewController {
             let tabbarVC = storyboard.instantiateViewController(identifier: "UITabbarController") as! UITabBarController
             guard let vcs = tabbarVC.viewControllers,
                   let nc = vcs.first as? UINavigationController else { return }
+            
+            // Set tabbar items
+            
             nc.navigationBar.prefersLargeTitles = true
             UIApplication.shared.windows.first?.rootViewController = tabbarVC
             UIApplication.shared.windows.first?.makeKeyAndVisible()

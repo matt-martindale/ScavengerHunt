@@ -672,10 +672,10 @@
             </objects>
             <point key="canvasLocation" x="2494" y="530"/>
         </scene>
-        <!--Play-->
+        <!--Main-->
         <scene sceneID="orF-4Z-HDf">
             <objects>
-                <viewControllerPlaceholder storyboardName="Play" id="wV9-4a-2gs" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Main" id="wV9-4a-2gs" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="fNK-EX-CxF"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AAV-SK-eRF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
