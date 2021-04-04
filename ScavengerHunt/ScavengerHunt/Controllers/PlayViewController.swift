@@ -26,7 +26,7 @@ class PlayViewController: UIViewController {
         super.viewDidLoad()
         setupViews()
         clueLabel.text = event?.markers.head?.clue
-        avatarImageView.image = getMonsterImage()
+        avatarImageView.image = Utilites.shared.getMonsterImage()
     }
     
     // MARK: - IBActions
@@ -76,13 +76,8 @@ class PlayViewController: UIViewController {
         
         // If next Marker isn't the last one and scanned tag really is next, change current Marker to next one
         self.currentMarker = currentMarker.next
-        avatarImageView.image = getMonsterImage()
+        avatarImageView.image = Utilites.shared.getMonsterImage()
         clueLabel.text = self.currentMarker?.clue
-    }
-    
-    func getMonsterImage() -> UIImage {
-        let monsterNumber = Int.random(in: 1...6)
-        return UIImage(named: "monster\(monsterNumber)")!
     }
     
 }

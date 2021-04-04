@@ -11,6 +11,7 @@ import Firebase
 class ProfileViewController: UIViewController {
     
     // MARK: - IBOutlets
+    @IBOutlet weak var avatarImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     
@@ -27,6 +28,7 @@ class ProfileViewController: UIViewController {
     
     // MARK: - Methods
     func setupViews() {
+        avatarImage.image = Utilites.shared.getMonsterImage()
         fetchUserInfo()
     }
     

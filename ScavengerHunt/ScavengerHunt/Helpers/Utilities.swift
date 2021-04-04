@@ -39,6 +39,11 @@ struct Utilites {
         }
     }
     
+    func getMonsterImage() -> UIImage {
+        let monsterNumber = Int.random(in: 1...6)
+        return UIImage(named: "monster\(monsterNumber)")!
+    }
+    
     func createLinkedList(from dictionary: [String:Any]) -> Event {
         
         // Create Markers

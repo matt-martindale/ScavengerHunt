@@ -164,6 +164,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="avatarImage" destination="6Tv-Ci-x3T" id="Yd5-RK-YkD"/>
                         <outlet property="emailLabel" destination="ty3-Os-23N" id="6ml-sH-kyA"/>
                         <outlet property="nameLabel" destination="0gx-EP-6WP" id="p7b-zO-RdP"/>
                     </connections>
