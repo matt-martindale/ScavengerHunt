@@ -120,6 +120,21 @@
             </objects>
             <point key="canvasLocation" x="1239.1304347826087" y="154.6875"/>
         </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="NdC-eT-brO">
+            <objects>
+                <viewController storyboardIdentifier="ProfileVC" id="MiT-Qg-Rda" customClass="ProfileViewController" customModule="ScavengerHunt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BHC-Z9-6AH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="tt2-OH-YqD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mNv-zK-OX8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4403" y="-201"/>
+        </scene>
         <!--Creator Home View Controller-->
         <scene sceneID="QdK-Cq-EOf">
             <objects>

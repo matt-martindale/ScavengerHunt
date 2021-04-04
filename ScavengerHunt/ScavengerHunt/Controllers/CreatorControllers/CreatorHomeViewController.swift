@@ -46,24 +46,15 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
         let profile = UIImage(systemName: "person.crop.circle", withConfiguration: UIImage.SymbolConfiguration(weight: .light))?.withTintColor(.orange, renderingMode: .alwaysOriginal)
         let add  = UIImage(systemName: "plus.app.fill")?.withTintColor(.orange, renderingMode: .alwaysOriginal)
         
-        let settingsBtn = UIBarButtonItem(image: profile, style: .plain, target: self, action: #selector(settingsTapped))
+        let settingsBtn = UIBarButtonItem(image: profile, style: .plain, target: self, action: #selector(profileTapped))
         let addBtn      = UIBarButtonItem(image: add, style: .plain, target: self, action: #selector(addEventTapped))
         
         navigationItem.rightBarButtonItems = [settingsBtn, addBtn]
     }
     
-    @objc func settingsTapped() {
-        do {
-            try Auth.auth().signOut()
-            if Auth.auth().currentUser == nil {
-                UserDefaults.standard.removeObject(forKey: Constants.userUIDKey)
-                UserDefaults.standard.synchronize()
-            }
-            
-            navigationController?.popToRootViewController(animated: true)
-        } catch {
-            print("Error signing out")
-        }
+    @objc func profileTapped() {
+        guard let profileVC = storyboard?.instantiateViewController(identifier: Constants.Storyboard.profileVC) as? ProfileViewController else { return }
+        navigationController?.pushViewController(profileVC, animated: true)
     }
     
     @objc func addEventTapped() {
