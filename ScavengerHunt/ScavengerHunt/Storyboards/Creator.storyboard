@@ -154,7 +154,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3u5-jb-jPL">
-                                <rect key="frame" x="40" y="332" width="334" height="530"/>
+                                <rect key="frame" x="40" y="332" width="334" height="315"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProfileCell" textLabel="lRt-Mu-Llb" detailTextLabel="IOl-JD-b2U" style="IBUITableViewCellStyleValue1" id="u23-l7-Q51">
@@ -183,6 +183,19 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Te9-T7-9WD">
+                                <rect key="frame" x="107" y="666" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="hYb-xw-8kc"/>
+                                    <constraint firstAttribute="height" constant="40" id="vOb-Bq-gqH"/>
+                                </constraints>
+                                <state key="normal" title="Log Out">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="logOutBtnTapped:" destination="MiT-Qg-Rda" eventType="touchUpInside" id="ag9-kU-GvN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tt2-OH-YqD"/>
                         <color key="backgroundColor" red="0.1647058824" green="0.61568627450000002" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -191,6 +204,7 @@
                             <constraint firstItem="0gx-EP-6WP" firstAttribute="top" secondItem="6Tv-Ci-x3T" secondAttribute="bottom" constant="20" id="2MK-ga-qyn"/>
                             <constraint firstItem="ty3-Os-23N" firstAttribute="centerX" secondItem="BHC-Z9-6AH" secondAttribute="centerX" id="8RA-Ns-609"/>
                             <constraint firstItem="A9b-x2-ue4" firstAttribute="top" secondItem="ty3-Os-23N" secondAttribute="bottom" constant="8" id="Gu2-7f-zCU"/>
+                            <constraint firstItem="Te9-T7-9WD" firstAttribute="centerX" secondItem="BHC-Z9-6AH" secondAttribute="centerX" id="Hxs-Ec-eVD"/>
                             <constraint firstItem="6Tv-Ci-x3T" firstAttribute="top" secondItem="tt2-OH-YqD" secondAttribute="top" constant="8" id="Ibk-FE-2P9"/>
                             <constraint firstItem="3u5-jb-jPL" firstAttribute="centerX" secondItem="BHC-Z9-6AH" secondAttribute="centerX" id="QSj-RA-4zV"/>
                             <constraint firstItem="3u5-jb-jPL" firstAttribute="leading" secondItem="tt2-OH-YqD" secondAttribute="leading" constant="40" id="TDU-ZT-N0R"/>
@@ -202,6 +216,7 @@
                             <constraint firstItem="tt2-OH-YqD" firstAttribute="trailing" secondItem="3u5-jb-jPL" secondAttribute="trailing" constant="40" id="gaY-j2-baf"/>
                             <constraint firstItem="tt2-OH-YqD" firstAttribute="trailing" secondItem="0gx-EP-6WP" secondAttribute="trailing" constant="50" id="oa7-8e-6SQ"/>
                             <constraint firstItem="ty3-Os-23N" firstAttribute="leading" secondItem="tt2-OH-YqD" secondAttribute="leading" constant="40" id="yTC-Sy-6uu"/>
+                            <constraint firstItem="Te9-T7-9WD" firstAttribute="top" secondItem="3u5-jb-jPL" secondAttribute="bottom" constant="8" id="zMq-YO-AQu"/>
                             <constraint firstItem="0gx-EP-6WP" firstAttribute="leading" secondItem="tt2-OH-YqD" secondAttribute="leading" constant="50" id="zVT-N1-jTJ"/>
                         </constraints>
                     </view>
@@ -209,13 +224,14 @@
                         <outlet property="avatarImage" destination="6Tv-Ci-x3T" id="Yd5-RK-YkD"/>
                         <outlet property="companyLabel" destination="A9b-x2-ue4" id="tZd-pA-dki"/>
                         <outlet property="emailLabel" destination="ty3-Os-23N" id="6ml-sH-kyA"/>
+                        <outlet property="logOutBtn" destination="Te9-T7-9WD" id="ISx-VU-SvS"/>
                         <outlet property="nameLabel" destination="0gx-EP-6WP" id="p7b-zO-RdP"/>
                         <outlet property="tableView" destination="3u5-jb-jPL" id="04u-fs-pYf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mNv-zK-OX8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4403" y="-201"/>
+            <point key="canvasLocation" x="4402.898550724638" y="-201.5625"/>
         </scene>
         <!--Creator Home View Controller-->
         <scene sceneID="QdK-Cq-EOf">

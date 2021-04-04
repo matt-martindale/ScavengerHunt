@@ -16,6 +16,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var companyLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var logOutBtn: UIButton!
     
     // MARK: - Properties
     var db = Firestore.firestore()
@@ -30,9 +31,15 @@ class ProfileViewController: UIViewController {
     }
     
     // MARK: - IBActions
+    @IBAction func logOutBtnTapped(_ sender: UIButton) {
+        signOut()
+    }
     
     // MARK: - Methods
     func setupViews() {
+        logOutBtn.layer.cornerRadius = 20
+        logOutBtn.layer.borderWidth = 2.0
+        logOutBtn.layer.borderColor = UIColor.orange.cgColor
         avatarImage.image = Utilites.shared.getMonsterImage()
         tableView.tableFooterView = UIView()
         tableView.isScrollEnabled = false
