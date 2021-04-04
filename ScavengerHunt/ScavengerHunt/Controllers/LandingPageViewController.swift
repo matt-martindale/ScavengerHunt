@@ -74,7 +74,9 @@ class LandingPageViewController: UIViewController {
             UIApplication.shared.windows.first?.rootViewController = tabbarVC
             UIApplication.shared.windows.first?.makeKeyAndVisible()
         } else {
-            navigationController?.pushViewController(<#T##viewController: UIViewController##UIViewController#>, animated: <#T##Bool#>)
+            let storyboard = UIStoryboard(name: "Creator", bundle: nil)
+            let loginVC = storyboard.instantiateViewController(identifier: Constants.Storyboard.loginVC)
+            navigationController?.pushViewController(loginVC, animated: true)
         }
     }
     

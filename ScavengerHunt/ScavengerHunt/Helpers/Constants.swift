@@ -16,6 +16,7 @@ struct Constants {
         static let eventConfirmationVC = "EventConfirmationVC"
         static let playVC = "PlayVC"
         static let finishVC = "FinishVC"
+        static let loginVC = "LoginVC"
     }
     
     static let eventsTableViewCell = "eventsTableViewCell"
