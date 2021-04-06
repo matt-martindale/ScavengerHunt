@@ -28,6 +28,11 @@ class EventConfirmationViewController: UIViewController {
         tableView.tableFooterView = UIView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
     // MARK: - IBActions
     @IBAction func confirmBtnTapped(_ sender: UIButton) {
         Utilites.shared.playSound(sender.tag)
@@ -69,6 +74,7 @@ class EventConfirmationViewController: UIViewController {
     // MARK: - Methods
     private func setupViews() {
         setupTitle()
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         confirmBtn.layer.cornerRadius = 20
         tableView.isEditing = true
         deleteBarButton.title = "Delete"

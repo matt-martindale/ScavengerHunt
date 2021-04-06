@@ -29,6 +29,11 @@ class PlayViewController: UIViewController {
         avatarImageView.image = Utilites.shared.getMonsterImage()
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        navigationController?.isNavigationBarHidden = true
+    }
+    
     // MARK: - IBActions
     @IBAction func backBtnTapped(_ sender: UIButton) {
         Utilites.shared.playSound(sender.tag)

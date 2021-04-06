@@ -65,6 +65,8 @@ class CreateEventViewController: UIViewController {
     
     // MARK: - Methods
     private func setupViews() {
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationController?.navigationBar.prefersLargeTitles = true
         titleTextField.layer.cornerRadius = 20
         titleTextField.addBottomBorder()
         firstClueTextView.layer.borderWidth = 2.0
