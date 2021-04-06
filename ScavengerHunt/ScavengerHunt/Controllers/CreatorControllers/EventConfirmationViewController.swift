@@ -32,8 +32,8 @@ class EventConfirmationViewController: UIViewController {
     @IBAction func confirmBtnTapped(_ sender: UIButton) {
         Utilites.shared.playSound(sender.tag)
         
+        // Create Dictionary from Linked List Event
         guard let event = event else { return }
-        
         let confirmedEvent = event.createEvent()
         
         let db = Firestore.firestore()
@@ -79,7 +79,7 @@ class EventConfirmationViewController: UIViewController {
     
     @objc func toggleDelete() {
         showDelete = !showDelete
-        deleteBarButton.title = showDelete ? "Done" : "Delete"
+        deleteBarButton.title = showDelete ? "Done" : "Edit"
         tableView.reloadData()
     }
     
@@ -128,5 +128,4 @@ extension EventConfirmationViewController: UITableViewDelegate, UITableViewDataS
             tableView.reloadData()
         }
     }
-    
 }
