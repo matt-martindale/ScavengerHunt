@@ -28,6 +28,7 @@ class ProfileViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         setupViews()
+        fetchUserInfo()
     }
     
     // MARK: - IBActions
@@ -43,7 +44,6 @@ class ProfileViewController: UIViewController {
         avatarImage.image = Utilites.shared.getMonsterImage()
         tableView.tableFooterView = UIView()
         tableView.isScrollEnabled = false
-        fetchUserInfo()
     }
     
     func fetchUserInfo() {
@@ -71,7 +71,6 @@ class ProfileViewController: UIViewController {
                         self.emailLabel.text = email
                         self.companyLabel.text = company
                     }
-                    
                 }
             }
         }
@@ -103,6 +102,4 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
-    
-    
 }
