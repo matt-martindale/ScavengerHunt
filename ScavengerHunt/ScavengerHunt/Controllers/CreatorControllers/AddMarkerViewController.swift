@@ -79,6 +79,7 @@ class AddMarkerViewController: UIViewController {
     
     // MARK: - Methods
     private func setupViews() {
+        navigationItem.largeTitleDisplayMode = .always
         titleTextField.addBottomBorder()
         titleTextField.layer.cornerRadius = 20
         clueTextView.layer.borderWidth = 2.0

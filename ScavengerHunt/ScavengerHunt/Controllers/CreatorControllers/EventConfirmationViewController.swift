@@ -58,7 +58,12 @@ class EventConfirmationViewController: UIViewController {
         }
         
         // Go back to HomeVC
-        navigationController?.popToRootViewController(animated: true)
+        guard let controllers = navigationController?.viewControllers else { return }
+        for vc in controllers {
+            if vc is CreatorTabViewController {
+                _ = navigationController?.popToViewController(vc as! CreatorTabViewController, animated: true)
+            }
+        }
     }
     
     // MARK: - Methods

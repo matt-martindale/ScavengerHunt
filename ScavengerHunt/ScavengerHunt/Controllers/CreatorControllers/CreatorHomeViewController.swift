@@ -13,6 +13,8 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
     
     // MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var addEventBtn: UIButton!
+    @IBOutlet weak var settingsBtn: UIButton!
     
     // MARK: - Properties
     var events: [Event] = []
@@ -30,6 +32,17 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchEvents()
+    }
+    
+    // MARK: - IBActions
+    @IBAction func addEventBtnTapped(_ sender: UIButton) {
+        guard let createEventVC = storyboard?.instantiateViewController(identifier: Constants.Storyboard.createEventVC) as? CreateEventViewController else { return }
+        navigationController?.pushViewController(createEventVC, animated: true)
+    }
+    
+    @IBAction func settingsBtnTapped(_ sender: Any) {
+        guard let profileVC = storyboard?.instantiateViewController(identifier: Constants.Storyboard.profileVC) as? ProfileViewController else { return }
+        navigationController?.pushViewController(profileVC, animated: true)
     }
     
     // MARK: - Methods
