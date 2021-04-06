@@ -242,7 +242,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="boo-fa-6j4">
-                                <rect key="frame" x="0.0" y="90" width="414" height="674"/>
+                                <rect key="frame" x="0.0" y="97" width="414" height="667"/>
                                 <color key="backgroundColor" red="0.14901960780000001" green="0.27450980390000002" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="eventsTableViewCell" rowHeight="150" id="CdG-Ux-FZp" customClass="CreatorEventTableViewCell" customModule="ScavengerHunt" customModuleProvider="target">
@@ -335,13 +335,13 @@
                                 </connections>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="8ou-pY-NbY">
-                                <rect key="frame" x="314" y="52" width="80" height="30"/>
+                                <rect key="frame" x="324" y="60" width="70" height="25"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9KM-zS-Eeo">
-                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="FtF-XI-4Ek"/>
-                                            <constraint firstAttribute="height" constant="30" id="KEg-Cw-U2w"/>
+                                            <constraint firstAttribute="width" constant="25" id="FtF-XI-4Ek"/>
+                                            <constraint firstAttribute="height" constant="25" id="KEg-Cw-U2w"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <color key="tintColor" red="0.95686274510000002" green="0.63529411759999999" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -351,10 +351,10 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fAr-00-qYY">
-                                        <rect key="frame" x="50" y="0.0" width="30" height="30"/>
+                                        <rect key="frame" x="45" y="0.0" width="25" height="25"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="07Q-He-1hc"/>
-                                            <constraint firstAttribute="height" constant="30" id="vAi-uX-muW"/>
+                                            <constraint firstAttribute="width" constant="25" id="07Q-He-1hc"/>
+                                            <constraint firstAttribute="height" constant="25" id="vAi-uX-muW"/>
                                         </constraints>
                                         <color key="tintColor" red="0.95686274510000002" green="0.63529411759999999" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" image="gear" catalog="system"/>
@@ -368,12 +368,12 @@
                         <viewLayoutGuide key="safeArea" id="dub-p7-72t"/>
                         <color key="backgroundColor" red="0.14901960780000001" green="0.27450980390000002" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="boo-fa-6j4" firstAttribute="top" secondItem="8ou-pY-NbY" secondAttribute="bottom" constant="8" id="NGd-aN-QXA"/>
+                            <constraint firstItem="boo-fa-6j4" firstAttribute="top" secondItem="8ou-pY-NbY" secondAttribute="bottom" constant="12" id="NGd-aN-QXA"/>
                             <constraint firstItem="boo-fa-6j4" firstAttribute="leading" secondItem="dub-p7-72t" secondAttribute="leading" id="PbV-Nh-DbW"/>
                             <constraint firstItem="dub-p7-72t" firstAttribute="trailing" secondItem="8ou-pY-NbY" secondAttribute="trailing" constant="20" id="Xd6-2z-fxh"/>
                             <constraint firstItem="dub-p7-72t" firstAttribute="bottom" secondItem="boo-fa-6j4" secondAttribute="bottom" id="muv-gg-MGo"/>
                             <constraint firstItem="dub-p7-72t" firstAttribute="trailing" secondItem="boo-fa-6j4" secondAttribute="trailing" id="nY8-KZ-jIo"/>
-                            <constraint firstItem="8ou-pY-NbY" firstAttribute="top" secondItem="dub-p7-72t" secondAttribute="top" constant="8" id="xec-Zw-RTm"/>
+                            <constraint firstItem="8ou-pY-NbY" firstAttribute="top" secondItem="dub-p7-72t" secondAttribute="top" constant="16" id="xec-Zw-RTm"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="Nm8-QG-LFk"/>

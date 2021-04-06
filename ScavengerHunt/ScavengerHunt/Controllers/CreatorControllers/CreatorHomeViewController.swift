@@ -49,6 +49,12 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
     private func setupViews() {
         navigationItem.setHidesBackButton(true, animated: true)
         createBarBtns()
+        addEventBtn.contentVerticalAlignment = .fill
+        addEventBtn.contentHorizontalAlignment = .fill
+        addEventBtn.imageEdgeInsets = UIEdgeInsets(top: 1, left: 0, bottom: 1, right: 0)
+        settingsBtn.contentVerticalAlignment = .fill
+        settingsBtn.contentHorizontalAlignment = .fill
+        settingsBtn.imageEdgeInsets = UIEdgeInsets(top: 1, left: 0, bottom: 1, right: 0)
         tableView.separatorStyle = .none
         tableView.tableFooterView = UIView()
         let attributes = [NSAttributedString.Key.font: UIFont(name: "Avenir Next", size: 17)!]
