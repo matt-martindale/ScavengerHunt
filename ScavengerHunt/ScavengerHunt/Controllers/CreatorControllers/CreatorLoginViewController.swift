@@ -36,7 +36,6 @@ class CreatorLoginViewController: UIViewController {
         signUpBtn.layer.borderWidth = 2.0
         signUpBtn.layer.borderColor = UIColor.orange.cgColor
         
-        emailTextField.becomeFirstResponder()
         emailTextField.addBottomBorder()
         passwordTextField.addBottomBorder()
         emailTextField.delegate = self
@@ -100,9 +99,7 @@ class CreatorLoginViewController: UIViewController {
         vcs[1].tabBarItem = playVCTabbarItem
         
         navigationController?.pushViewController(tabbarVC, animated: true)
-//        nc.navigationBar.prefersLargeTitles = true
-//        UIApplication.shared.windows.first?.rootViewController = tabbarVC
-//        UIApplication.shared.windows.first?.makeKeyAndVisible()
+        navigationController?.navigationBar.prefersLargeTitles = false
     }
     
     private func checkIfCurrentUserExists() {
