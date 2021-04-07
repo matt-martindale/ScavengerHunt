@@ -12,6 +12,7 @@
 		C931F644261A68560074738A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C931F643261A68560074738A /* ProfileViewController.swift */; };
 		C931F647261A731C0074738A /* ProfileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C931F646261A731C0074738A /* ProfileData.swift */; };
 		C931F64A261BE3480074738A /* CreatorTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C931F649261BE3480074738A /* CreatorTabViewController.swift */; };
+		C931F650261D5C1E0074738A /* EventDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C931F64F261D5C1E0074738A /* EventDetailTableViewCell.swift */; };
 		C989437A260C127900C0AA0E /* PlayerFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9894379260C127900C0AA0E /* PlayerFormViewController.swift */; };
 		C989437E260C1C1F00C0AA0E /* FloatingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C989437D260C1C1F00C0AA0E /* FloatingLabel.swift */; };
 		C9894383260D507F00C0AA0E /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9894382260D507F00C0AA0E /* PlayViewController.swift */; };
@@ -52,6 +53,7 @@
 		C931F643261A68560074738A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C931F646261A731C0074738A /* ProfileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileData.swift; sourceTree = "<group>"; };
 		C931F649261BE3480074738A /* CreatorTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorTabViewController.swift; sourceTree = "<group>"; };
+		C931F64F261D5C1E0074738A /* EventDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailTableViewCell.swift; sourceTree = "<group>"; };
 		C9894379260C127900C0AA0E /* PlayerFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerFormViewController.swift; sourceTree = "<group>"; };
 		C989437D260C1C1F00C0AA0E /* FloatingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingLabel.swift; sourceTree = "<group>"; };
 		C9894382260D507F00C0AA0E /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				C9894385260FCF2800C0AA0E /* CreatorEventTableViewCell.swift */,
+				C931F64F261D5C1E0074738A /* EventDetailTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 				C989437A260C127900C0AA0E /* PlayerFormViewController.swift in Sources */,
 				C9894383260D507F00C0AA0E /* PlayViewController.swift in Sources */,
 				C9CC0CDC25FD8EAA0059822E /* UITextField+Extension.swift in Sources */,
+				C931F650261D5C1E0074738A /* EventDetailTableViewCell.swift in Sources */,
 				C9CC0CBC25FAE6DE0059822E /* Event.swift in Sources */,
 				C9CC0CD825FB27360059822E /* AuthManager.swift in Sources */,
 				C931F64A261BE3480074738A /* CreatorTabViewController.swift in Sources */,
@@ -561,6 +565,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = "1.0.0-alpha";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mattmartindale.ScavengerHunt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -582,6 +587,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = "1.0.0-alpha";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mattmartindale.ScavengerHunt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

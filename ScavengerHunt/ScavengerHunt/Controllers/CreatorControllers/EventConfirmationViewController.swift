@@ -27,6 +27,7 @@ class EventConfirmationViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
+        tableView.separatorStyle = .none
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -110,12 +111,27 @@ extension EventConfirmationViewController: UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell"),
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as? EventDetailTableViewCell,
               let marker = event?.markers.getMarkerAt(index: indexPath.row) else { return UITableViewCell() }
         let next = marker.next?.title ?? ""
-        cell.textLabel?.text = marker.title
-        cell.detailTextLabel?.text = next == "" ? "" : "next: \(next)"
+        cell.titleLabel.text = marker.title
+        cell.clueLabel.text = marker.clue
+        
+//        var attributes = [NSAttributedString.Key: AnyObject]()
+//        attributes[.foregroundColor] = UIColor.orange
+        let attributedNextString = NSMutableAttributedString(string: "Next: \(next)")
+        attributedNextString.addAttribute(.foregroundColor, value: UIColor.orange, range: NSRange(location: 0, length: 5))
+        
+        cell.nextLabel.attributedText = next == "" ? NSAttributedString(string: "") : attributedNextString
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
