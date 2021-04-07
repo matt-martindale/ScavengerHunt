@@ -13,6 +13,8 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
     
     // MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var addEventBtn: UIButton!
+    @IBOutlet weak var settingsBtn: UIButton!
     
     // MARK: - Properties
     var events: [Event] = []
@@ -32,10 +34,27 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
         fetchEvents()
     }
     
+    // MARK: - IBActions
+    @IBAction func addEventBtnTapped(_ sender: UIButton) {
+        guard let createEventVC = storyboard?.instantiateViewController(identifier: Constants.Storyboard.createEventVC) as? CreateEventViewController else { return }
+        navigationController?.pushViewController(createEventVC, animated: true)
+    }
+    
+    @IBAction func settingsBtnTapped(_ sender: Any) {
+        guard let profileVC = storyboard?.instantiateViewController(identifier: Constants.Storyboard.profileVC) as? ProfileViewController else { return }
+        navigationController?.pushViewController(profileVC, animated: true)
+    }
+    
     // MARK: - Methods
     private func setupViews() {
         navigationItem.setHidesBackButton(true, animated: true)
         createBarBtns()
+        addEventBtn.contentVerticalAlignment = .fill
+        addEventBtn.contentHorizontalAlignment = .fill
+        addEventBtn.imageEdgeInsets = UIEdgeInsets(top: 1, left: 0, bottom: 1, right: 0)
+        settingsBtn.contentVerticalAlignment = .fill
+        settingsBtn.contentHorizontalAlignment = .fill
+        settingsBtn.imageEdgeInsets = UIEdgeInsets(top: 1, left: 0, bottom: 1, right: 0)
         tableView.separatorStyle = .none
         tableView.tableFooterView = UIView()
         let attributes = [NSAttributedString.Key.font: UIFont(name: "Avenir Next", size: 17)!]

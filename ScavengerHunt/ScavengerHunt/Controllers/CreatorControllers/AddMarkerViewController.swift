@@ -79,6 +79,7 @@ class AddMarkerViewController: UIViewController {
     
     // MARK: - Methods
     private func setupViews() {
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         titleTextField.addBottomBorder()
         titleTextField.layer.cornerRadius = 20
         clueTextView.layer.borderWidth = 2.0

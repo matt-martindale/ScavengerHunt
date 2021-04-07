@@ -24,6 +24,7 @@ class HelpPageViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLayoutSubviews()
         scrollWidth = scrollView.frame.size.width
         scrollHeight = scrollView.frame.size.height
+        navigationController?.isNavigationBarHidden = true
     }
     
     override func viewDidLoad() {

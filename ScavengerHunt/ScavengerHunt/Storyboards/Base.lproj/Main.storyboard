@@ -32,7 +32,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xRu-oK-naT">
-                                <rect key="frame" x="334" y="160" width="30" height="30"/>
+                                <rect key="frame" x="334" y="108" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="4zX-nT-HNV"/>
                                     <constraint firstAttribute="height" constant="30" id="jDc-8u-HlB"/>
@@ -47,7 +47,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How to Play" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDy-g9-W98">
-                                <rect key="frame" x="302.5" y="195" width="93" height="23.5"/>
+                                <rect key="frame" x="302.5" y="143" width="93" height="23.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.96470588239999999" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -208,11 +208,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bubble" translatesAutoresizingMaskIntoConstraints="NO" id="51U-AK-259">
-                                <rect key="frame" x="32" y="132" width="350" height="350"/>
+                                <rect key="frame" x="32" y="64" width="350" height="418"/>
                                 <color key="tintColor" red="0.1647058824" green="0.61568627450000002" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="350" id="AV7-6T-L4H"/>
-                                    <constraint firstAttribute="height" constant="350" id="W0n-90-tXD"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="monster1" translatesAutoresizingMaskIntoConstraints="NO" id="4cF-eU-cHp">
@@ -240,7 +239,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crE-He-pL3">
-                                <rect key="frame" x="67" y="182" width="280" height="200"/>
+                                <rect key="frame" x="67" y="148" width="280" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="RmH-ky-w3p"/>
                                     <constraint firstAttribute="width" constant="280" id="kzl-d3-Ltb"/>
@@ -272,6 +271,7 @@
                             <constraint firstItem="YNQ-ky-iIu" firstAttribute="bottom" secondItem="CFJ-BO-O5x" secondAttribute="bottom" constant="50" id="5He-cS-Rwl"/>
                             <constraint firstItem="51U-AK-259" firstAttribute="centerX" secondItem="6IP-N9-0QF" secondAttribute="centerX" id="8rj-8N-yA2"/>
                             <constraint firstItem="crE-He-pL3" firstAttribute="centerX" secondItem="51U-AK-259" secondAttribute="centerX" id="OAc-S9-mQi"/>
+                            <constraint firstItem="51U-AK-259" firstAttribute="top" secondItem="YNQ-ky-iIu" secondAttribute="top" constant="20" id="UyR-XG-Mns"/>
                             <constraint firstItem="CFJ-BO-O5x" firstAttribute="leading" secondItem="YNQ-ky-iIu" secondAttribute="leading" constant="40" id="Yaw-Qz-avX"/>
                             <constraint firstItem="4cF-eU-cHp" firstAttribute="top" secondItem="51U-AK-259" secondAttribute="bottom" id="bjF-NC-GHg"/>
                             <constraint firstItem="YNQ-ky-iIu" firstAttribute="bottom" secondItem="Fxh-Is-raw" secondAttribute="bottom" constant="50" id="di8-Lx-bFB"/>
@@ -420,9 +420,10 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="g7O-RI-nXe" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="jlq-nn-vAL">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jlq-nn-vAL">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

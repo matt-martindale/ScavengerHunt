@@ -118,8 +118,7 @@ class CreatorSignUpViewController: UIViewController {
     private func transitionToHome() {
         let storyboard = UIStoryboard(name: "Creator", bundle: nil)
         let tabbarVC = storyboard.instantiateViewController(identifier: "UITabbarController") as! UITabBarController
-        guard let vcs = tabbarVC.viewControllers,
-              let nc = vcs.first as? UINavigationController else { return }
+        guard let vcs = tabbarVC.viewControllers else { return }
         
         // Set tabbar items
         let homeVCTabbarItem = UITabBarItem(title: "Events", image: UIImage(systemName: "house"), tag: 0)
@@ -127,9 +126,8 @@ class CreatorSignUpViewController: UIViewController {
         vcs[0].tabBarItem = homeVCTabbarItem
         vcs[1].tabBarItem = playVCTabbarItem
         
-        nc.navigationBar.prefersLargeTitles = true
-        UIApplication.shared.windows.first?.rootViewController = tabbarVC
-        UIApplication.shared.windows.first?.makeKeyAndVisible()
+        navigationController?.pushViewController(tabbarVC, animated: true)
+        navigationController?.navigationBar.prefersLargeTitles = false
     }
     
 }
