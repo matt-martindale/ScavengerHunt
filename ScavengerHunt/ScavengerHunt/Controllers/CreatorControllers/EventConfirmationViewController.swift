@@ -12,6 +12,7 @@ class EventConfirmationViewController: UIViewController {
     
     // MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var confirmBtn: UIButton!
     
     // MARK: - Properties
@@ -31,6 +32,11 @@ class EventConfirmationViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        errorLabel.alpha = 0.0
     }
     
     // MARK: - IBActions
@@ -81,6 +87,7 @@ class EventConfirmationViewController: UIViewController {
         deleteBarButton.style = .plain
         deleteBarButton.target = self
         deleteBarButton.action = #selector(toggleDelete)
+        errorLabel.alpha = 0.0
         navigationItem.rightBarButtonItem = deleteBarButton
     }
     
@@ -121,6 +128,13 @@ extension EventConfirmationViewController: UITableViewDelegate, UITableViewDataS
         // Check if User is trying to swap first marker. If so, undo their swap by reversing the insert
         if destinationIndexPath.row == 0 {
             event.markers.insert(source: destinationIndexPath.row, atIndex: sourceIndexPath.row)
+            Utilites.shared.showError("Can't swap Start marker", errorLabel: errorLabel)
+            
+            // Create timer to hide error after a certain time
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
+                guard let self = self else { return }
+                self.errorLabel.alpha = 0.0
+            }
         }
         
         // Use custom MarkerList method to reorder Marker Nodes
