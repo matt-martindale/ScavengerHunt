@@ -21,7 +21,7 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
     
     lazy var buttonView: UIView = {
         let view = UIView()
-        view.frame = CGRect(x: self.view.frame.maxX-100, y: self.view.frame.maxY-200, width: 70, height: 70)
+        view.frame = CGRect(x: self.view.frame.maxX-100, y: self.view.frame.maxY-180, width: 60, height: 60)
         view.layer.cornerRadius = view.frame.size.width/2
 //        view.clipsToBounds = true
         view.backgroundColor = .white
@@ -34,7 +34,7 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
     
     lazy var addEventBtn: UIButton = {
         let button = UIButton()
-        button.frame = CGRect(x: 10, y: 12, width: 50, height: 45)
+        button.frame = CGRect(x: 5, y: 7, width: 50, height: 45)
         button.setImage(UIImage(systemName: "plus.app.fill"), for: .normal)
         button.contentHorizontalAlignment = .fill
         button.contentVerticalAlignment = .fill
