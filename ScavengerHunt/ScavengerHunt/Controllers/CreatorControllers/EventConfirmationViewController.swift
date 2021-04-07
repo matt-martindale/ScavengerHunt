@@ -112,11 +112,17 @@ extension EventConfirmationViewController: UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        return true
+        return indexPath.row != 0 ? true : false
     }
     
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         guard let event = event else { return }
+        
+        // Check if User is trying to swap first marker. If so, undo their swap by reversing the insert
+        if destinationIndexPath.row == 0 {
+            event.markers.insert(source: destinationIndexPath.row, atIndex: sourceIndexPath.row)
+        }
+        
         // Use custom MarkerList method to reorder Marker Nodes
         event.markers.insert(source: sourceIndexPath.row, atIndex: destinationIndexPath.row)
         tableView.reloadData()
