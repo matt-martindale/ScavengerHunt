@@ -19,6 +19,31 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
     let db = Firestore.firestore()
     var activityIndicator = UIActivityIndicatorView(style: .large)
     
+    lazy var buttonView: UIView = {
+        let view = UIView()
+        view.frame = CGRect(x: self.view.frame.maxX-100, y: self.view.frame.maxY-200, width: 70, height: 70)
+        view.layer.cornerRadius = view.frame.size.width/2
+//        view.clipsToBounds = true
+        view.backgroundColor = .white
+        view.layer.shadowColor = UIColor.black.cgColor
+        view.layer.shadowOffset = CGSize(width: 5, height: 5)
+        view.layer.shadowRadius = 5
+        view.layer.shadowOpacity = 0.3
+        return view
+    }()
+    
+    lazy var addEventBtn: UIButton = {
+        let button = UIButton()
+        button.frame = CGRect(x: 10, y: 12, width: 50, height: 45)
+        button.setImage(UIImage(systemName: "plus.app.fill"), for: .normal)
+        button.contentHorizontalAlignment = .fill
+        button.contentVerticalAlignment = .fill
+        button.imageEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        button.tintColor = .orange
+        button.addTarget(self, action: #selector(addEventBtnTapped), for: .touchUpInside)
+        return button
+    }()
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,14 +58,11 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     // MARK: - IBActions
-    @IBAction func addEventBtnTapped(_ sender: UIButton) {
+    @objc func addEventBtnTapped(_ sender: UIButton) {
+        Utilites.shared.playSound(sender.tag)
+        
         guard let createEventVC = storyboard?.instantiateViewController(identifier: Constants.Storyboard.createEventVC) as? CreateEventViewController else { return }
         navigationController?.pushViewController(createEventVC, animated: true)
-    }
-    
-    @IBAction func settingsBtnTapped(_ sender: Any) {
-        guard let profileVC = storyboard?.instantiateViewController(identifier: Constants.Storyboard.profileVC) as? ProfileViewController else { return }
-        navigationController?.pushViewController(profileVC, animated: true)
     }
     
     // MARK: - Methods
@@ -48,8 +70,8 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
         navigationItem.setHidesBackButton(true, animated: true)
         tableView.separatorStyle = .none
         tableView.tableFooterView = UIView()
-        let attributes = [NSAttributedString.Key.font: UIFont(name: "Avenir Next", size: 17)!]
-        UINavigationBarAppearance().titleTextAttributes = attributes
+        view.addSubview(buttonView)
+        buttonView.addSubview(addEventBtn)
     }
     
     // Get array of eventIDs from User's events property

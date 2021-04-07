@@ -23,6 +23,7 @@ class CreatorTabViewController: UITabBarController {
     
     private func setupBarBtn() {
         let profileBarBtn = UIBarButtonItem(image: UIImage(systemName: "person.circle"), style: .plain, target: self, action: #selector(goToProfileView))
+        profileBarBtn.tintColor = .white
         navigationItem.rightBarButtonItem = profileBarBtn
     }
     
