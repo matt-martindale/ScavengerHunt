@@ -16,6 +16,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var companyLabel: UILabel!
     @IBOutlet weak var logOutBtn: UIButton!
+    @IBOutlet weak var versionLabel: UILabel!
     
     // MARK: - Properties
     var db = Firestore.firestore()
@@ -38,6 +39,13 @@ class ProfileViewController: UIViewController {
         logOutBtn.layer.borderWidth = 2.0
         logOutBtn.layer.borderColor = UIColor.orange.cgColor
         avatarImage.image = Utilites.shared.getMonsterImage()
+        versionLabel.text = "version: \(getAppVersion())"
+    }
+    
+    func getAppVersion() -> String {
+        guard let plist = Bundle.main.infoDictionary else { return "xx.xx"}
+        guard let version = plist["CFBundleShortVersionString"] as? String else { return "xx.xx"}
+        return version
     }
     
     func fetchUserInfo() {

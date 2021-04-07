@@ -83,7 +83,7 @@ class EventConfirmationViewController: UIViewController {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         confirmBtn.layer.cornerRadius = 20
         tableView.isEditing = true
-        deleteBarButton.title = "Delete"
+        deleteBarButton.title = "Edit"
         deleteBarButton.style = .plain
         deleteBarButton.target = self
         deleteBarButton.action = #selector(toggleDelete)
