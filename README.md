@@ -1,4 +1,4 @@
 # ScavengerHunt
 #### iOS Scavenger hunt app using NFC tags
 
-Play and Create your own Scavenger Hunts with this iOS app
+All you need are NDEF-Compatible NFC Tags, and this app!
