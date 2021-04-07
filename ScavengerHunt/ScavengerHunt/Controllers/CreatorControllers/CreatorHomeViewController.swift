@@ -13,8 +13,6 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
     
     // MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var addEventBtn: UIButton!
-    @IBOutlet weak var settingsBtn: UIButton!
     
     // MARK: - Properties
     var events: [Event] = []
@@ -48,37 +46,10 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
     // MARK: - Methods
     private func setupViews() {
         navigationItem.setHidesBackButton(true, animated: true)
-        createBarBtns()
-        addEventBtn.contentVerticalAlignment = .fill
-        addEventBtn.contentHorizontalAlignment = .fill
-        addEventBtn.imageEdgeInsets = UIEdgeInsets(top: 1, left: 0, bottom: 1, right: 0)
-        settingsBtn.contentVerticalAlignment = .fill
-        settingsBtn.contentHorizontalAlignment = .fill
-        settingsBtn.imageEdgeInsets = UIEdgeInsets(top: 1, left: 0, bottom: 1, right: 0)
         tableView.separatorStyle = .none
         tableView.tableFooterView = UIView()
         let attributes = [NSAttributedString.Key.font: UIFont(name: "Avenir Next", size: 17)!]
         UINavigationBarAppearance().titleTextAttributes = attributes
-    }
-    
-    private func createBarBtns() {
-        let profile = UIImage(systemName: "person.crop.circle", withConfiguration: UIImage.SymbolConfiguration(weight: .light))?.withTintColor(.orange, renderingMode: .alwaysOriginal)
-        let add  = UIImage(systemName: "plus.app.fill")?.withTintColor(.orange, renderingMode: .alwaysOriginal)
-        
-        let settingsBtn = UIBarButtonItem(image: profile, style: .plain, target: self, action: #selector(profileTapped))
-        let addBtn      = UIBarButtonItem(image: add, style: .plain, target: self, action: #selector(addEventTapped))
-        
-        navigationItem.rightBarButtonItems = [settingsBtn, addBtn]
-    }
-    
-    @objc func profileTapped() {
-        guard let profileVC = storyboard?.instantiateViewController(identifier: Constants.Storyboard.profileVC) as? ProfileViewController else { return }
-        navigationController?.pushViewController(profileVC, animated: true)
-    }
-    
-    @objc func addEventTapped() {
-        guard let createEventVC = storyboard?.instantiateViewController(identifier: Constants.Storyboard.createEventVC) as? CreateEventViewController else { return }
-        navigationController?.pushViewController(createEventVC, animated: true)
     }
     
     // Get array of eventIDs from User's events property

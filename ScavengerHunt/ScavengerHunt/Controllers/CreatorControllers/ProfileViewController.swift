@@ -15,18 +15,14 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var companyLabel: UILabel!
-    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var logOutBtn: UIButton!
     
     // MARK: - Properties
     var db = Firestore.firestore()
-    var profileData: [String] = ["0.9"]
     
     // MARK: - Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
         setupViews()
         fetchUserInfo()
     }
@@ -42,8 +38,6 @@ class ProfileViewController: UIViewController {
         logOutBtn.layer.borderWidth = 2.0
         logOutBtn.layer.borderColor = UIColor.orange.cgColor
         avatarImage.image = Utilites.shared.getMonsterImage()
-        tableView.tableFooterView = UIView()
-        tableView.isScrollEnabled = false
     }
     
     func fetchUserInfo() {
@@ -89,17 +83,4 @@ class ProfileViewController: UIViewController {
         }
     }
 
-}
-
-extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return profileData.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.profileTableViewCell) as? UITableViewCell else { return UITableViewCell() }
-        let data = profileData[indexPath.row]
-        
-        return cell
-    }
 }
