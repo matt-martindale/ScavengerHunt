@@ -22,6 +22,7 @@ class AddMarkerViewController: UIViewController {
     var session: NFCNDEFReaderSession?
     var uid: NFCNDEFMessage?
     var eventUID: UUID?
+    var cluePlaceholderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 0.4)
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -87,6 +88,7 @@ class AddMarkerViewController: UIViewController {
         clueTextView.backgroundColor = .clear
         clueTextView.layer.cornerRadius = 10
         clueTextView.tintColor = .orange
+        clueTextView.textColor = cluePlaceholderColor
         scanMarkerBtn.layer.cornerRadius = 20
         errorLabel.alpha = 0.0
         finishBtn.layer.cornerRadius = 20
@@ -212,6 +214,17 @@ extension AddMarkerViewController: NFCNDEFReaderSessionDelegate {
 
 extension AddMarkerViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
-        clueTextView.text = ""
+        if textView.textColor == cluePlaceholderColor {
+            textView.text = nil
+            textView.textColor = .white
+        }
     }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "Clue to next marker"
+            textView.textColor = cluePlaceholderColor
+        }
+    }
+    
 }
