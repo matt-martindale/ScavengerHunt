@@ -44,6 +44,23 @@ struct Utilites {
         return UIImage(named: "monster\(monsterNumber)")!
     }
     
+    func getDashImage(_ event: Event) -> UIImage {
+        let numOfMarkers = event.markers.getSize
+        
+        switch numOfMarkers {
+        case 1...2:
+            return UIImage(named: "dash1")!
+        case 3...4:
+            return UIImage(named: "dash2")!
+        case 5...6:
+            return UIImage(named: "dash3")!
+        case 7...8:
+            return UIImage(named: "dash4")!
+        default:
+            return UIImage(named: "dash1")!
+        }
+    }
+    
     func createLinkedList(from dictionary: [String:Any]) -> Event {
         
         // Create Markers

@@ -322,6 +322,7 @@
                                         <color key="backgroundColor" red="0.14901960780000001" green="0.27450980390000002" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <outlet property="cellView" destination="14P-Xh-vDL" id="SGu-5L-xBk"/>
+                                            <outlet property="dashImage" destination="edT-cE-nu7" id="mjV-t0-unD"/>
                                             <outlet property="finishLabel" destination="VMJ-IG-Lej" id="KbJ-nk-j0p"/>
                                             <outlet property="numberOfMarkersLabel" destination="Oc8-PI-1ob" id="FDm-BX-wma"/>
                                             <outlet property="titleLabel" destination="Ma5-of-JiS" id="KYS-RT-KSm"/>

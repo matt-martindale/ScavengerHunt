@@ -23,7 +23,6 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
         let view = UIView()
         view.frame = CGRect(x: self.view.frame.maxX-100, y: self.view.frame.maxY-180, width: 60, height: 60)
         view.layer.cornerRadius = view.frame.size.width/2
-//        view.clipsToBounds = true
         view.backgroundColor = .white
         view.layer.shadowColor = UIColor.black.cgColor
         view.layer.shadowOffset = CGSize(width: 5, height: 5)
@@ -157,6 +156,7 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
         }
         let event = self.events[indexPath.row]
         cell.titleLabel.text = event.title
+        cell.dashImage.image = Utilites.shared.getDashImage(event)
         cell.finishLabel.text = event.markers.tail?.title
         cell.numberOfMarkersLabel.text = String(event.markers.getSize)
         return cell

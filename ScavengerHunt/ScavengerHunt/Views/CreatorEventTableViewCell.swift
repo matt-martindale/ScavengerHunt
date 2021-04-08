@@ -12,6 +12,7 @@ class CreatorEventTableViewCell: UITableViewCell {
     // MARK: - IBOutlets
     @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var dashImage: UIImageView!
     @IBOutlet weak var finishLabel: UILabel!
     @IBOutlet weak var numberOfMarkersLabel: UILabel!
     
