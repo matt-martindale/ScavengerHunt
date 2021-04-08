@@ -117,8 +117,6 @@ extension EventConfirmationViewController: UITableViewDelegate, UITableViewDataS
         cell.titleLabel.text = marker.title
         cell.clueLabel.text = marker.clue
         
-//        var attributes = [NSAttributedString.Key: AnyObject]()
-//        attributes[.foregroundColor] = UIColor.orange
         let attributedNextString = NSMutableAttributedString(string: "Next: \(next)")
         attributedNextString.addAttribute(.foregroundColor, value: UIColor.orange, range: NSRange(location: 0, length: 5))
         
