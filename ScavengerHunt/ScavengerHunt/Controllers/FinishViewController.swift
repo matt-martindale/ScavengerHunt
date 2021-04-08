@@ -13,6 +13,9 @@ class FinishViewController: UIViewController {
     @IBOutlet weak var congratsImageView: UIImageView!
     @IBOutlet weak var homeBtn: UIButton!
     
+    
+    let particleEmitter = CAEmitterLayer()
+    
     // MARK: - Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +30,9 @@ class FinishViewController: UIViewController {
 
     // MARK: - IBActions
     @IBAction func homeBtnTapped(_ sender: UIButton) {
+        Utilites.shared.playSound(sender.tag)
+        particleEmitter.emitterCells?.removeAll()
+        navigationController?.popToRootViewController(animated: true)
     }
     
     // MARK: - Methods
@@ -37,7 +43,6 @@ class FinishViewController: UIViewController {
     }
     
     func createParticles() {
-        let particleEmitter = CAEmitterLayer()
 
         particleEmitter.emitterPosition = CGPoint(x: view.center.x, y: -20)
         particleEmitter.emitterShape = .line
