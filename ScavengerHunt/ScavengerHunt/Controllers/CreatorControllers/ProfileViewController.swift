@@ -15,11 +15,16 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var companyLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var logOutBtn: UIButton!
-    @IBOutlet weak var versionLabel: UILabel!
     
     // MARK: - Properties
     var db = Firestore.firestore()
+    lazy var profileData: [String] = [
+        "version: \(getAppVersion())",
+        "Character vector created by freepik - www.freepik.com",
+        "Celebration Background vector created by starline - www.freepik.com"
+    ]
     
     // MARK: - Lifecycles
     override func viewDidLoad() {
@@ -39,7 +44,7 @@ class ProfileViewController: UIViewController {
         logOutBtn.layer.borderWidth = 2.0
         logOutBtn.layer.borderColor = UIColor.orange.cgColor
         avatarImage.image = Utilites.shared.getMonsterImage()
-        versionLabel.text = "version: \(getAppVersion())"
+        tableView.tableFooterView = UIView()
     }
     
     func getAppVersion() -> String {
@@ -91,4 +96,18 @@ class ProfileViewController: UIViewController {
         }
     }
 
+}
+
+extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return profileData.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") else { return UITableViewCell() }
+        
+        cell.textLabel?.text = profileData[indexPath.row]
+        
+        return cell
+    }
 }
