@@ -68,11 +68,6 @@ class PlayViewController: UIViewController {
             print("No current Marker")
             return }
         
-        if self.currentMarker?.next?.next == nil {
-            guard let finishVC = (storyboard?.instantiateViewController(identifier: Constants.Storyboard.finishVC)) as? FinishViewController else { return }
-            navigationController?.pushViewController(finishVC, animated: true)
-        }
-        
         // Check if marker scanned is really the next Marker in the Event
         guard currentMarker.next?.uid == nextMarkerUID else {
             Utilites.shared.showError("Whoops! Wrong order. This Tag wasn't the next clue.", errorLabel: clueLabel)
@@ -83,6 +78,11 @@ class PlayViewController: UIViewController {
         self.currentMarker = currentMarker.next
         avatarImageView.image = Utilites.shared.getMonsterImage()
         clueLabel.text = self.currentMarker?.clue
+        
+        if self.currentMarker?.next == nil {
+            guard let finishVC = (storyboard?.instantiateViewController(identifier: Constants.Storyboard.finishVC)) as? FinishViewController else { return }
+            navigationController?.pushViewController(finishVC, animated: true)
+        }
     }
     
 }
