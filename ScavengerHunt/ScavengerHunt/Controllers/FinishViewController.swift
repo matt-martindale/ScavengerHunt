@@ -16,6 +16,7 @@ class FinishViewController: UIViewController {
     // MARK: - Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupViews()
     }
     
     override func viewWillLayoutSubviews() {
@@ -28,5 +29,9 @@ class FinishViewController: UIViewController {
     }
     
     // MARK: - Methods
-    
+    func setupViews() {
+        homeBtn.layer.cornerRadius = 20
+        homeBtn.layer.borderWidth = 2.0
+        homeBtn.layer.borderColor = UIColor.orange.cgColor
+    }
 }

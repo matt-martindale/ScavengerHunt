@@ -299,18 +299,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="party" translatesAutoresizingMaskIntoConstraints="NO" id="fwg-yS-i3B">
-                                <rect key="frame" x="40" y="84" width="334" height="495.5"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="celebration" translatesAutoresizingMaskIntoConstraints="NO" id="fwg-yS-i3B">
+                                <rect key="frame" x="-143" y="68" width="700" height="700"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="fwg-yS-i3B" secondAttribute="height" multiplier="1:1" id="ItH-c4-LC4"/>
+                                    <constraint firstAttribute="width" constant="700" id="vDI-Tc-sh4"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="CONGRATULATIONS!!!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1X4-gG-zsP">
-                                <rect key="frame" x="40" y="599.5" width="334" height="31.5"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="23"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="You found all the clues" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Doe-pU-7RR">
-                                <rect key="frame" x="40" y="651" width="334" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You found all the clues!!!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Doe-pU-7RR">
+                                <rect key="frame" x="40" y="691.5" width="334" height="30.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -320,7 +318,9 @@
                                     <constraint firstAttribute="height" constant="40" id="Umn-HN-NTx"/>
                                     <constraint firstAttribute="width" constant="200" id="hr1-3T-mIm"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Home">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="homeBtnTapped:" destination="AYb-wC-5Gn" eventType="touchUpInside" id="ueO-EN-Bot"/>
                                 </connections>
@@ -329,20 +329,14 @@
                         <viewLayoutGuide key="safeArea" id="H9c-7x-Ued"/>
                         <color key="backgroundColor" red="0.14901960780000001" green="0.27450980390000002" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="KFj-l7-3b0" firstAttribute="top" secondItem="Doe-pU-7RR" secondAttribute="bottom" constant="100" id="3xX-4d-qOd"/>
-                            <constraint firstItem="Doe-pU-7RR" firstAttribute="top" secondItem="1X4-gG-zsP" secondAttribute="bottom" constant="20" id="6e5-m8-Pzc"/>
-                            <constraint firstItem="H9c-7x-Ued" firstAttribute="trailing" secondItem="1X4-gG-zsP" secondAttribute="trailing" constant="40" id="6oF-Ra-xJW"/>
-                            <constraint firstItem="fwg-yS-i3B" firstAttribute="leading" secondItem="H9c-7x-Ued" secondAttribute="leading" constant="40" id="7No-O1-Jp4"/>
-                            <constraint firstItem="1X4-gG-zsP" firstAttribute="centerX" secondItem="7In-by-8zh" secondAttribute="centerX" id="9mc-eW-de8"/>
+                            <constraint firstItem="KFj-l7-3b0" firstAttribute="top" secondItem="Doe-pU-7RR" secondAttribute="bottom" constant="50" id="3xX-4d-qOd"/>
+                            <constraint firstItem="fwg-yS-i3B" firstAttribute="centerX" secondItem="7In-by-8zh" secondAttribute="centerX" id="P60-KI-YeN"/>
                             <constraint firstItem="H9c-7x-Ued" firstAttribute="bottom" secondItem="KFj-l7-3b0" secondAttribute="bottom" constant="50" id="RFp-FR-bqu"/>
-                            <constraint firstItem="1X4-gG-zsP" firstAttribute="leading" secondItem="H9c-7x-Ued" secondAttribute="leading" constant="40" id="TUu-Xd-BBu"/>
-                            <constraint firstItem="fwg-yS-i3B" firstAttribute="top" secondItem="H9c-7x-Ued" secondAttribute="top" constant="40" id="WjI-N8-92N"/>
-                            <constraint firstItem="1X4-gG-zsP" firstAttribute="top" secondItem="fwg-yS-i3B" secondAttribute="bottom" constant="20" id="bHG-2j-0JJ"/>
                             <constraint firstItem="H9c-7x-Ued" firstAttribute="trailing" secondItem="Doe-pU-7RR" secondAttribute="trailing" constant="40" id="bHo-U9-MRs"/>
                             <constraint firstItem="Doe-pU-7RR" firstAttribute="centerX" secondItem="7In-by-8zh" secondAttribute="centerX" id="c8y-sH-PMc"/>
                             <constraint firstItem="Doe-pU-7RR" firstAttribute="leading" secondItem="H9c-7x-Ued" secondAttribute="leading" constant="40" id="eWO-k9-vdE"/>
                             <constraint firstItem="KFj-l7-3b0" firstAttribute="centerX" secondItem="7In-by-8zh" secondAttribute="centerX" id="n6J-Xu-Hki"/>
-                            <constraint firstItem="H9c-7x-Ued" firstAttribute="trailing" secondItem="fwg-yS-i3B" secondAttribute="trailing" constant="40" id="pgR-yC-KJN"/>
+                            <constraint firstItem="fwg-yS-i3B" firstAttribute="centerY" secondItem="7In-by-8zh" secondAttribute="centerY" constant="-30" id="pNv-wM-SdI"/>
                         </constraints>
                     </view>
                     <connections>
@@ -437,9 +431,9 @@
     </scenes>
     <resources>
         <image name="bubble" width="500" height="500"/>
-        <image name="homeBackground" width="585" height="1266"/>
+        <image name="celebration" width="4166.5" height="4166.5"/>
+        <image name="homeBackground" width="577.5" height="1250"/>
         <image name="monster1" width="500" height="500"/>
-        <image name="party" width="700" height="467"/>
         <image name="play" width="400" height="400"/>
         <image name="questionmark.circle" catalog="system" width="128" height="121"/>
         <image name="scanFirst" width="400" height="400"/>
