@@ -33,6 +33,7 @@ struct Utilites {
         let url = URL(fileURLWithPath: path)
         do {
             player = try AVAudioPlayer(contentsOf: url)
+            try? AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.ambient)
             player?.play()
         } catch {
             print("Couldn't load file")
