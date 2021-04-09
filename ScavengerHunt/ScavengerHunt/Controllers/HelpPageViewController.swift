@@ -17,7 +17,6 @@ class HelpPageViewController: UIViewController, UIScrollViewDelegate {
     // MARK: - Properties
     var scrollWidth: CGFloat = 0.0
     var scrollHeight: CGFloat = 0.0
-    var titles = ["Number 1", "Number 2", "Number 3"]
     var images = ["step1"]
     
     // MARK: - Lifecycles
@@ -73,7 +72,7 @@ class HelpPageViewController: UIViewController, UIScrollViewDelegate {
         scrollView.contentSize = CGSize(width: scrollWidth * CGFloat(titles.count), height: scrollHeight)
         self.scrollView.contentSize.height = 1.0
         
-        pageControl.numberOfPages = titles.count
+        pageControl.numberOfPages = images.count
         pageControl.currentPage = 0
     }
     
