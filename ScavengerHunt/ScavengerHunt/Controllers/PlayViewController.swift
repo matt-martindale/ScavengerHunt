@@ -23,6 +23,7 @@ class PlayViewController: UIViewController {
     lazy var currentMarker: Marker? = event?.markers.head
     var session: NFCNDEFReaderSession?
     
+    // MARK: - Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
@@ -95,6 +96,7 @@ class PlayViewController: UIViewController {
     
 }
 
+// NFC Delegate Methods
 extension PlayViewController: NFCNDEFReaderSessionDelegate {
     func readerSession(_ session: NFCNDEFReaderSession, didDetectNDEFs messages: [NFCNDEFMessage]) {
         for message in messages {
