@@ -300,10 +300,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="celebration" translatesAutoresizingMaskIntoConstraints="NO" id="fwg-yS-i3B">
-                                <rect key="frame" x="-143" y="68" width="700" height="700"/>
+                                <rect key="frame" x="-93" y="118" width="600" height="600"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="fwg-yS-i3B" secondAttribute="height" multiplier="1:1" id="ItH-c4-LC4"/>
-                                    <constraint firstAttribute="width" constant="700" id="vDI-Tc-sh4"/>
+                                    <constraint firstAttribute="width" constant="600" id="vDI-Tc-sh4"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You found all the clues!!!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Doe-pU-7RR">
