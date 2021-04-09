@@ -13,7 +13,7 @@ class FinishViewController: UIViewController {
     @IBOutlet weak var congratsImageView: UIImageView!
     @IBOutlet weak var homeBtn: UIButton!
     
-    
+    // MARK: - Properties
     let particleEmitter = CAEmitterLayer()
     
     // MARK: - Lifecycles
