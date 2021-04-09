@@ -13,6 +13,7 @@ class PlayViewController: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet weak var clueBoxImageView: UIImageView!
     @IBOutlet weak var clueLabel: UILabel!
+    @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var backbtn: UIButton!
     @IBOutlet weak var foundClueBtn: UIButton!
@@ -34,6 +35,11 @@ class PlayViewController: UIViewController {
         navigationController?.isNavigationBarHidden = true
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        errorLabel.alpha = 0.0
+    }
+    
     // MARK: - IBActions
     @IBAction func backBtnTapped(_ sender: UIButton) {
         Utilites.shared.playSound(sender.tag)
@@ -45,7 +51,7 @@ class PlayViewController: UIViewController {
         
         // start NFC session
         guard NFCNDEFReaderSession.readingAvailable else {
-            Utilites.shared.showError("This device does not support tag scanning.", errorLabel: clueLabel)
+            Utilites.shared.showError("This device does not support tag scanning.", errorLabel: errorLabel)
             return
         }
         
@@ -61,16 +67,18 @@ class PlayViewController: UIViewController {
         backbtn.layer.borderWidth = 2.0
         backbtn.layer.borderColor = UIColor.orange.cgColor
         foundClueBtn.layer.cornerRadius = 20
+        errorLabel.alpha = 0.0
     }
     
     func loadNextMarker(nextMarkerUID: String) {
+        errorLabel.text = ""
         guard let currentMarker = currentMarker else {
             print("No current Marker")
             return }
         
         // Check if marker scanned is really the next Marker in the Event
         guard currentMarker.next?.uid == nextMarkerUID else {
-            Utilites.shared.showError("Whoops! Wrong order. This Tag wasn't the next clue.", errorLabel: clueLabel)
+            Utilites.shared.showError("Whoops! Wrong order. This Tag wasn't the next clue.", errorLabel: errorLabel)
             return
         }
         
@@ -101,7 +109,7 @@ extension PlayViewController: NFCNDEFReaderSessionDelegate {
                     loadNextMarker(nextMarkerUID: strippedMarkerUID)
                 } else {
                     // Error with getting payload
-                    Utilites.shared.showError("Error getting message payload from tag, \(record.payload)", errorLabel: clueLabel)
+                    Utilites.shared.showError("Error getting message payload from tag, \(record.payload)", errorLabel: errorLabel)
                 }
             }
         }
