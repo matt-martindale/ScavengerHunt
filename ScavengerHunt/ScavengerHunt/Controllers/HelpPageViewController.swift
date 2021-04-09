@@ -18,6 +18,7 @@ class HelpPageViewController: UIViewController, UIScrollViewDelegate {
     var scrollWidth: CGFloat = 0.0
     var scrollHeight: CGFloat = 0.0
     var titles = ["Number 1", "Number 2", "Number 3"]
+    var images = ["step1"]
     
     // MARK: - Lifecycles
     override func viewDidLayoutSubviews() {
@@ -53,22 +54,19 @@ class HelpPageViewController: UIViewController, UIScrollViewDelegate {
     // MARK: - Methods
     private func setupScrollView() {
         var frame = CGRect(x: 0.0, y: 0.0, width: 0.0, height: 0.0)
-        for index in 0..<titles.count {
+        for index in 0..<images.count {
             frame.origin.x = scrollWidth * CGFloat(index)
             frame.size = CGSize(width: scrollWidth, height: scrollHeight)
             
             let slide = UIView(frame: frame)
             
-            // subviews
-            let text: UILabel = {
-                let label = UILabel()
-                label.frame = CGRect(x: 30, y: 100, width: scrollWidth-64, height: 30)
-                label.textAlignment = .center
-                label.text = titles[index]
-                return label
-            }()
+            //subviews
+            let imageView = UIImageView.init(image: UIImage.init(named: images[index]))
+            imageView.frame = CGRect(x: 0, y: 0, width: 300, height: 500)
+            imageView.contentMode = .scaleAspectFit
+            imageView.center = CGPoint(x: scrollWidth/2, y: scrollHeight/2)
             
-            slide.addSubview(text)
+            slide.addSubview(imageView)
             scrollView.addSubview(slide)
         }
         
