@@ -109,7 +109,8 @@ class AddMarkerViewController: UIViewController {
         guard let event = event else { return }
         title = "Add Marker #\(event.markers.getSize+1)"
         titleTextField.text = ""
-        clueTextView.text = "*Write clue to next marker*"
+        clueTextView.text = ""
+        textViewDidEndEditing(clueTextView)
     }
     
     func createEvent() {
