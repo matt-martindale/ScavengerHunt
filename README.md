@@ -10,3 +10,6 @@ To get started, all you need are NFC Tags, and this app!
 * Any Creator with an iPhone 7 and iOS 13 or newer can create Treasure Hunts and write NFC tags.
 
 #### Future Features:
+* Ability to create a more custom Finish screen for your Players e.x. show custom image, text, even a digital reward.
+* Select a "Winner" to a Treasure Hunt by whoever finishes the quickest.
+* More custom Creator profile
