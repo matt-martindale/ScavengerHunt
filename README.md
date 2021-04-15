@@ -1,7 +1,7 @@
 # TreasureHunt
 #### iOS Treasure hunt app using NFC tags
 Scan NFC tags using your iPhone to show clues that will lead you to the Treasure! 💎
-To get started, all you need are NFC Tags, and this app!
+To get started, all you need are type 1-5 NFC Tags, and this app!
 
 #### Here's a list of features that make it easy to create and play your very own Treasure Hunt:
 
