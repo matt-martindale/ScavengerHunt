@@ -15,6 +15,6 @@ To get started, all you need are type 1-5 NFC Tags, and this app!
 
 #### Features for future updates:
 * Ability to create a more custom Finish screen for your Players e.x. show custom image, text, even a digital reward. 🎁
-* Select a "Winner" to a Treasure Hunt by whoever finishes the quickest.
+* Designate a "Winner" to a Treasure Hunt by whoever finds the treasure the quickest.
 * More custom Creator profile
 * Ability to edit individual clues
