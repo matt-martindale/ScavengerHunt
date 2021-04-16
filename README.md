@@ -8,6 +8,7 @@ To get started, all you need are NFC Tags, and this app!
 * Fun and Friendly UI
 * Sign Up and Login with Firebase, which allows you to create and view your Treasure Hunts from any iPhone device.
 * Ability to reorder clues by using draggable cells
+* Swipeable help cards that will show Players how to play the game.
 
 #### ⏩ Features for future updates:
 * Ability to create a more custom Finish screen for your Players e.x. show custom image, text, even a digital reward.
