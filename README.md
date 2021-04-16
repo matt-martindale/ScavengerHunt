@@ -14,6 +14,7 @@ To get started, all you need are NFC Tags, and this app!
 * Designate a "Winner" to a Treasure Hunt by whoever finds the treasure the quickest.
 * More custom Creator profile
 * Ability to edit individual clues
+* Add GPS locations to the Markers, so Creators can see all their clues on a Map.
 
 #### :electron: Tech Specs
 * Players with an iPhone 7 and iOS 11 or newer can play the game.
