@@ -19,6 +19,6 @@ To get started, all you need are NFC Tags, and this app!
 
 #### :electron: Tech Specs
 * *To play the game*: iPhone 7 and iOS 11 or newer.
-* *To create Treasure Hunts and write NFC tags*: iPhone 7 and iOS 13 or newer.
+* * **To create Treasure Hunts and write NFC tags** *: iPhone 7 and iOS 13 or newer.
 * Works with any rewriteable NDEF NFC tags types 1-5, or any that are compatible with "Amiibos"
 * Need NFC Tags with minimum 40 bytes of memory.
