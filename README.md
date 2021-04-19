@@ -1,5 +1,6 @@
 # NFC Treasure Hunt!
 #### iOS Treasure hunt app using NFC tags
+\*Great for family fun and company events\*
 Scan tags using your iPhone to show clues that will lead you to the Treasure! 💎
 To get started, all you need are NFC Tags, and this app!
 
