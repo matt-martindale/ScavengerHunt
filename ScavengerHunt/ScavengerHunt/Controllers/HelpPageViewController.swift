@@ -17,7 +17,7 @@ class HelpPageViewController: UIViewController, UIScrollViewDelegate {
     // MARK: - Properties
     var scrollWidth: CGFloat = 0.0
     var scrollHeight: CGFloat = 0.0
-    var images = ["step1"]
+    var images = ["step1", "step2"]
     
     // MARK: - Lifecycles
     override func viewDidLayoutSubviews() {
@@ -69,7 +69,7 @@ class HelpPageViewController: UIViewController, UIScrollViewDelegate {
             scrollView.addSubview(slide)
         }
         
-        scrollView.contentSize = CGSize(width: scrollWidth * CGFloat(titles.count), height: scrollHeight)
+        scrollView.contentSize = CGSize(width: scrollWidth * CGFloat(images.count), height: scrollHeight)
         self.scrollView.contentSize.height = 1.0
         
         pageControl.numberOfPages = images.count
