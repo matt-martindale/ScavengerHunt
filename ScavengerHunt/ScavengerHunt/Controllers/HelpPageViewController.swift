@@ -72,8 +72,8 @@ class HelpPageViewController: UIViewController, UIScrollViewDelegate {
             
             let label = UILabel.init()
             label.text = helpText[index]
-            label.font = UIFont(name: "avenir_next", size: 16)
-            label.frame = CGRect(x: 0, y: 0, width: scrollWidth, height: 40)
+            label.font = UIFont(name: "Avenir Next", size: 18)
+            label.frame = CGRect(x: 0, y: 0, width: scrollWidth-40, height: 40)
             label.center = CGPoint(x: scrollWidth/2, y: scrollHeight-100)
             label.textAlignment = .center
             
