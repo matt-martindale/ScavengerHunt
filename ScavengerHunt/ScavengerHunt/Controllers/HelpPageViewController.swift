@@ -17,7 +17,12 @@ class HelpPageViewController: UIViewController, UIScrollViewDelegate {
     // MARK: - Properties
     var scrollWidth: CGFloat = 0.0
     var scrollHeight: CGFloat = 0.0
-    var images = ["step1", "step2", "step3"]
+    var images = ["step1", "step2", "step3", "step4"]
+    var helpText = ["1. Scan the starting clue",
+        "2. Follow the clue to find the next one",
+        "3. Tap \"Found Clue\" and scan the clue",
+        "4. Keep going until you reach the end!"
+    ]
     
     // MARK: - Lifecycles
     override func viewDidLayoutSubviews() {
@@ -65,7 +70,15 @@ class HelpPageViewController: UIViewController, UIScrollViewDelegate {
             imageView.contentMode = .scaleAspectFit
             imageView.center = CGPoint(x: scrollWidth/2, y: scrollHeight/2)
             
+            let label = UILabel.init()
+            label.text = helpText[index]
+            label.font = UIFont(name: "avenir_next", size: 16)
+            label.frame = CGRect(x: 0, y: 0, width: scrollWidth, height: 40)
+            label.center = CGPoint(x: scrollWidth/2, y: scrollHeight-100)
+            label.textAlignment = .center
+            
             slide.addSubview(imageView)
+            slide.addSubview(label)
             scrollView.addSubview(slide)
         }
         
