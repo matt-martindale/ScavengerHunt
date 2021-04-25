@@ -17,7 +17,7 @@ class HelpPageViewController: UIViewController, UIScrollViewDelegate {
     // MARK: - Properties
     var scrollWidth: CGFloat = 0.0
     var scrollHeight: CGFloat = 0.0
-    var images = ["step1", "step2"]
+    var images = ["step1", "step2", "step3"]
     
     // MARK: - Lifecycles
     override func viewDidLayoutSubviews() {
