@@ -706,43 +706,43 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="WFF-1t-cWP">
-                                <rect key="frame" x="40" y="64" width="334" height="275"/>
+                                <rect key="frame" x="40" y="64" width="334" height="281"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="NsS-MH-8Xw">
-                                        <rect key="frame" x="0.0" y="0.0" width="334" height="87.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="90.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marker Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SJW-2M-s04">
-                                                <rect key="frame" x="0.0" y="0.0" width="334" height="27.5"/>
-                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="334" height="30.5"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="22"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title, Location, etc." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5rC-Gh-rhB">
-                                                <rect key="frame" x="0.0" y="47.5" width="334" height="40"/>
+                                                <rect key="frame" x="0.0" y="50.5" width="334" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="Jfh-rP-SJN"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="7sM-Dj-eKl">
-                                        <rect key="frame" x="0.0" y="127.5" width="334" height="147.5"/>
+                                        <rect key="frame" x="0.0" y="130.5" width="334" height="150.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vpH-Mh-V6f">
-                                                <rect key="frame" x="0.0" y="0.0" width="334" height="27.5"/>
-                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="334" height="30.5"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="22"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Clue to next marker" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xiQ-dw-b3K">
-                                                <rect key="frame" x="0.0" y="47.5" width="334" height="100"/>
+                                                <rect key="frame" x="0.0" y="50.5" width="334" height="100"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="Ryg-Wp-5sF"/>
                                                 </constraints>
-                                                <color key="textColor" systemColor="systemGray4Color"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
@@ -751,7 +751,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uqP-Ox-Vmf">
-                                <rect key="frame" x="107" y="369" width="200" height="40"/>
+                                <rect key="frame" x="107" y="375" width="200" height="40"/>
                                 <color key="backgroundColor" red="0.95686274510000002" green="0.63529411759999999" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Tk7-ux-scG"/>
@@ -761,9 +761,12 @@
                                 <state key="normal" title="Save">
                                     <color key="titleColor" red="0.14901960780000001" green="0.27450980390000002" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="saveBtnTapped:" destination="iau-A4-YhG" eventType="touchUpInside" id="Qu0-wC-CZs"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZCd-Pg-fyy">
-                                <rect key="frame" x="50" y="449" width="314" height="23.5"/>
+                                <rect key="frame" x="50" y="455" width="314" height="23.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                 <color key="textColor" red="0.95686274510000002" green="0.63529411759999999" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -784,6 +787,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Q6R-MO-J7F"/>
+                    <connections>
+                        <outlet property="clueTextView" destination="xiQ-dw-b3K" id="svR-ta-DL0"/>
+                        <outlet property="errorLabel" destination="ZCd-Pg-fyy" id="WF4-FH-iOI"/>
+                        <outlet property="saveBtn" destination="uqP-Ox-Vmf" id="TG4-gL-Iyj"/>
+                        <outlet property="titleTextField" destination="5rC-Gh-rhB" id="pAN-4U-RaJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="59x-ee-jhQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
