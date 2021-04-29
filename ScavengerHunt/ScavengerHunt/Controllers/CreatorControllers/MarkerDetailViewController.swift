@@ -8,7 +8,7 @@
 import UIKit
 
 protocol MarkerUpdateDelegate {
-    func updateMarker(title: String, clue: String)
+    func updateMarker(title: String, clue: String, index: Int)
 }
 
 class MarkerDetailViewController: UIViewController {
@@ -21,6 +21,7 @@ class MarkerDetailViewController: UIViewController {
     
     // MARK: - Properties
     var marker: Marker?
+    var index: Int?
     var markerDelegate: MarkerUpdateDelegate!
     
     override func viewDidLoad() {
@@ -41,6 +42,7 @@ class MarkerDetailViewController: UIViewController {
     }
     
     private func setupViews() {
+        self.hideKeyboardOnTap()
         titleTextField.layer.cornerRadius = 20
         titleTextField.addBottomBorder()
         clueTextView.layer.borderWidth = 2.0
@@ -74,8 +76,9 @@ class MarkerDetailViewController: UIViewController {
         
         // Call delegate method to update passed in marker
         guard let title = titleTextField.text,
-              let clue = clueTextView.text else { return }
-        markerDelegate.updateMarker(title: title, clue: clue)
+              let clue = clueTextView.text,
+              let index = index else { return }
+        markerDelegate.updateMarker(title: title, clue: clue, index: index)
         navigationController?.popViewController(animated: true)
     }
 }

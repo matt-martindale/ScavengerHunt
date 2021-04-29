@@ -186,7 +186,18 @@ extension EventConfirmationViewController: UITableViewDelegate, UITableViewDataS
         let creatorStoryboard = UIStoryboard(name: "Creator", bundle: nil)
         guard let editMarkerVC = creatorStoryboard.instantiateViewController(identifier: Constants.Storyboard.editMarkerVC) as? MarkerDetailViewController else { return }
         editMarkerVC.marker = marker
+        editMarkerVC.index = index
+        editMarkerVC.markerDelegate = self
         navigationController?.pushViewController(editMarkerVC, animated: true)
         
+    }
+}
+
+extension EventConfirmationViewController: MarkerUpdateDelegate {
+    func updateMarker(title: String, clue: String, index: Int) {
+        let marker = event?.markers.getMarkerAt(index: index)
+        marker?.title = title
+        marker?.clue = clue
+        tableView.reloadData()
     }
 }
