@@ -575,7 +575,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3YW-hf-Q0n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6014" y="530"/>
+            <point key="canvasLocation" x="6090" y="530"/>
         </scene>
         <!--Confirm Event-->
         <scene sceneID="s3J-TJ-UHc">
@@ -705,33 +705,89 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NBW-kT-QyS">
-                                <rect key="frame" x="186" y="100" width="33" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Clue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rUu-Q8-Bry">
-                                <rect key="frame" x="186" y="244" width="35" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="WFF-1t-cWP">
+                                <rect key="frame" x="40" y="64" width="334" height="275"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="NsS-MH-8Xw">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="87.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marker Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SJW-2M-s04">
+                                                <rect key="frame" x="0.0" y="0.0" width="334" height="27.5"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title, Location, etc." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5rC-Gh-rhB">
+                                                <rect key="frame" x="0.0" y="47.5" width="334" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="Jfh-rP-SJN"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="7sM-Dj-eKl">
+                                        <rect key="frame" x="0.0" y="127.5" width="334" height="147.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vpH-Mh-V6f">
+                                                <rect key="frame" x="0.0" y="0.0" width="334" height="27.5"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Clue to next marker" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xiQ-dw-b3K">
+                                                <rect key="frame" x="0.0" y="47.5" width="334" height="100"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="Ryg-Wp-5sF"/>
+                                                </constraints>
+                                                <color key="textColor" systemColor="systemGray4Color"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uqP-Ox-Vmf">
+                                <rect key="frame" x="107" y="369" width="200" height="40"/>
+                                <color key="backgroundColor" red="0.95686274510000002" green="0.63529411759999999" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Tk7-ux-scG"/>
+                                    <constraint firstAttribute="width" constant="200" id="tU3-td-jon"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" red="0.14901960780000001" green="0.27450980390000002" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZCd-Pg-fyy">
+                                <rect key="frame" x="50" y="449" width="314" height="23.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <color key="textColor" red="0.95686274510000002" green="0.63529411759999999" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LUk-TQ-21Q"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.14901960780000001" green="0.27450980390000002" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="LUk-TQ-21Q" firstAttribute="trailing" secondItem="ZCd-Pg-fyy" secondAttribute="trailing" constant="50" id="2aV-lr-aOg"/>
+                            <constraint firstItem="LUk-TQ-21Q" firstAttribute="trailing" secondItem="WFF-1t-cWP" secondAttribute="trailing" constant="40" id="Dtj-kH-0qD"/>
+                            <constraint firstItem="ZCd-Pg-fyy" firstAttribute="top" secondItem="uqP-Ox-Vmf" secondAttribute="bottom" constant="40" id="EYH-KP-5Bm"/>
+                            <constraint firstItem="ZCd-Pg-fyy" firstAttribute="leading" secondItem="LUk-TQ-21Q" secondAttribute="leading" constant="50" id="OOX-xF-xpD"/>
+                            <constraint firstItem="WFF-1t-cWP" firstAttribute="top" secondItem="LUk-TQ-21Q" secondAttribute="top" constant="20" id="V6l-R4-9Xz"/>
+                            <constraint firstItem="ZCd-Pg-fyy" firstAttribute="centerX" secondItem="SwR-1n-q4f" secondAttribute="centerX" id="bEe-eg-HlK"/>
+                            <constraint firstItem="uqP-Ox-Vmf" firstAttribute="top" secondItem="WFF-1t-cWP" secondAttribute="bottom" constant="30" id="gnV-Lr-rnD"/>
+                            <constraint firstItem="WFF-1t-cWP" firstAttribute="leading" secondItem="LUk-TQ-21Q" secondAttribute="leading" constant="40" id="psf-DV-c3y"/>
+                            <constraint firstItem="uqP-Ox-Vmf" firstAttribute="centerX" secondItem="SwR-1n-q4f" secondAttribute="centerX" id="raq-kQ-5gf"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Q6R-MO-J7F"/>
-                    <connections>
-                        <outlet property="clueLabel" destination="rUu-Q8-Bry" id="XEF-rH-VzJ"/>
-                        <outlet property="titleLabel" destination="NBW-kT-QyS" id="uek-4x-rBC"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="59x-ee-jhQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7668" y="530"/>
+            <point key="canvasLocation" x="7546" y="524"/>
         </scene>
         <!--SIGN UP-->
         <scene sceneID="KH9-qD-APR">
