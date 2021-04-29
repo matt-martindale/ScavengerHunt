@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol MarkerUpdateDelegate {
+    func updateMarker(title: String, clue: String)
+}
+
 class MarkerDetailViewController: UIViewController {
     
     // MARK: - IBOutlets
@@ -17,6 +21,7 @@ class MarkerDetailViewController: UIViewController {
     
     // MARK: - Properties
     var marker: Marker?
+    var markerDelegate: MarkerUpdateDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,8 +51,31 @@ class MarkerDetailViewController: UIViewController {
         saveBtn.layer.cornerRadius = 20
         errorLabel.alpha = 0.0
     }
+    
+    private func validateFields() -> String? {
+        if titleTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            clueTextView.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+            return "Please fill in all fields."
+        } else {
+            return nil
+        }
+    }
 
+    // MARK: - IBActions
     @IBAction func saveBtnTapped(_ sender: UIButton) {
         Utilites.shared.playSound(sender.tag)
+        
+        // Check if the fields aren't empty
+        let error = validateFields()
+        if let error = error {
+            Utilites.shared.showError(error, errorLabel: errorLabel)
+            return
+        }
+        
+        // Call delegate method to update passed in marker
+        guard let title = titleTextField.text,
+              let clue = clueTextView.text else { return }
+        markerDelegate.updateMarker(title: title, clue: clue)
+        navigationController?.popViewController(animated: true)
     }
 }

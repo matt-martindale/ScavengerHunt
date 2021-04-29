@@ -36,6 +36,7 @@ class CreateEventViewController: UIViewController {
     // MARK: - IBActions
     @IBAction func confirmBtnTapped(_ sender: UIButton) {
         Utilites.shared.playSound(sender.tag)
+        
         let error = validateFields()
         if let error = error {
             Utilites.shared.showError(error, errorLabel: errorLabel)
