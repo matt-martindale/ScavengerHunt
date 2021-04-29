@@ -600,7 +600,7 @@
                                     <action selector="confirmBtnTapped:" destination="4tR-UV-sig" eventType="touchUpInside" id="xey-FH-amp"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hZz-ls-G9R">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hZz-ls-G9R">
                                 <rect key="frame" x="20" y="64" width="374" height="644.5"/>
                                 <color key="backgroundColor" red="0.14901960780000001" green="0.27450980390000002" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
@@ -661,7 +661,6 @@
                                             <outlet property="clueLabel" destination="ynU-UZ-ERh" id="WoY-JY-KWd"/>
                                             <outlet property="nextLabel" destination="MYe-TO-a1a" id="vev-fS-Dh5"/>
                                             <outlet property="titleLabel" destination="VdK-Ik-ZsG" id="5SI-TY-gE5"/>
-                                            <segue destination="iau-A4-YhG" kind="show" id="aRt-X5-Jts"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -701,14 +700,34 @@
         <!--Marker Detail View Controller-->
         <scene sceneID="OSS-n5-vwX">
             <objects>
-                <viewController id="iau-A4-YhG" customClass="MarkerDetailViewController" customModule="ScavengerHunt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MarkerDetailVC" id="iau-A4-YhG" customClass="MarkerDetailViewController" customModule="ScavengerHunt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SwR-1n-q4f">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NBW-kT-QyS">
+                                <rect key="frame" x="186" y="100" width="33" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Clue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rUu-Q8-Bry">
+                                <rect key="frame" x="186" y="244" width="35" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="LUk-TQ-21Q"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="Q6R-MO-J7F"/>
+                    <connections>
+                        <outlet property="clueLabel" destination="rUu-Q8-Bry" id="XEF-rH-VzJ"/>
+                        <outlet property="titleLabel" destination="NBW-kT-QyS" id="uek-4x-rBC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="59x-ee-jhQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

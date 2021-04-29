@@ -84,6 +84,7 @@ class EventConfirmationViewController: UIViewController {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         confirmBtn.layer.cornerRadius = 20
         tableView.isEditing = true
+        tableView.allowsSelectionDuringEditing = true
         deleteBarButton.title = "Edit"
         deleteBarButton.style = .plain
         deleteBarButton.target = self
@@ -172,5 +173,20 @@ extension EventConfirmationViewController: UITableViewDelegate, UITableViewDataS
             setupTitle()
             tableView.reloadData()
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let index = indexPath.row
+        guard let marker = event?.markers.getMarkerAt(index: index) else {
+            print("Could not find marker at index: \(index)")
+            return
+        }
+        
+        let creatorStoryboard = UIStoryboard(name: "Creator", bundle: nil)
+        guard let editMarkerVC = creatorStoryboard.instantiateViewController(identifier: Constants.Storyboard.editMarkerVC) as? MarkerDetailViewController else { return }
+        editMarkerVC.marker = marker
+        navigationController?.pushViewController(editMarkerVC, animated: true)
+        
     }
 }
