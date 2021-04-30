@@ -15,6 +15,7 @@
 		C931F650261D5C1E0074738A /* EventDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C931F64F261D5C1E0074738A /* EventDetailTableViewCell.swift */; };
 		C931F660261EA28D0074738A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C931F65F261EA28D0074738A /* Colors.swift */; };
 		C961D8B6263A38C1001C0B5A /* MarkerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C961D8B5263A38C1001C0B5A /* MarkerDetailViewController.swift */; };
+		C961D8B9263B8CE8001C0B5A /* CreatorHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C961D8B8263B8CE8001C0B5A /* CreatorHelpViewController.swift */; };
 		C989437A260C127900C0AA0E /* PlayerFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9894379260C127900C0AA0E /* PlayerFormViewController.swift */; };
 		C989437E260C1C1F00C0AA0E /* FloatingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C989437D260C1C1F00C0AA0E /* FloatingLabel.swift */; };
 		C9894383260D507F00C0AA0E /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9894382260D507F00C0AA0E /* PlayViewController.swift */; };
@@ -58,6 +59,7 @@
 		C931F64F261D5C1E0074738A /* EventDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailTableViewCell.swift; sourceTree = "<group>"; };
 		C931F65F261EA28D0074738A /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		C961D8B5263A38C1001C0B5A /* MarkerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerDetailViewController.swift; sourceTree = "<group>"; };
+		C961D8B8263B8CE8001C0B5A /* CreatorHelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorHelpViewController.swift; sourceTree = "<group>"; };
 		C9894379260C127900C0AA0E /* PlayerFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerFormViewController.swift; sourceTree = "<group>"; };
 		C989437D260C1C1F00C0AA0E /* FloatingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingLabel.swift; sourceTree = "<group>"; };
 		C9894382260D507F00C0AA0E /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 				C931F643261A68560074738A /* ProfileViewController.swift */,
 				C931F649261BE3480074738A /* CreatorTabViewController.swift */,
 				C961D8B5263A38C1001C0B5A /* MarkerDetailViewController.swift */,
+				C961D8B8263B8CE8001C0B5A /* CreatorHelpViewController.swift */,
 			);
 			path = CreatorControllers;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 				C9CC0CDF25FD8F750059822E /* Utilities.swift in Sources */,
 				C9D6060A2601AAE400085FAA /* EventConfirmationViewController.swift in Sources */,
 				C989437E260C1C1F00C0AA0E /* FloatingLabel.swift in Sources */,
+				C961D8B9263B8CE8001C0B5A /* CreatorHelpViewController.swift in Sources */,
 				C9D6060226003F8C00085FAA /* AddMarkerViewController.swift in Sources */,
 				C9CC0CFE25FDA8DA0059822E /* CreatorHomeViewController.swift in Sources */,
 				C989437A260C127900C0AA0E /* PlayerFormViewController.swift in Sources */,
