@@ -123,7 +123,7 @@
         <!--Creator Help View Controller-->
         <scene sceneID="6oR-3b-cND">
             <objects>
-                <viewController id="p3Z-mT-ZHv" customClass="CreatorHelpViewController" customModule="ScavengerHunt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreatorHelpVC" id="p3Z-mT-ZHv" customClass="CreatorHelpViewController" customModule="ScavengerHunt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uMj-JS-QqE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
