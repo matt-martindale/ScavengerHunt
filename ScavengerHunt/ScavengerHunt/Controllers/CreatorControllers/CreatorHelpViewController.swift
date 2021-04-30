@@ -9,10 +9,15 @@ import UIKit
 
 class CreatorHelpViewController: UIViewController {
 
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupViews()
+    }
+    
+    private func setupViews() {
+        scrollView.layer.cornerRadius = 10
     }
 
 }
