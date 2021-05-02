@@ -14,6 +14,7 @@ class EventConfirmationViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var confirmBtn: UIButton!
+    @IBOutlet weak var cancelBtn: UIButton!
     
     // MARK: - Properties
     var event: Event?
@@ -77,6 +78,19 @@ class EventConfirmationViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func cancelBtnTapped(_ sender: UIButton) {
+        Utilites.shared.playSound(sender.tag)
+        
+        // Go back to HomeVC
+        guard let controllers = navigationController?.viewControllers else { return }
+        for vc in controllers {
+            if vc is CreatorTabViewController {
+                _ = navigationController?.popToViewController(vc as! CreatorTabViewController, animated: true)
+            }
+        }
+    }
+    
     
     // MARK: - Methods
     private func setupViews() {

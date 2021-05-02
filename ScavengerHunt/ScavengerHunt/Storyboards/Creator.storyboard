@@ -669,7 +669,7 @@ Avoid placing tags on metal surfaces, metal interferes with the scanning capabil
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9WF-Yx-ERy">
-                                <rect key="frame" x="57" y="772" width="300" height="40"/>
+                                <rect key="frame" x="57" y="742" width="300" height="40"/>
                                 <color key="backgroundColor" red="0.95686274510000002" green="0.63529411759999999" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="OCa-pr-a3T"/>
@@ -684,7 +684,7 @@ Avoid placing tags on metal surfaces, metal interferes with the scanning capabil
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hZz-ls-G9R">
-                                <rect key="frame" x="20" y="64" width="374" height="644.5"/>
+                                <rect key="frame" x="20" y="64" width="374" height="614.5"/>
                                 <color key="backgroundColor" red="0.14901960780000001" green="0.27450980390000002" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="150" id="glb-Qs-rOp" customClass="EventDetailTableViewCell" customModule="ScavengerHunt" customModuleProvider="target">
@@ -749,15 +749,30 @@ Avoid placing tags on metal surfaces, metal interferes with the scanning capabil
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FCT-16-ir3">
-                                <rect key="frame" x="40" y="728.5" width="334" height="23.5"/>
+                                <rect key="frame" x="40" y="698.5" width="334" height="23.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                 <color key="textColor" red="0.95686274510000002" green="0.63529411759999999" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZSb-nd-oeq">
+                                <rect key="frame" x="57" y="802" width="300" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="7b3-7f-Vdp"/>
+                                    <constraint firstAttribute="width" constant="300" id="s9w-69-MyG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="1" green="0.96470588239999999" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelBtnTapped:" destination="4tR-UV-sig" eventType="touchUpInside" id="W7N-hV-iJP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="TBa-qe-K4Y"/>
                         <color key="backgroundColor" red="0.14901960780000001" green="0.27450980390000002" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="ZSb-nd-oeq" firstAttribute="centerX" secondItem="iOP-YU-ILV" secondAttribute="centerX" id="3W3-wS-aLm"/>
                             <constraint firstItem="TBa-qe-K4Y" firstAttribute="trailing" secondItem="hZz-ls-G9R" secondAttribute="trailing" constant="20" id="4Js-BA-NJd"/>
                             <constraint firstItem="9WF-Yx-ERy" firstAttribute="top" secondItem="FCT-16-ir3" secondAttribute="bottom" constant="20" id="COm-VG-wQB"/>
                             <constraint firstItem="FCT-16-ir3" firstAttribute="centerX" secondItem="iOP-YU-ILV" secondAttribute="centerX" id="D65-JN-u36"/>
@@ -766,11 +781,13 @@ Avoid placing tags on metal surfaces, metal interferes with the scanning capabil
                             <constraint firstItem="FCT-16-ir3" firstAttribute="top" secondItem="hZz-ls-G9R" secondAttribute="bottom" constant="20" id="VuX-w8-For"/>
                             <constraint firstItem="TBa-qe-K4Y" firstAttribute="trailing" secondItem="FCT-16-ir3" secondAttribute="trailing" constant="40" id="XBJ-GI-XX6"/>
                             <constraint firstItem="hZz-ls-G9R" firstAttribute="top" secondItem="TBa-qe-K4Y" secondAttribute="top" constant="20" id="bD3-p9-VYA"/>
-                            <constraint firstItem="TBa-qe-K4Y" firstAttribute="bottom" secondItem="9WF-Yx-ERy" secondAttribute="bottom" constant="50" id="iac-rD-Z8B"/>
+                            <constraint firstItem="ZSb-nd-oeq" firstAttribute="top" secondItem="9WF-Yx-ERy" secondAttribute="bottom" constant="20" id="iac-rD-Z8B"/>
                             <constraint firstItem="FCT-16-ir3" firstAttribute="leading" secondItem="TBa-qe-K4Y" secondAttribute="leading" constant="40" id="iho-7l-MnV"/>
+                            <constraint firstItem="TBa-qe-K4Y" firstAttribute="bottom" secondItem="ZSb-nd-oeq" secondAttribute="bottom" constant="20" id="s7T-1F-O8K"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cancelBtn" destination="ZSb-nd-oeq" id="ptO-PM-TzI"/>
                         <outlet property="confirmBtn" destination="9WF-Yx-ERy" id="UqI-pi-5EL"/>
                         <outlet property="errorLabel" destination="FCT-16-ir3" id="N5E-Zj-Koy"/>
                         <outlet property="tableView" destination="hZz-ls-G9R" id="SBX-at-2bc"/>
