@@ -17,9 +17,24 @@ class CreatorHelpViewController: UIViewController {
         setupViews()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+    }
+    
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
+        scrollView.contentSize = CGSize(width: 400, height: 2300)
         nfcTagSpecsLabel.text = """
+        Works with any rewritable NDEF NFC tags type 1-5, or any that are compatible with “Amiibos”.
+
+        Minimum 40 bytes of memory.
+
+        Tags with adhesive are best when placing around!
+
+        Avoid placing tags on metal surfaces, metal interferes with the scanning capabilities.
+
+
         Works with any rewritable NDEF NFC tags type 1-5, or any that are compatible with “Amiibos”.
 
         Minimum 40 bytes of memory.

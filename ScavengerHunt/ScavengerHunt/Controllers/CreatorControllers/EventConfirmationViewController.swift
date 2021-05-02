@@ -97,6 +97,9 @@ class EventConfirmationViewController: UIViewController {
         setupTitle()
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         confirmBtn.layer.cornerRadius = 20
+        cancelBtn.layer.borderWidth = 2.0
+        cancelBtn.layer.borderColor = UIColor.orange.cgColor
+        cancelBtn.layer.cornerRadius = 20
         tableView.isEditing = true
         tableView.allowsSelectionDuringEditing = true
         deleteBarButton.title = "Edit"
