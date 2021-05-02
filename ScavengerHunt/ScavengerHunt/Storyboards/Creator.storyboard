@@ -143,13 +143,38 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To create a Treasure Hunt, all you need are NFC tags and this app!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZfH-xU-NNW">
                                         <rect key="frame" x="12" y="12" width="330" height="46.5"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" red="1" green="0.96470588239999999" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="dsg-ZU-Wwf">
+                                        <rect key="frame" x="12" y="78.5" width="330" height="246"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NFC TAG SPECS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Up7-uY-R37">
+                                                <rect key="frame" x="0.0" y="0.0" width="330" height="25"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QRc-fV-ajf">
+                                                <rect key="frame" x="0.0" y="37" width="330" height="209"/>
+                                                <string key="text">Works with any rewritable NDEF NFC tags type 1-5, or any that are compatible with “Amiibos”.
+Minimum 40 bytes of memory.
+Tags with adhesive are best when placing around!
+Avoid placing tags on metal surfaces, metal interferes with the scanning capabilities.</string>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                <color key="textColor" red="1" green="0.96470588239999999" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.1764705882" green="0.32549019610000002" blue="0.38431372549999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.1764705882352941" green="0.32549019607843138" blue="0.38431372549019605" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
+                                    <constraint firstItem="dsg-ZU-Wwf" firstAttribute="top" secondItem="ZfH-xU-NNW" secondAttribute="bottom" constant="20" id="2bl-gT-rDk"/>
                                     <constraint firstItem="Xvb-d3-p5A" firstAttribute="trailing" secondItem="ZfH-xU-NNW" secondAttribute="trailing" constant="12" id="6hF-Gh-ZRF"/>
+                                    <constraint firstItem="dsg-ZU-Wwf" firstAttribute="leading" secondItem="Xvb-d3-p5A" secondAttribute="leading" constant="12" id="mJJ-We-QUI"/>
+                                    <constraint firstItem="Xvb-d3-p5A" firstAttribute="trailing" secondItem="dsg-ZU-Wwf" secondAttribute="trailing" constant="12" id="u9z-YK-KQt"/>
                                     <constraint firstItem="ZfH-xU-NNW" firstAttribute="leading" secondItem="Xvb-d3-p5A" secondAttribute="leading" constant="12" id="vU8-BF-VO3"/>
                                     <constraint firstItem="ZfH-xU-NNW" firstAttribute="top" secondItem="Xvb-d3-p5A" secondAttribute="top" constant="12" id="x0H-NP-Kkx"/>
                                     <constraint firstItem="ZfH-xU-NNW" firstAttribute="centerX" secondItem="AnG-wZ-YTT" secondAttribute="centerX" id="z2s-HR-nFS"/>
@@ -170,6 +195,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="nfcTagSpecsLabel" destination="QRc-fV-ajf" id="pLY-C8-Bne"/>
                         <outlet property="scrollView" destination="AnG-wZ-YTT" id="pVK-or-9sk"/>
                     </connections>
                 </viewController>
