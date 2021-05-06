@@ -103,25 +103,15 @@ class CreatorHelpViewController: UIViewController {
         let label = UILabel()
         label.text = """
                         1. Tap on add event button “+”.
-                        2. Add a Title for your event and then
-                        enter a clue for the players to follow to
-                        find the next Marker.
+                        2. Add a Title for your event and then enter a clue for the players to follow to find the next Marker.
                         3. Tap “Confirm”.
-                        4. Scan an NFC tag, keep this starter tag
-                        at the beginning of your Treasure
-                        Hunt.
+                        4. Scan an NFC tag, keep this starter tag at the beginning of your Treasure Hunt.
                         5. Go to the location you chose as your next Marker and place an NFC tag in the spot you described in your previous clue.
                         6. Add a title for your current location and enter a clue for the next Marker.
-                        7. Tap “Scan Marker” and scan the NFC
-                        tag.
-                        8. Repeat steps 5-7 for however many
-                        Markers you want in your Treasure
-                        Hunt.
-                        9. The clue for the final tag can be
-                        anything you want, you can just write
-                        “Finish”.
-                        10. Once you’re done adding Markers, tap
-                        “Review” where you can edit, rearrange, and delete your Markers, tap “CONFIRM” to create your Treasure Hunt!
+                        7. Tap “Scan Marker” and scan the NFC tag.
+                        8. Repeat steps 5-7 for however many Markers you want in your Treasure Hunt.
+                        9. The clue for the final tag can be anything you want, you can just write “Finish”.
+                        10. Once you’re done adding Markers, tap “Review” where you can edit, rearrange, and delete your Markers, tap “CONFIRM” to create your Treasure Hunt!
                      """
         label.font = UIFont(name: "Avenir Next", size: 16)
         label.numberOfLines = 0
