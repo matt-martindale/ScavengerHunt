@@ -15,61 +15,9 @@ class CreatorHelpViewController: UIViewController {
     let scrollView = UIScrollView()
     let contentView = UIView()
     
-    let label: UILabel = {
+    let introLabel: UILabel = {
         let label = UILabel()
-        label.text =
-                    """
-                    Works with any rewritable NDEF NFC tags type 1-5, or any that are compatible with “Amiibos”.
-                    
-                    Minimum 40 bytes of memory.
-                    
-                    Tags with adhesive are best when placing around!
-                    
-                    Avoid placing tags on metal surfaces, metal interferes with the scanning capabilities.
-                    
-                    
-                    Works with any rewritable NDEF NFC tags type 1-5, or any that are compatible with “Amiibos”.
-                    
-                    Minimum 40 bytes of memory.
-                    
-                    Tags with adhesive are best when placing around!
-                    
-                    Avoid placing tags on metal surfaces, metal interferes with the scanning capabilities.
-
-                    Works with any rewritable NDEF NFC tags type 1-5, or any that are compatible with “Amiibos”.
-                    
-                    Minimum 40 bytes of memory.
-                    
-                    Tags with adhesive are best when placing around!
-                    
-                    Avoid placing tags on metal surfaces, metal interferes with the scanning capabilities.
-                    
-                    
-                    Works with any rewritable NDEF NFC tags type 1-5, or any that are compatible with “Amiibos”.
-                    
-                    Minimum 40 bytes of memory.
-                    
-                    Tags with adhesive are best when placing around!
-                    
-                    Avoid placing tags on metal surfaces, metal interferes with the scanning capabilities.
-
-                    Works with any rewritable NDEF NFC tags type 1-5, or any that are compatible with “Amiibos”.
-                    
-                    Minimum 40 bytes of memory.
-                    
-                    Tags with adhesive are best when placing around!
-                    
-                    Avoid placing tags on metal surfaces, metal interferes with the scanning capabilities.
-                    
-                    
-                    Works with any rewritable NDEF NFC tags type 1-5, or any that are compatible with “Amiibos”.
-                    
-                    Minimum 40 bytes of memory.
-                    
-                    Tags with adhesive are best when placing around!
-                    
-                    Avoid placing tags on metal surfaces, metal interferes with the scanning capabilities.
-                    """
+        label.text = "To create a Treasure Hunt, all you’ll need are NFC tags and this app!"
         label.font = UIFont(name: "Avenir Next", size: 16)
         label.numberOfLines = 0
         label.sizeToFit()
@@ -78,34 +26,29 @@ class CreatorHelpViewController: UIViewController {
         return label
     }()
     
+    let nfcTagSpecsTitle: UILabel = {
+        let label = UILabel()
+        label.text = "NFC TAG SPECS"
+        label.font = UIFont(name: "Avenir Next", size: 18)
+        label.font = UIFont.systemFont(ofSize: 18, weight: .medium)
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        label.sizeToFit()
+        label.textColor = .white
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    let nfcTagSpecsLabel: UILabel = {
+        let label = UILabel()
+        return label
+    }()
+    
     // MARK: - Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
         setupScrollView()
         setupViews()
-    }
-    
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        
-//        """
-//        Works with any rewritable NDEF NFC tags type 1-5, or any that are compatible with “Amiibos”.
-//
-//        Minimum 40 bytes of memory.
-//
-//        Tags with adhesive are best when placing around!
-//
-//        Avoid placing tags on metal surfaces, metal interferes with the scanning capabilities.
-//
-//
-//        Works with any rewritable NDEF NFC tags type 1-5, or any that are compatible with “Amiibos”.
-//
-//        Minimum 40 bytes of memory.
-//
-//        Tags with adhesive are best when placing around!
-//
-//        Avoid placing tags on metal surfaces, metal interferes with the scanning capabilities.
-//        """
     }
     
     // MARK: - Methods
@@ -128,11 +71,19 @@ class CreatorHelpViewController: UIViewController {
     }
 
     private func setupViews() {
-        contentView.addSubview(label)
-        label.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        label.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
-        label.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 3/4).isActive = true
-        label.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+        // Intro label
+        contentView.addSubview(introLabel)
+        introLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        introLabel.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+        introLabel.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 3/4).isActive = true
+//        introLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+        
+        // NFC Tag specs labels
+        contentView.addSubview(nfcTagSpecsTitle)
+        nfcTagSpecsTitle.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        nfcTagSpecsTitle.topAnchor.constraint(equalTo: introLabel.bottomAnchor, constant: 20).isActive = true
+        nfcTagSpecsTitle.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 3/4).isActive = true
+        nfcTagSpecsTitle.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
     }
     
 }
