@@ -58,6 +58,34 @@ class CreatorHelpViewController: UIViewController {
         return label
     }()
     
+    let minimumReqTitle: UILabel = {
+        let label = UILabel()
+        label.text = "MINIMUM REQUIREMENTS"
+        label.font = UIFont(name: "Avenir Next", size: 18)
+        label.font = UIFont.systemFont(ofSize: 18, weight: .medium)
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        label.sizeToFit()
+        label.textColor = .orange
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    let minimumReqLabel: UILabel = {
+        let label = UILabel()
+        label.text = """
+                        To scan NFC tags and play the game: iPhone 7 and iOS 11 or newer.
+
+                        To write NFC tags and create Treasure Hunts: iPhone 7 and iOS 13 or newer.
+                     """
+        label.font = UIFont(name: "Avenir Next", size: 16)
+        label.numberOfLines = 0
+        label.sizeToFit()
+        label.textColor = .white
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     // MARK: - Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,20 +118,28 @@ class CreatorHelpViewController: UIViewController {
         introLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         introLabel.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
         introLabel.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 3/4).isActive = true
-//        introLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
         
         // NFC Tag specs labels
         contentView.addSubview(nfcTagSpecsTitle)
         nfcTagSpecsTitle.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        nfcTagSpecsTitle.topAnchor.constraint(equalTo: introLabel.bottomAnchor, constant: 20).isActive = true
+        nfcTagSpecsTitle.topAnchor.constraint(equalTo: introLabel.bottomAnchor, constant: 30).isActive = true
         nfcTagSpecsTitle.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 3/4).isActive = true
-//        nfcTagSpecsTitle.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
         
         contentView.addSubview(nfcTagSpecsLabel)
         nfcTagSpecsLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         nfcTagSpecsLabel.topAnchor.constraint(equalTo: nfcTagSpecsTitle.bottomAnchor, constant: 12).isActive = true
         nfcTagSpecsLabel.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 3/4).isActive = true
-        nfcTagSpecsLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+        
+        // Minimum Req labels
+        contentView.addSubview(minimumReqTitle)
+        minimumReqTitle.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        minimumReqTitle.topAnchor.constraint(equalTo: nfcTagSpecsLabel.bottomAnchor, constant: 30).isActive = true
+        minimumReqTitle.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 3/4).isActive = true
+        
+        contentView.addSubview(minimumReqLabel)
+        minimumReqLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        minimumReqLabel.topAnchor.constraint(equalTo: minimumReqTitle.bottomAnchor, constant: 12).isActive = true
+        minimumReqLabel.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 3/4).isActive = true
     }
     
 }
