@@ -131,6 +131,19 @@ class CreatorHelpViewController: UIViewController {
         return label
     }()
     
+    let haveFunLabel: UILabel = {
+        let label = UILabel()
+        label.text = "HAVE FUN HUNTING!"
+        label.font = UIFont(name: "Avenir Next", size: 18)
+        label.font = UIFont.systemFont(ofSize: 18, weight: .medium)
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        label.sizeToFit()
+        label.textColor = .orange
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     // MARK: - Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -196,7 +209,13 @@ class CreatorHelpViewController: UIViewController {
         howToLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         howToLabel.topAnchor.constraint(equalTo: howToTitle.bottomAnchor, constant: 12).isActive = true
         howToLabel.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 3/4).isActive = true
-        howToLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+        
+        // Have Fun label
+        contentView.addSubview(haveFunLabel)
+        haveFunLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        haveFunLabel.topAnchor.constraint(equalTo: howToLabel.bottomAnchor, constant: 30).isActive = true
+        haveFunLabel.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 3/4).isActive = true
+        haveFunLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -50).isActive = true
     }
     
 }
