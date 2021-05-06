@@ -9,8 +9,6 @@ import UIKit
 
 class CreatorHelpViewController: UIViewController {
 
-    // MARK: - IBOutlets
-    
     // MARK: - Properties
     let scrollView = UIScrollView()
     let contentView = UIView()
