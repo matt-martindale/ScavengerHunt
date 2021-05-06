@@ -34,13 +34,27 @@ class CreatorHelpViewController: UIViewController {
         label.numberOfLines = 0
         label.textAlignment = .center
         label.sizeToFit()
-        label.textColor = .white
+        label.textColor = .orange
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     let nfcTagSpecsLabel: UILabel = {
         let label = UILabel()
+        label.text = """
+                        Works with any rewritable NDEF NFC tags type 1-5, or any that are compatible with “Amiibos”.
+
+                        Minimum 40 bytes of memory.
+
+                        Tags with adhesive are best when placing around!
+
+                        Avoid placing tags on metal surfaces, metal interferes with the scanning capabilities.
+                     """
+        label.font = UIFont(name: "Avenir Next", size: 16)
+        label.numberOfLines = 0
+        label.sizeToFit()
+        label.textColor = .white
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -83,7 +97,13 @@ class CreatorHelpViewController: UIViewController {
         nfcTagSpecsTitle.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         nfcTagSpecsTitle.topAnchor.constraint(equalTo: introLabel.bottomAnchor, constant: 20).isActive = true
         nfcTagSpecsTitle.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 3/4).isActive = true
-        nfcTagSpecsTitle.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+//        nfcTagSpecsTitle.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+        
+        contentView.addSubview(nfcTagSpecsLabel)
+        nfcTagSpecsLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        nfcTagSpecsLabel.topAnchor.constraint(equalTo: nfcTagSpecsTitle.bottomAnchor, constant: 12).isActive = true
+        nfcTagSpecsLabel.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 3/4).isActive = true
+        nfcTagSpecsLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
     }
     
 }
