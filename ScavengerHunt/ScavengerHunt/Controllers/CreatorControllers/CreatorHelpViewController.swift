@@ -86,6 +86,51 @@ class CreatorHelpViewController: UIViewController {
         return label
     }()
     
+    let howToTitle: UILabel = {
+        let label = UILabel()
+        label.text = "HOW TO"
+        label.font = UIFont(name: "Avenir Next", size: 18)
+        label.font = UIFont.systemFont(ofSize: 18, weight: .medium)
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        label.sizeToFit()
+        label.textColor = .orange
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    let howToLabel: UILabel = {
+        let label = UILabel()
+        label.text = """
+                        1. Tap on add event button “+”.
+                        2. Add a Title for your event and then
+                        enter a clue for the players to follow to
+                        find the next Marker.
+                        3. Tap “Confirm”.
+                        4. Scan an NFC tag, keep this starter tag
+                        at the beginning of your Treasure
+                        Hunt.
+                        5. Go to the location you chose as your next Marker and place an NFC tag in the spot you described in your previous clue.
+                        6. Add a title for your current location and enter a clue for the next Marker.
+                        7. Tap “Scan Marker” and scan the NFC
+                        tag.
+                        8. Repeat steps 5-7 for however many
+                        Markers you want in your Treasure
+                        Hunt.
+                        9. The clue for the final tag can be
+                        anything you want, you can just write
+                        “Finish”.
+                        10. Once you’re done adding Markers, tap
+                        “Review” where you can edit, rearrange, and delete your Markers, tap “CONFIRM” to create your Treasure Hunt!
+                     """
+        label.font = UIFont(name: "Avenir Next", size: 16)
+        label.numberOfLines = 0
+        label.sizeToFit()
+        label.textColor = .white
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     // MARK: - Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -140,6 +185,18 @@ class CreatorHelpViewController: UIViewController {
         minimumReqLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         minimumReqLabel.topAnchor.constraint(equalTo: minimumReqTitle.bottomAnchor, constant: 12).isActive = true
         minimumReqLabel.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 3/4).isActive = true
+        
+        // How To labels
+        contentView.addSubview(howToTitle)
+        howToTitle.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        howToTitle.topAnchor.constraint(equalTo: minimumReqLabel.bottomAnchor, constant: 30).isActive = true
+        howToTitle.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 3/4).isActive = true
+        
+        contentView.addSubview(howToLabel)
+        howToLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        howToLabel.topAnchor.constraint(equalTo: howToTitle.bottomAnchor, constant: 12).isActive = true
+        howToLabel.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 3/4).isActive = true
+        howToLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
     }
     
 }
