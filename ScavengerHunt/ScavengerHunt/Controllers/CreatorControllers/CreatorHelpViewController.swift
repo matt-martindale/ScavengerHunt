@@ -13,6 +13,8 @@ class CreatorHelpViewController: UIViewController {
     let scrollView = UIScrollView()
     let contentView = UIView()
     
+    
+    // Labels
     let introLabel: UILabel = {
         let label = UILabel()
         label.text = "To create a Treasure Hunt, all you’ll need are NFC tags and this app!"
