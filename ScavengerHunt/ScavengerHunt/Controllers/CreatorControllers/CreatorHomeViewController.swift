@@ -46,7 +46,7 @@ class CreatorHomeViewController: UIViewController, UITableViewDelegate, UITableV
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Events"
+        title = "Hunts"
         setupViews()
         UserDefaults.standard.set(true, forKey: Constants.inCreatorModeKey)
     }
