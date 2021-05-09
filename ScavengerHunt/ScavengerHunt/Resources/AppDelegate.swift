@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
         UserDefaults.standard.setValue(false, forKey: Constants.inCreatorModeKey)
+        UITabBar.appearance().tintColor = .orange
         return true
     }
 
