@@ -93,7 +93,7 @@ class CreatorLoginViewController: UIViewController {
         guard let vcs = tabbarVC.viewControllers else { return }
         
         // Set tabbar items
-        let homeVCTabbarItem = UITabBarItem(title: "Hunts", image: UIImage(systemName: "house"), tag: 0)
+        let homeVCTabbarItem = UITabBarItem(title: "Hunts", image: UIImage(systemName: "map"), tag: 0)
         let playVCTabbarItem = UITabBarItem(title: "Play", image: UIImage(systemName: "iphone.homebutton.badge.play"), tag: 1)
         vcs[0].tabBarItem = homeVCTabbarItem
         vcs[1].tabBarItem = playVCTabbarItem
