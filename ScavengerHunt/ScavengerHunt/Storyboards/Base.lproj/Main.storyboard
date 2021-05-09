@@ -245,7 +245,7 @@
                                     <constraint firstAttribute="height" constant="40" id="cjx-5s-cbk"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
-                                <state key="normal" title="Back">
+                                <state key="normal" title="Home">
                                     <color key="titleColor" red="1" green="0.96470588239999999" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
@@ -443,7 +443,7 @@
         <image name="celebration" width="4166.5" height="4166.5"/>
         <image name="homeBackground" width="577.5" height="1250"/>
         <image name="monster1" width="500" height="500"/>
-        <image name="play" width="400" height="400"/>
+        <image name="play" width="450" height="450"/>
         <image name="questionmark.circle" catalog="system" width="128" height="121"/>
         <image name="scanFirst" width="400" height="400"/>
     </resources>
