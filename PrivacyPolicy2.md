@@ -1,4 +1,4 @@
-Privacy Policy of Hunt!
+Privacy Policy of NFC Treasure Hunt
 This Application collects some Personal Data from its Users.
 
 
