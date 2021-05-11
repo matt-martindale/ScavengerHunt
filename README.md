@@ -1,4 +1,4 @@
-# NFC Treasure Hunt &nbsp;&nbsp; <img src="https://github.com/matt-martindale/ScavengerHunt/blob/main/images/logo_50.png" alt="Treasure Hunt Logo" width="50px"/> <img src="https://github.com/matt-martindale/ScavengerHunt/blob/main/images/app_store.png" alt="App Store Logo" width="120px"/>
+# NFC Treasure Hunt &nbsp;&nbsp; <img src="https://github.com/matt-martindale/ScavengerHunt/blob/main/images/logo_50.png" alt="Treasure Hunt Logo" width="50px"/> <img src="https://github.com/matt-martindale/ScavengerHunt/blob/main/images/app_store.png" alt="App Store Logo" width="150px"/>
 #### iOS Treasure hunt app using NFC tags
 
 Scan tags using your iPhone to show clues that will lead you to the Treasure! 💎
