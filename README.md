@@ -25,4 +25,3 @@ To get started, all you need are NFC Tags, and this app!
 * Need NFC Tags with minimum 40 bytes of memory.
 
 
-
