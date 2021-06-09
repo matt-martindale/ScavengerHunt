@@ -24,3 +24,4 @@ To get started, all you need are NFC Tags, and this app!
 * Works with any rewriteable NDEF NFC tags types 1-5, or any that are compatible with "Amiibos"
 * Need NFC Tags with minimum 40 bytes of memory.
 
+
