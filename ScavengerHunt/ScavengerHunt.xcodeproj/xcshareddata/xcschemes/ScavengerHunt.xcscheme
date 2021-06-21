@@ -28,6 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "C94E72C326803AB700BEF6F8"
+               BuildableName = "ScavengerHuntUnitTests.xctest"
+               BlueprintName = "ScavengerHuntUnitTests"
+               ReferencedContainer = "container:ScavengerHunt.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "C94E72D326803B1500BEF6F8"
+               BuildableName = "ScavengerHuntTests.xctest"
+               BlueprintName = "ScavengerHuntTests"
+               ReferencedContainer = "container:ScavengerHunt.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
